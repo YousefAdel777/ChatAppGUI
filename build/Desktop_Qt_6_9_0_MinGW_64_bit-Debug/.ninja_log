@@ -1,89 +1,69 @@
 # ninja log v6
-31	827	7680678663464378	Privacy_autogen/timestamp	c564759a60266eb
-31	827	7680678663464378	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-4960	5213	7680678705642021	Privacy.exe	4f31d739c075e97d
-31	827	7680678663464378	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-828	4534	7680678664320860	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
-31	827	7680678663464378	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-832	4481	7680678664362251	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
+58	334	7687808741868941	Privacy_autogen/timestamp	b2a7034b111cda91
+58	334	7687808741868941	Privacy_autogen/mocs_compilation.cpp	b2a7034b111cda91
+7	888	7687811243514848	build.ninja	8575d73058d55a9
+3790	10218	7687805431085095	CMakeFiles/untitled7.dir/untitled7_autogen/mocs_compilation.cpp.obj	24613a67d7a55bb7
+1590	6001	7687804408785759	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	51af88f2b82693e8
+1595	6109	7687804408844361	CMakeFiles/Privacy.dir/main.cpp.obj	cc80a930cb5e1843
+1496	1590	7687804408649124	Privacy_autogen/EWIEGA46WW/qrc_img.cpp	6e7de4b83935a15c
+3803	10843	7687805431217378	CMakeFiles/untitled7.dir/About.cpp.obj	4715925cf8a72492
 836	4960	7680678664403044	CMakeFiles/Privacy.dir/widget.cpp.obj	a4813efb4255b4f3
-7	888	7680680108076748	build.ninja	8575d73058d55a9
-217	282	7680505387548434	Privacy_autogen/EWIEGA46WW/qrc_img.cpp	3c236126527601d6
-217	282	7680505387548434	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/EWIEGA46WW/qrc_img.cpp	3c236126527601d6
-286	400	7680505387691832	CMakeFiles/Privacy.dir/Privacy_autogen/EWIEGA46WW/qrc_img.cpp.obj	c311c3616e7dde85
-30	698	7680680211903828	Privacy_autogen/timestamp	c564759a60266eb
-30	698	7680680211903828	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-30	698	7680680211903828	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-30	698	7680680211903828	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-702	3778	7680680212704423	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
-698	3788	7680680212668208	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
-705	4153	7680680212734408	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-4153	4398	7680680247222168	Privacy.exe	4f7fe11b8c64d186
-11	768	7680692695641538	Privacy_autogen/timestamp	c564759a60266eb
-11	768	7680692695641538	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-11	768	7680692695641538	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-11	768	7680692695641538	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-774	4239	7680692696554490	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
-769	4370	7680692696503705	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
-778	4877	7680692696589255	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-4877	5151	7680692737589594	Privacy.exe	4f7fe11b8c64d186
-34	173	7680700948828033	Privacy_autogen/timestamp	c564759a60266eb
-34	173	7680700948828033	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-34	173	7680700948828033	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-34	173	7680700948828033	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-174	3004	7680700950217782	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-3004	3246	7680700978513812	Privacy.exe	4f7fe11b8c64d186
-31	788	7680706383946319	Privacy_autogen/timestamp	c564759a60266eb
-31	788	7680706383946319	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-31	788	7680706383946319	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-31	788	7680706383946319	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-794	5779	7680706385021673	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
-789	5950	7680706384981383	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
-799	6668	7680706385078544	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-6668	7000	7680706443758250	Privacy.exe	4f7fe11b8c64d186
-33	839	7680709934597565	Privacy_autogen/timestamp	c564759a60266eb
-33	839	7680709934597565	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-33	839	7680709934597565	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-33	839	7680709934597565	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-844	6022	7680709935757423	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
-840	6357	7680709935707558	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
-849	6829	7680709935810512	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-6830	7195	7680709995617459	Privacy.exe	4f7fe11b8c64d186
-30	179	7680710435485745	Privacy_autogen/timestamp	c564759a60266eb
-30	179	7680710435485745	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-30	179	7680710435485745	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-30	179	7680710435485745	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-180	2950	7680710436976513	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-2950	3191	7680710464692196	Privacy.exe	4f7fe11b8c64d186
-30	166	7680710781715643	Privacy_autogen/timestamp	c564759a60266eb
-30	166	7680710781715643	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-30	166	7680710781715643	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-30	166	7680710781715643	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-166	2952	7680710783072586	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-2952	3189	7680710810923788	Privacy.exe	4f7fe11b8c64d186
-34	1144	7680730741754446	Privacy_autogen/timestamp	c564759a60266eb
-34	1144	7680730741754446	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-34	1144	7680730741754446	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-34	1144	7680730741754446	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-1151	6747	7680730743295685	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
-1145	6847	7680730743238287	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
-1157	7551	7680730743358683	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-7551	7897	7680730807287047	Privacy.exe	4f7fe11b8c64d186
-11	177	7680731184812441	Privacy_autogen/timestamp	c564759a60266eb
-11	177	7680731184812441	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-11	177	7680731184812441	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-11	177	7680731184812441	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-177	2593	7680731186477260	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-2594	2805	7680731210638036	Privacy.exe	4f7fe11b8c64d186
-11	141	7680732159479735	Privacy_autogen/timestamp	c564759a60266eb
-11	141	7680732159479735	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-11	141	7680732159479735	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-11	141	7680732159479735	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-142	2893	7680732160779215	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-2893	3145	7680732188298655	Privacy.exe	4f7fe11b8c64d186
-37	212	7680734816534203	Privacy_autogen/timestamp	c564759a60266eb
-37	212	7680734816534203	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-37	212	7680734816534203	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
-37	212	7680734816534203	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
-213	3701	7680734818300027	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
-3701	4026	7680734853165323	Privacy.exe	4f7fe11b8c64d186
+1608	1892	7687804408971203	CMakeFiles/Privacy.dir/Privacy_autogen/EWIEGA46WW/qrc_img.cpp.obj	fb3516e7d347a57a
+3477	37539	7687806829611047	CMakeFiles/ChatApp.dir/ChatApp_autogen/EWIEGA46WW/qrc_res.cpp.obj	6949644019d570b
+336	6513	7687808744655998	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	47268cf86b324ec5
+58	334	7687808741868941	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	b2a7034b111cda91
+58	334	7687808741868941	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	b2a7034b111cda91
+6707	7448	7687808808365437	ChatApp.exe	f274b124b3b40d84
+422	6261	7687808745515891	CMakeFiles/ChatApp.dir/header.cpp.obj	4e97849d6a5751f7
+1496	1590	7687804408649124	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/EWIEGA46WW/qrc_img.cpp	6e7de4b83935a15c
+69	413	7687808741991691	ChatApp_autogen/mocs_compilation.cpp	a1565df9f5bf929a
+60	1998	7687805412063915	untitled7_autogen/timestamp	669b27e1a49e7c78
+60	1998	7687805412063915	untitled7_autogen/mocs_compilation.cpp	669b27e1a49e7c78
+60	1998	7687805412063915	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/untitled7_autogen/timestamp	669b27e1a49e7c78
+60	1998	7687805412063915	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/untitled7_autogen/mocs_compilation.cpp	669b27e1a49e7c78
+2162	3446	7687806829037436	ChatApp_autogen/EWIEGA46WW/qrc_res.cpp	7ea943f206660c40
+1999	3790	7687805430906706	untitled7_autogen/EWIEGA46WW/qrc_res.cpp	54a9bd75c0d2c52
+2162	3446	7687806829037436	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ChatApp_autogen/EWIEGA46WW/qrc_res.cpp	7ea943f206660c40
+1999	3790	7687805430906706	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/untitled7_autogen/EWIEGA46WW/qrc_res.cpp	54a9bd75c0d2c52
+3813	9948	7687805431314978	CMakeFiles/untitled7.dir/chatroommenu.cpp.obj	804327cd8535a125
+3799	9718	7687805431178116	CMakeFiles/untitled7.dir/mainwindow.cpp.obj	9005840a401490ff
+3794	9887	7687805431133381	CMakeFiles/untitled7.dir/main.cpp.obj	8a17313d7d0c2b1c
+3808	10532	7687805431266175	CMakeFiles/untitled7.dir/header.cpp.obj	35977d24fbbd6c7e
+3820	39037	7687805431383838	CMakeFiles/untitled7.dir/untitled7_autogen/EWIEGA46WW/qrc_res.cpp.obj	f105c4d667e8afb8
+427	5653	7687808745574485	CMakeFiles/ChatApp.dir/chatroommenu.cpp.obj	95409459cdb8d35b
+69	413	7687808741991691	ChatApp_autogen/timestamp	a1565df9f5bf929a
+69	413	7687808741991691	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ChatApp_autogen/timestamp	a1565df9f5bf929a
+69	413	7687808741991691	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/ChatApp_autogen/mocs_compilation.cpp	a1565df9f5bf929a
+414	5599	7687808745437817	CMakeFiles/ChatApp.dir/mainwindow.cpp.obj	fca0f9dfee3a2be0
+3447	9562	7687806829312285	CMakeFiles/ChatApp.dir/ChatApp_autogen/mocs_compilation.cpp.obj	3c796048c44c21cc
+3451	9741	7687806829360845	CMakeFiles/ChatApp.dir/main.cpp.obj	d83f7b80b0dd3780
+418	6707	7687808745476968	CMakeFiles/ChatApp.dir/About.cpp.obj	71b2d7a29a97216c
+59	3140	7687811394982090	UnifiedApp_autogen/timestamp	5d4f2209f85bf570
+59	3140	7687811394982090	UnifiedApp_autogen/mocs_compilation.cpp	5d4f2209f85bf570
+59	3140	7687811394982090	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/UnifiedApp_autogen/timestamp	5d4f2209f85bf570
+59	3140	7687811394982090	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/UnifiedApp_autogen/mocs_compilation.cpp	5d4f2209f85bf570
+3153	3268	7687811397414481	UnifiedApp_autogen/EWIEGA46WW/qrc_img.cpp	ae55d87c3a162d83
+3153	3268	7687811397414481	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/UnifiedApp_autogen/EWIEGA46WW/qrc_img.cpp	ae55d87c3a162d83
+3161	4431	7687811408993048	UnifiedApp_autogen/EWIEGA46WW/qrc_res.cpp	ffeb2be90aa6e6ff
+3161	4431	7687811408993048	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/UnifiedApp_autogen/EWIEGA46WW/qrc_res.cpp	ffeb2be90aa6e6ff
+4467	4977	7687811409543323	CMakeFiles/UnifiedApp.dir/UnifiedApp_autogen/EWIEGA46WW/qrc_img.cpp.obj	c0c05ab33823a5c7
+4440	10430	7687811409276925	CMakeFiles/UnifiedApp.dir/mainwindow.cpp.obj	9da5ffb1b04c2085
+4454	10940	7687811409420778	CMakeFiles/UnifiedApp.dir/chatroommenu.cpp.obj	82d0abf896e4081f
+4460	11106	7687811409479342	CMakeFiles/UnifiedApp.dir/main.cpp.obj	4aad22c64558737f
+4431	11413	7687811409190628	CMakeFiles/UnifiedApp.dir/UnifiedApp_autogen/mocs_compilation.cpp.obj	415fb422c39b84f5
+4435	11438	7687811409228132	CMakeFiles/UnifiedApp.dir/PrivacySettings.cpp.obj	a49c45c754795961
+4450	11533	7687811409371992	CMakeFiles/UnifiedApp.dir/header.cpp.obj	5f7cd6237edacaae
+4444	11827	7687811409313540	CMakeFiles/UnifiedApp.dir/About.cpp.obj	4dfd8e614edfc164
+4472	36764	7687811409601875	CMakeFiles/UnifiedApp.dir/UnifiedApp_autogen/EWIEGA46WW/qrc_res.cpp.obj	2f7ff5ccab40286b
+36764	37634	7687811732515972	UnifiedApp.exe	39ef7d7391c54091
+80	460	7687813020568257	UnifiedApp_autogen/timestamp	5d4f2209f85bf570
+80	460	7687813020568257	UnifiedApp_autogen/mocs_compilation.cpp	5d4f2209f85bf570
+80	460	7687813020568257	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/UnifiedApp_autogen/timestamp	5d4f2209f85bf570
+80	460	7687813020568257	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/UnifiedApp_autogen/mocs_compilation.cpp	5d4f2209f85bf570
+488	7012	7687813024646266	CMakeFiles/UnifiedApp.dir/main.cpp.obj	4aad22c64558737f
+482	7064	7687813024586892	CMakeFiles/UnifiedApp.dir/chatroommenu.cpp.obj	82d0abf896e4081f
+467	7078	7687813024438470	CMakeFiles/UnifiedApp.dir/mainwindow.cpp.obj	9da5ffb1b04c2085
+477	7512	7687813024528333	CMakeFiles/UnifiedApp.dir/header.cpp.obj	5f7cd6237edacaae
+462	8010	7687813024384931	CMakeFiles/UnifiedApp.dir/PrivacySettings.cpp.obj	a49c45c754795961
+471	8198	7687813024484069	CMakeFiles/UnifiedApp.dir/About.cpp.obj	4dfd8e614edfc164
+8198	9074	7687813101751289	UnifiedApp.exe	39ef7d7391c54091

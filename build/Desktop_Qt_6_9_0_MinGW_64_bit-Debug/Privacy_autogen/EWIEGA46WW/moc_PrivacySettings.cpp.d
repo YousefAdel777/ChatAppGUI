@@ -1,5 +1,5 @@
-D:/QT\ Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/EWIEGA46WW/moc_PrivacySettings.cpp: D:/QT\ Designs/Privacy/PrivacySettings.h \
-  D:/QT\ Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/moc_predefs.h \
+C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/EWIEGA46WW/moc_PrivacySettings.cpp: C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/PrivacySettings.h \
+  C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/moc_predefs.h \
   C:/Qt/6.9.0/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.9.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.9.0/mingw_64/include/QtCore/q20iterator.h \

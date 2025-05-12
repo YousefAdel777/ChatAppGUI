@@ -577,15 +577,16 @@ Privacy_autogen/timestamp: \
 	C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
 	C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
 	C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-	D:/QT\ Designs/Privacy/CMakeLists.txt \
-	D:/QT\ Designs/Privacy/PrivacySettings.cpp \
-	D:/QT\ Designs/Privacy/PrivacySettings.h \
-	D:/QT\ Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
-	D:/QT\ Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
-	D:/QT\ Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
-	D:/QT\ Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
-	D:/QT\ Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/moc_predefs.h \
-	D:/QT\ Designs/Privacy/img.qrc \
-	D:/QT\ Designs/Privacy/main.cpp \
-	D:/QT\ Designs/Privacy/PrivacySettings.ui \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/CMakeLists.txt \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/PrivacySettings.cpp \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/PrivacySettings.h \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/moc_predefs.h \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/img.qrc \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/main.cpp \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/res.qrc \
+	C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/PrivacySettings.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
