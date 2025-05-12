@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>511</width>
+    <height>477</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #E5E5E5;</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>601</width>
+     <height>451</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QStackedWidget" name="PrivacyWidgets">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="font">
+       <font>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="currentIndex">
+       <number>5</number>
+      </property>
+      <widget class="QWidget" name="MainPrivacyWidget">
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>371</width>
+          <height>371</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QGroupBox" name="LastSeenAndOnlineBox">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+border: 0px;
+</string>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QLabel" name="LastSeenAndOnlineLabel">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>30</y>
+              <width>201</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+            </property>
+            <property name="text">
+             <string>Last seen and online</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="LastSeenAndOnlineCircle">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>40</y>
+              <width>30</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: #AED1AC;
+border-radius: 15px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="img.qrc">
+              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QLabel" name="LastSeenAndOnlineChoice">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>60</y>
+              <width>181</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: 0;
+color: #424941;</string>
+            </property>
+            <property name="text">
+             <string>Everyone, Everyone</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="LastSeenAndOnlineButton">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>20</y>
+              <width>301</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 30px;
+}
+QPushButton#LastSeenAndOnlineButton:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#LastSeenAndOnlineButton:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="autoRepeat">
+             <bool>false</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>false</bool>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <zorder>LastSeenAndOnlineButton</zorder>
+           <zorder>LastSeenAndOnlineLabel</zorder>
+           <zorder>LastSeenAndOnlineCircle</zorder>
+           <zorder>LastSeenAndOnlineChoice</zorder>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="ProfilePhotoBox">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0px;
+border: 0px;</string>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QLabel" name="ProfilePhotoLabel">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>30</y>
+              <width>201</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+            </property>
+            <property name="text">
+             <string>Profile Photo</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="ProfilePhotoCircle">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>40</y>
+              <width>30</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: #AED1AC;
+border-radius: 15px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="img.qrc">
+              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="ProfilePhotoButton">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>20</y>
+              <width>301</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 30px;
+}
+QPushButton#ProfilePhotoButton:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#ProfilePhotoButton:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="ProfilePhotoChoice">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>60</y>
+              <width>171</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: 0;
+color: #424941;</string>
+            </property>
+            <property name="text">
+             <string>Everyone</string>
+            </property>
+           </widget>
+           <zorder>ProfilePhotoButton</zorder>
+           <zorder>ProfilePhotoLabel</zorder>
+           <zorder>ProfilePhotoCircle</zorder>
+           <zorder>ProfilePhotoChoice</zorder>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="AboutBox">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0px;
+border: 0px;</string>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QPushButton" name="AboutButton">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>20</y>
+              <width>301</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 30px;
+}
+QPushButton#AboutButton:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#AboutButton:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="AboutChoice">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>60</y>
+              <width>181</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: 0;
+color: #424941;</string>
+            </property>
+            <property name="text">
+             <string>Everyone</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="AboutLabel">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>30</y>
+              <width>201</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+            </property>
+            <property name="text">
+             <string>About</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="AboutCircle">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>40</y>
+              <width>30</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: #AED1AC;
+border-radius: 15px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="img.qrc">
+              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="StatusBox">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: 0px;
+border: 0px;</string>
+           </property>
+           <property name="title">
+            <string/>
+           </property>
+           <widget class="QPushButton" name="StatusButton">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>20</y>
+              <width>300</width>
+              <height>70</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 30px;
+}
+QPushButton#StatusButton:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#StatusButton:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="StatusLabel">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>30</y>
+              <width>201</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+            </property>
+            <property name="text">
+             <string>Status</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="StatusChoice">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>60</y>
+              <width>181</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: 0;
+color: #424941;</string>
+            </property>
+            <property name="text">
+             <string>My contacts</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="StatusCircle">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>40</y>
+              <width>30</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: #AED1AC;
+border-radius: 15px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="img.qrc">
+              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="MainLabel">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>12</y>
+          <width>369</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #424941;
+background-color: 0;</string>
+        </property>
+        <property name="text">
+         <string>Who can see your info</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="LastSeenAndOnlineWidget">
+       <widget class="QPushButton" name="LastSeenAndOnlineBack">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>5</y>
+          <width>24</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 12px;
+}
+QPushButton#LastSeenAndOnlineBack:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#LastSeenAndOnlineBack:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="img.qrc">
+          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="LastSeenAndOnlineWidgetLabel">
+        <property name="geometry">
+         <rect>
+          <x>45</x>
+          <y>5</y>
+          <width>161</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+        </property>
+        <property name="text">
+         <string>Last seen and online</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>44</y>
+          <width>171</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #424941;
+background-color: 0;</string>
+        </property>
+        <property name="text">
+         <string>Who can see my last seen</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>70</y>
+          <width>160</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QRadioButton" name="LastSeenChoiceEveryone">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Everyone</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="LastSeenChoiceMyContacts">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>My contacts</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="LastSeenChoiceMyContactsExept">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>My contacts except</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="LastSeenChoiceNobody">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Nobody</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>220</y>
+          <width>160</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QRadioButton" name="OnlineChoiceEveryone">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Everyone</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="OnlineChoiceSameAsLastSeen">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Same as last seen</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>193</y>
+          <width>181</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #424941;
+background-color: 0;</string>
+        </property>
+        <property name="text">
+         <string>Who can see when I'm online</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="ProfilePhotoWidget">
+       <widget class="QPushButton" name="ProfilePhotoBack">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>5</y>
+          <width>24</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 12px;
+}
+QPushButton#ProfilePhotoBack:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#ProfilePhotoBack:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="img.qrc">
+          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="ProfilePhotoWidgetLabel">
+        <property name="geometry">
+         <rect>
+          <x>45</x>
+          <y>5</y>
+          <width>161</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+        </property>
+        <property name="text">
+         <string>Profile photo</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>44</y>
+          <width>181</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #424941;
+background-color: 0;</string>
+        </property>
+        <property name="text">
+         <string>Who can see my profile photo</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_5">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>160</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QRadioButton" name="ProfilePhotoChoiceEveryone">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Everyone</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="ProfilePhotoChoiceMyContacts">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>My contacts</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="ProfilePhotoChoiceMyContactsExept">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>My contacts exept</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="ProfilePhotoChoiceNobody">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Nobody</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="AboutWidget">
+       <widget class="QPushButton" name="AboutBack">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>5</y>
+          <width>24</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 12px;
+}
+QPushButton#AboutBack:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#AboutBack:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="img.qrc">
+          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="AboutWidgetLabel">
+        <property name="geometry">
+         <rect>
+          <x>45</x>
+          <y>5</y>
+          <width>91</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+        </property>
+        <property name="text">
+         <string>About</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_6">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>160</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QRadioButton" name="AboutChoiceEveryone">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Everyone</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="AboutChoiceMyContacts">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>My contacts</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="AboutChoiceMyContactsExept">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>My contacts exept</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="AboutChoiceNobody">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Nobody</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>44</y>
+          <width>181</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #424941;
+background-color: 0;</string>
+        </property>
+        <property name="text">
+         <string>Who can see my profile photo</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="StatusWidget">
+       <widget class="QPushButton" name="StatusBack">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>5</y>
+          <width>24</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 12px;
+}
+QPushButton#StatusBack:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#StatusBack:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="img.qrc">
+          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+       </widget>
+       <widget class="QLabel" name="StatusWidgetLabel">
+        <property name="geometry">
+         <rect>
+          <x>45</x>
+          <y>5</y>
+          <width>161</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+        </property>
+        <property name="text">
+         <string>Status</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="geometry">
+         <rect>
+          <x>9</x>
+          <y>44</y>
+          <width>191</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: #424941;
+background-color: 0;</string>
+        </property>
+        <property name="text">
+         <string>Who can see my status updates</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="verticalLayoutWidget_7">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>70</y>
+          <width>160</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QRadioButton" name="StatusChoiceMyContacts">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>My contacts</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="StatusChoiceMyContactsExept">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>My contacts exept</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="StatusChoiceOnlyShareWith">
+           <property name="styleSheet">
+            <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+           </property>
+           <property name="text">
+            <string>Only share with</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="ExcludeContactsWidget">
+       <widget class="QLabel" name="ExcludeContactsWidgetLabel">
+        <property name="geometry">
+         <rect>
+          <x>45</x>
+          <y>5</y>
+          <width>131</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+        </property>
+        <property name="text">
+         <string>Exclude contacts</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="ExcludeContactsBack">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>5</y>
+          <width>24</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 12px;
+}
+QPushButton#ExcludeContactsBack:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#ExcludeContactsBack:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="img.qrc">
+          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>27</width>
+          <height>27</height>
+         </size>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
