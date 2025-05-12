@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>511</width>
-    <height>477</height>
+    <width>500</width>
+    <height>455</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,11 +33,15 @@
       </property>
       <property name="font">
        <font>
+        <pointsize>9</pointsize>
         <kerning>true</kerning>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FBFDF6;</string>
+      </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="MainPrivacyWidget">
        <widget class="QWidget" name="verticalLayoutWidget_2">
@@ -1102,33 +1106,11 @@ color: #0E1F12;</string>
        </widget>
       </widget>
       <widget class="QWidget" name="ExcludeContactsWidget">
-       <widget class="QLabel" name="ExcludeContactsWidgetLabel">
-        <property name="geometry">
-         <rect>
-          <x>45</x>
-          <y>5</y>
-          <width>131</width>
-          <height>24</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: 0;
-color: #0E1F12;</string>
-        </property>
-        <property name="text">
-         <string>Exclude contacts</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="ExcludeContactsBack">
         <property name="geometry">
          <rect>
-          <x>5</x>
-          <y>5</y>
+          <x>10</x>
+          <y>10</y>
           <width>24</width>
           <height>24</height>
          </rect>
@@ -1159,6 +1141,148 @@ backGround-color: rgb(186, 223, 184);
          </size>
         </property>
        </widget>
+       <widget class="QLabel" name="ExcludeContactsWidgetLabel">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>10</y>
+          <width>121</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: 0;
+color: #0E1F12;</string>
+        </property>
+        <property name="text">
+         <string>Exclude contacts</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>125</x>
+          <y>40</y>
+          <width>250</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>250</width>
+           <height>42</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: &quot;#E1ECE1&quot;;
+padding: 10px 5px;
+border-radius: 20px;
+font-size: 11pt;
+color: #424941;</string>
+         </property>
+         <property name="inputMask">
+          <string/>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Search Contact</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="ExcludeContactsBack_2">
+         <property name="geometry">
+          <rect>
+           <x>207</x>
+           <y>0</y>
+           <width>42</width>
+           <height>42</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background-color: #D3E8D2;
+border-radius: 21px;
+}
+QPushButton#ExcludeContactsBack:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#ExcludeContactsBack:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="res.qrc">
+           <normaloff>:/search.png</normaloff>:/search.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPushButton" name="ExcludeContactsBack_3">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>10</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: #FBFDF6;
+border-radius: 15px;
+}
+QPushButton#ExcludeContactsBack_3:hover{
+background-color:rgb(238, 240, 233);
+}
+QPushButton#ExcludeContactsBack_3:pressed{
+backGround-color: rgb(186, 223, 184);
+}</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="res.qrc">
+          <normaloff>:/SelectAll.png</normaloff>:/SelectAll.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>35</width>
+          <height>35</height>
+         </size>
+        </property>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -1167,6 +1291,7 @@ backGround-color: rgb(186, 223, 184);
  </widget>
  <resources>
   <include location="img.qrc"/>
+  <include location="res.qrc"/>
  </resources>
  <connections/>
 </ui>

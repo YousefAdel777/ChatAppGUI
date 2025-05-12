@@ -1,11 +1,15 @@
 <RCC>
-    <qresource prefix="/">
-        <file>pfp.png</file>
-        <file>info.png</file>
-        <file>delete.png</file>
-        <file>block.png</file>
-        <file>group.png</file>
-        <file>3 dots.png</file>
+    <qresource prefix="/icons">
+        <file>icons/pfp.png</file>
+        <file>icons/info.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/block.png</file>
+        <file>icons/group.png</file>
+        <file>icons/3 dots.png</file>
+        <file>icons/search.png</file>
+	<file>icons/Arrow.png</file>
+	<file>icons/BackArrow.png</file>
+	<file>icons/SelectAll.png</file>
         <file>static/Roboto_Condensed-Black.ttf</file>
         <file>static/Roboto_Condensed-BlackItalic.ttf</file>
         <file>static/Roboto_Condensed-Bold.ttf</file>
@@ -60,6 +64,5 @@
         <file>static/Roboto-SemiBoldItalic.ttf</file>
         <file>static/Roboto-Thin.ttf</file>
         <file>static/Roboto-ThinItalic.ttf</file>
-        <file>search.png</file>
     </qresource>
 </RCC>
