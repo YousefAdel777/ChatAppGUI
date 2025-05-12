@@ -1,0 +1,89 @@
+# ninja log v6
+31	827	7680678663464378	Privacy_autogen/timestamp	c564759a60266eb
+31	827	7680678663464378	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+4960	5213	7680678705642021	Privacy.exe	4f31d739c075e97d
+31	827	7680678663464378	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+828	4534	7680678664320860	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
+31	827	7680678663464378	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+832	4481	7680678664362251	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
+836	4960	7680678664403044	CMakeFiles/Privacy.dir/widget.cpp.obj	a4813efb4255b4f3
+7	888	7680680108076748	build.ninja	8575d73058d55a9
+217	282	7680505387548434	Privacy_autogen/EWIEGA46WW/qrc_img.cpp	3c236126527601d6
+217	282	7680505387548434	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/EWIEGA46WW/qrc_img.cpp	3c236126527601d6
+286	400	7680505387691832	CMakeFiles/Privacy.dir/Privacy_autogen/EWIEGA46WW/qrc_img.cpp.obj	c311c3616e7dde85
+30	698	7680680211903828	Privacy_autogen/timestamp	c564759a60266eb
+30	698	7680680211903828	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+30	698	7680680211903828	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+30	698	7680680211903828	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+702	3778	7680680212704423	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
+698	3788	7680680212668208	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
+705	4153	7680680212734408	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+4153	4398	7680680247222168	Privacy.exe	4f7fe11b8c64d186
+11	768	7680692695641538	Privacy_autogen/timestamp	c564759a60266eb
+11	768	7680692695641538	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+11	768	7680692695641538	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+11	768	7680692695641538	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+774	4239	7680692696554490	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
+769	4370	7680692696503705	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
+778	4877	7680692696589255	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+4877	5151	7680692737589594	Privacy.exe	4f7fe11b8c64d186
+34	173	7680700948828033	Privacy_autogen/timestamp	c564759a60266eb
+34	173	7680700948828033	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+34	173	7680700948828033	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+34	173	7680700948828033	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+174	3004	7680700950217782	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+3004	3246	7680700978513812	Privacy.exe	4f7fe11b8c64d186
+31	788	7680706383946319	Privacy_autogen/timestamp	c564759a60266eb
+31	788	7680706383946319	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+31	788	7680706383946319	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+31	788	7680706383946319	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+794	5779	7680706385021673	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
+789	5950	7680706384981383	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
+799	6668	7680706385078544	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+6668	7000	7680706443758250	Privacy.exe	4f7fe11b8c64d186
+33	839	7680709934597565	Privacy_autogen/timestamp	c564759a60266eb
+33	839	7680709934597565	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+33	839	7680709934597565	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+33	839	7680709934597565	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+844	6022	7680709935757423	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
+840	6357	7680709935707558	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
+849	6829	7680709935810512	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+6830	7195	7680709995617459	Privacy.exe	4f7fe11b8c64d186
+30	179	7680710435485745	Privacy_autogen/timestamp	c564759a60266eb
+30	179	7680710435485745	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+30	179	7680710435485745	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+30	179	7680710435485745	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+180	2950	7680710436976513	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+2950	3191	7680710464692196	Privacy.exe	4f7fe11b8c64d186
+30	166	7680710781715643	Privacy_autogen/timestamp	c564759a60266eb
+30	166	7680710781715643	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+30	166	7680710781715643	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+30	166	7680710781715643	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+166	2952	7680710783072586	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+2952	3189	7680710810923788	Privacy.exe	4f7fe11b8c64d186
+34	1144	7680730741754446	Privacy_autogen/timestamp	c564759a60266eb
+34	1144	7680730741754446	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+34	1144	7680730741754446	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+34	1144	7680730741754446	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+1151	6747	7680730743295685	CMakeFiles/Privacy.dir/main.cpp.obj	dd3d9f208e781783
+1145	6847	7680730743238287	CMakeFiles/Privacy.dir/Privacy_autogen/mocs_compilation.cpp.obj	b47d2cd7ef99945f
+1157	7551	7680730743358683	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+7551	7897	7680730807287047	Privacy.exe	4f7fe11b8c64d186
+11	177	7680731184812441	Privacy_autogen/timestamp	c564759a60266eb
+11	177	7680731184812441	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+11	177	7680731184812441	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+11	177	7680731184812441	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+177	2593	7680731186477260	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+2594	2805	7680731210638036	Privacy.exe	4f7fe11b8c64d186
+11	141	7680732159479735	Privacy_autogen/timestamp	c564759a60266eb
+11	141	7680732159479735	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+11	141	7680732159479735	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+11	141	7680732159479735	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+142	2893	7680732160779215	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+2893	3145	7680732188298655	Privacy.exe	4f7fe11b8c64d186
+37	212	7680734816534203	Privacy_autogen/timestamp	c564759a60266eb
+37	212	7680734816534203	Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+37	212	7680734816534203	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/timestamp	c564759a60266eb
+37	212	7680734816534203	D:/QT Designs/Privacy/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Privacy_autogen/mocs_compilation.cpp	c564759a60266eb
+213	3701	7680734818300027	CMakeFiles/Privacy.dir/PrivacySettings.cpp.obj	6f632aebc78d0055
+3701	4026	7680734853165323	Privacy.exe	4f7fe11b8c64d186
