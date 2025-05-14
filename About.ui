@@ -92,7 +92,7 @@ border-top-left-radius:25px;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="res.qrc">:/pfp.png</pixmap>
+               <pixmap resource="res.qrc">:/icons/icons/pfp.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -187,7 +187,7 @@ color:gray;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="res.qrc">:/info.png</pixmap>
+               <pixmap resource="res.qrc">:/icons/icons/info.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -301,7 +301,7 @@ color:gray;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="res.qrc">:/group.png</pixmap>
+               <pixmap resource="res.qrc">:/icons/icons/group.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -360,7 +360,7 @@ padding:4px;
                <string>Delete chat</string>
               </property>
               <property name="icon">
-               <iconset resource="res.qrc">
+               <iconset>
                 <normaloff>:/delete.png</normaloff>:/delete.png</iconset>
               </property>
              </widget>
@@ -391,7 +391,7 @@ padding:4px;
                <string>Block</string>
               </property>
               <property name="icon">
-               <iconset resource="res.qrc">
+               <iconset>
                 <normaloff>:/block.png</normaloff>:/block.png</iconset>
               </property>
              </widget>

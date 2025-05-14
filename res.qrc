@@ -7,9 +7,9 @@
         <file>icons/group.png</file>
         <file>icons/3 dots.png</file>
         <file>icons/search.png</file>
-	<file>icons/Arrow.png</file>
-	<file>icons/BackArrow.png</file>
-	<file>icons/SelectAll.png</file>
+        <file>icons/Arrow.png</file>
+        <file>icons/BackArrow.png</file>
+        <file>icons/SelectAll.png</file>
         <file>static/Roboto_Condensed-Black.ttf</file>
         <file>static/Roboto_Condensed-BlackItalic.ttf</file>
         <file>static/Roboto_Condensed-Bold.ttf</file>
@@ -64,5 +64,9 @@
         <file>static/Roboto-SemiBoldItalic.ttf</file>
         <file>static/Roboto-Thin.ttf</file>
         <file>static/Roboto-ThinItalic.ttf</file>
+        <file>icons/attach.png</file>
+        <file>icons/mic.png</file>
+        <file>icons/pause.png</file>
+        <file>icons/send.png</file>
     </qresource>
 </RCC>

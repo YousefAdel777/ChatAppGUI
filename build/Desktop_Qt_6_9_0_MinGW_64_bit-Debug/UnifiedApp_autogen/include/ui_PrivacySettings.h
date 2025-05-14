@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStackedWidget>
@@ -97,14 +98,18 @@ public:
     QRadioButton *StatusChoiceMyContactsExept;
     QRadioButton *StatusChoiceOnlyShareWith;
     QWidget *ExcludeContactsWidget;
-    QLabel *ExcludeContactsWidgetLabel;
     QPushButton *ExcludeContactsBack;
+    QLabel *ExcludeContactsWidgetLabel;
+    QGroupBox *groupBox;
+    QLineEdit *lineEdit;
+    QPushButton *ExcludeContactsBack_2;
+    QPushButton *ExcludeContactsBack_3;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName("Widget");
-        Widget->resize(511, 477);
+        Widget->resize(500, 455);
         Widget->setStyleSheet(QString::fromUtf8("background-color: #E5E5E5;"));
         verticalLayoutWidget = new QWidget(Widget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
@@ -116,8 +121,10 @@ public:
         PrivacyWidgets->setObjectName("PrivacyWidgets");
         PrivacyWidgets->setEnabled(true);
         QFont font;
+        font.setPointSize(9);
         font.setKerning(true);
         PrivacyWidgets->setFont(font);
+        PrivacyWidgets->setStyleSheet(QString::fromUtf8("background-color: #FBFDF6;"));
         MainPrivacyWidget = new QWidget();
         MainPrivacyWidget->setObjectName("MainPrivacyWidget");
         verticalLayoutWidget_2 = new QWidget(MainPrivacyWidget);
@@ -590,15 +597,9 @@ public:
         PrivacyWidgets->addWidget(StatusWidget);
         ExcludeContactsWidget = new QWidget();
         ExcludeContactsWidget->setObjectName("ExcludeContactsWidget");
-        ExcludeContactsWidgetLabel = new QLabel(ExcludeContactsWidget);
-        ExcludeContactsWidgetLabel->setObjectName("ExcludeContactsWidgetLabel");
-        ExcludeContactsWidgetLabel->setGeometry(QRect(45, 5, 131, 24));
-        ExcludeContactsWidgetLabel->setFont(font1);
-        ExcludeContactsWidgetLabel->setStyleSheet(QString::fromUtf8("background-color: 0;\n"
-"color: #0E1F12;"));
         ExcludeContactsBack = new QPushButton(ExcludeContactsWidget);
         ExcludeContactsBack->setObjectName("ExcludeContactsBack");
-        ExcludeContactsBack->setGeometry(QRect(5, 5, 24, 24));
+        ExcludeContactsBack->setGeometry(QRect(10, 10, 24, 24));
         ExcludeContactsBack->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color: #FBFDF6;\n"
 "border-radius: 12px;\n"
@@ -611,6 +612,61 @@ public:
 "}"));
         ExcludeContactsBack->setIcon(icon1);
         ExcludeContactsBack->setIconSize(QSize(27, 27));
+        ExcludeContactsWidgetLabel = new QLabel(ExcludeContactsWidget);
+        ExcludeContactsWidgetLabel->setObjectName("ExcludeContactsWidgetLabel");
+        ExcludeContactsWidgetLabel->setGeometry(QRect(50, 10, 121, 28));
+        ExcludeContactsWidgetLabel->setMinimumSize(QSize(0, 0));
+        ExcludeContactsWidgetLabel->setFont(font1);
+        ExcludeContactsWidgetLabel->setStyleSheet(QString::fromUtf8("background-color: 0;\n"
+"color: #0E1F12;"));
+        groupBox = new QGroupBox(ExcludeContactsWidget);
+        groupBox->setObjectName("groupBox");
+        groupBox->setGeometry(QRect(125, 40, 250, 41));
+        lineEdit = new QLineEdit(groupBox);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(0, 0, 250, 42));
+        QFont font3;
+        font3.setPointSize(11);
+        lineEdit->setFont(font3);
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color: \"#E1ECE1\";\n"
+"padding: 10px 5px;\n"
+"border-radius: 20px;\n"
+"font-size: 11pt;\n"
+"color: #424941;"));
+        ExcludeContactsBack_2 = new QPushButton(groupBox);
+        ExcludeContactsBack_2->setObjectName("ExcludeContactsBack_2");
+        ExcludeContactsBack_2->setGeometry(QRect(207, 0, 42, 42));
+        ExcludeContactsBack_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"background-color: #D3E8D2;\n"
+"border-radius: 21px;\n"
+"}\n"
+"QPushButton#ExcludeContactsBack:hover{\n"
+"background-color:rgb(238, 240, 233);\n"
+"}\n"
+"QPushButton#ExcludeContactsBack:pressed{\n"
+"backGround-color: rgb(186, 223, 184);\n"
+"}"));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/icons/icons/search.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        ExcludeContactsBack_2->setIcon(icon2);
+        ExcludeContactsBack_2->setIconSize(QSize(20, 20));
+        ExcludeContactsBack_3 = new QPushButton(ExcludeContactsWidget);
+        ExcludeContactsBack_3->setObjectName("ExcludeContactsBack_3");
+        ExcludeContactsBack_3->setGeometry(QRect(420, 10, 41, 41));
+        ExcludeContactsBack_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"background-color: #FBFDF6;\n"
+"border-radius: 15px;\n"
+"}\n"
+"QPushButton#ExcludeContactsBack_3:hover{\n"
+"background-color:rgb(238, 240, 233);\n"
+"}\n"
+"QPushButton#ExcludeContactsBack_3:pressed{\n"
+"backGround-color: rgb(186, 223, 184);\n"
+"}"));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/icons/icons/SelectAll.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        ExcludeContactsBack_3->setIcon(icon3);
+        ExcludeContactsBack_3->setIconSize(QSize(35, 35));
         PrivacyWidgets->addWidget(ExcludeContactsWidget);
 
         verticalLayout->addWidget(PrivacyWidgets);
@@ -618,7 +674,7 @@ public:
 
         retranslateUi(Widget);
 
-        PrivacyWidgets->setCurrentIndex(0);
+        PrivacyWidgets->setCurrentIndex(5);
         LastSeenAndOnlineButton->setDefault(false);
 
 
@@ -679,8 +735,14 @@ public:
         StatusChoiceMyContacts->setText(QCoreApplication::translate("Widget", "My contacts", nullptr));
         StatusChoiceMyContactsExept->setText(QCoreApplication::translate("Widget", "My contacts exept", nullptr));
         StatusChoiceOnlyShareWith->setText(QCoreApplication::translate("Widget", "Only share with", nullptr));
-        ExcludeContactsWidgetLabel->setText(QCoreApplication::translate("Widget", "Exclude contacts", nullptr));
         ExcludeContactsBack->setText(QString());
+        ExcludeContactsWidgetLabel->setText(QCoreApplication::translate("Widget", "Exclude contacts", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("Widget", "GroupBox", nullptr));
+        lineEdit->setInputMask(QString());
+        lineEdit->setText(QString());
+        lineEdit->setPlaceholderText(QCoreApplication::translate("Widget", "Search Contact", nullptr));
+        ExcludeContactsBack_2->setText(QString());
+        ExcludeContactsBack_3->setText(QString());
     } // retranslateUi
 
 };

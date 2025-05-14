@@ -3,17 +3,17 @@
 #include <QApplication>
 #include "About.h"
 #include "header.h"
-#include<QFontDatabase>
+#include "sending.h"
+#include "recording.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    // Form *t = new Form();
-    // t->show();
-    // QFontDatabase::addApplicationFont(":/static/Roboto-Condensed-SemiBold.ttf");
     // header *h = new header();
     // h->show();
-    Widget w;
-    w.show();
-    return a.exec();
+    // Widget w;
+    // w.show();
+    Recording s;
+    s.show();
+
     return a.exec();
 }

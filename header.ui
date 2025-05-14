@@ -95,7 +95,7 @@ font-family:Roboto;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="res.qrc">:/pfp.png</pixmap>
+         <pixmap resource="res.qrc">:/icons/icons/pfp.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -134,7 +134,7 @@ font-family:Roboto;</string>
         </property>
         <property name="icon">
          <iconset resource="res.qrc">
-          <normaloff>:/3 dots.png</normaloff>:/3 dots.png</iconset>
+          <normaloff>:/icons/icons/3 dots.png</normaloff>:/icons/icons/3 dots.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -157,7 +157,7 @@ font-family:Roboto;</string>
         </property>
         <property name="icon">
          <iconset resource="res.qrc">
-          <normaloff>:/search.png</normaloff>:/search.png</iconset>
+          <normaloff>:/icons/icons/search.png</normaloff>:/icons/icons/search.png</iconset>
         </property>
         <property name="iconSize">
          <size>

@@ -80,7 +80,7 @@ public:
         label = new QLabel(widget_2);
         label->setObjectName("label");
         label->setGeometry(QRect(10, 0, 75, 75));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/pfp.png")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/icons/icons/pfp.png")));
         label->setScaledContents(true);
 
         horizontalLayout->addWidget(widget_2, 0, Qt::AlignmentFlag::AlignLeft);
@@ -98,14 +98,14 @@ public:
         Dots->setGeometry(QRect(80, 20, 32, 32));
         Dots->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/3 dots.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon.addFile(QString::fromUtf8(":/icons/icons/3 dots.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         Dots->setIcon(icon);
         Dots->setIconSize(QSize(32, 32));
         Search = new QPushButton(widget);
         Search->setObjectName("Search");
         Search->setGeometry(QRect(10, 20, 32, 32));
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/search.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon1.addFile(QString::fromUtf8(":/icons/icons/search.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         Search->setIcon(icon1);
         Search->setIconSize(QSize(32, 32));
 

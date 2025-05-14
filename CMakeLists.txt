@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia)
 
 # Source files for both projects
 set(PROJECT_SOURCES
@@ -15,7 +15,6 @@ set(PROJECT_SOURCES
     PrivacySettings.cpp
     PrivacySettings.h
     PrivacySettings.ui
-    img.qrc
     # untitled7 project files
     mainwindow.cpp
     mainwindow.h
@@ -27,9 +26,9 @@ set(PROJECT_SOURCES
     header.h
     header.cpp
     header.ui
-    chatroommenu.h
-    chatroommenu.cpp
-    chatroommenu.ui
+
+
+
     # main.cpp (Choose one or merge content)
     main.cpp # Assuming this main.cpp is for untitled7.  You might need to merge the contents of the two main.cpp files.
 )
@@ -38,6 +37,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(UnifiedApp
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        sending.h sending.cpp sending.ui
+        recorder.h recorder.cpp
+        recording.h recording.cpp recording.ui
+
     )
     set_property(TARGET UnifiedApp APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
         ${CMAKE_CURRENT_SOURCE_DIR}/android)
@@ -54,7 +57,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(UnifiedApp PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(UnifiedApp PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6::Multimedia)
 
 if(${QT_VERSION} VERSION_LESS 6.1.0)
     set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.UnifiedApp) # Changed Bundle ID

@@ -87,7 +87,7 @@ public:
         label = new QLabel(widget);
         label->setObjectName("label");
         label->setGeometry(QRect(190, 9, 91, 91));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/pfp.png")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/icons/icons/pfp.png")));
         label->setScaledContents(true);
         horizontalLayoutWidget = new QWidget(widget);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
@@ -134,7 +134,7 @@ public:
         label_7->setGeometry(QRect(10, 10, 25, 25));
         label_7->setStyleSheet(QString::fromUtf8("font-size:13pt;\n"
 "color:gray;"));
-        label_7->setPixmap(QPixmap(QString::fromUtf8(":/info.png")));
+        label_7->setPixmap(QPixmap(QString::fromUtf8(":/icons/icons/info.png")));
         label_7->setScaledContents(true);
         label_8 = new QLabel(Bio);
         label_8->setObjectName("label_8");
@@ -169,7 +169,7 @@ public:
         label_10->setGeometry(QRect(10, 14, 25, 25));
         label_10->setStyleSheet(QString::fromUtf8("font-size:13pt;\n"
 "color:gray;"));
-        label_10->setPixmap(QPixmap(QString::fromUtf8(":/group.png")));
+        label_10->setPixmap(QPixmap(QString::fromUtf8(":/icons/icons/group.png")));
         label_10->setScaledContents(true);
         verticalLayoutWidget_3 = new QWidget(widget_3);
         verticalLayoutWidget_3->setObjectName("verticalLayoutWidget_3");
