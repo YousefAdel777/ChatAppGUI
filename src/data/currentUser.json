@@ -1,0 +1,23 @@
+{
+  "blocked": [],
+  "chatRooms": [],
+  "contacts": [],
+  "firstName": "adsasdasda",
+  "id": 2,
+  "infoVisibility": [],
+  "lastName": "tatt",
+  "lastSeenVisibility": [],
+  "mobileNumber": "+20202002020",
+  "password": "$2b$10$s3RG2Yr4MzxzoKgtT5mt2OlHDHYUU09ezS.Pbn8gKncyeYstdjdtS",
+  "seenVisibility": [],
+  "stories": [],
+  "userProfileDescription": {
+    "About": "asdasdasdasdasd",
+    "Name": "",
+    "Phone": "",
+    "SocialMediaLinks": [],
+    "VisibilityOption": true,
+    "id": 3,
+    "imagePath": "../../src/data/images/freepik__upload__31384.png"
+  }
+}

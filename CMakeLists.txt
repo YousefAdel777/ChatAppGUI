@@ -9,6 +9,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia)
 
+include_directories(${CMAKE_SOURCE_DIR}/src)
+include_directories(${CMAKE_SOURCE_DIR}/src/libs)
+
 # Source files for both projects
 set(PROJECT_SOURCES
     # Privacy project files
@@ -16,9 +19,9 @@ set(PROJECT_SOURCES
     PrivacySettings.h
     PrivacySettings.ui
     # untitled7 project files
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
+    # mainwindow.cpp
+    # mainwindow.h
+    # mainwindow.ui
     About.h
     About.cpp
     About.ui
@@ -26,6 +29,53 @@ set(PROJECT_SOURCES
     header.h
     header.cpp
     header.ui
+
+    src/libs/bcrypt/src/bcrypt.cpp
+    src/libs/bcrypt/src/blowfish.cpp
+    src/libs/bcrypt/src/node_blf.h
+    src/libs/bcrypt/src/openbsd.h
+    src/User.h
+    src/User.cpp
+    src/ChatRoom.cpp
+    src/ChatRoom.h
+    src/Database.cpp
+    src/Database.h
+    src/Date.cpp
+    src/Date.h
+    src/Group.cpp
+    src/Group.h
+    src/Message.cpp
+    src/Message.h
+    src/Privacy.cpp
+    src/Privacy.h
+    src/SearchEngine.cpp
+    src/SearchEngine.h
+    src/Status.cpp
+    src/Status.h
+    src/Story.h
+    src/Story.cpp
+    src/UserProfileDescription.cpp
+    src/UserProfileDescription.h
+    ui/login/login.cpp
+    ui/login/login.h
+    ui/login/login.ui
+    ui/SignUp/signup.cpp
+    ui/SignUp/signup.h
+    ui/SignUp/signup.ui
+    ui/Settings/settings.cpp
+    ui/Settings/settings.h
+    ui/Settings/settings.ui
+    ${RESOURCE_FILES}
+    ui/Settings/settings.cpp
+    ui/Settings/settings.h
+    ui/Settings/settings.ui
+    ui/Settings/SocialLinksDialog/sociallinksdialog.cpp
+    ui/Settings/SocialLinksDialog/sociallinksdialog.h
+    ui/Settings/SocialLinksDialog/sociallinksdialog.ui
+    # src/ws/WebSocketServer.cpp
+    # src/ws/WebSocketServer.h
+
+
 
 
 

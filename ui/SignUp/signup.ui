@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SignUp</class>
+ <widget class="QWidget" name="SignUp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SignUp</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: &quot;#E1ECE1&quot;;
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QWidget" name="signUpForm" native="true">
+     <property name="maximumSize">
+      <size>
+       <width>320</width>
+       <height>470</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Product Sans Medium</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: &quot;#FBFDF6&quot;;
+border-radius: 20px;
+padding: 0 20px;</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+          <pointsize>-1</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 26px;
+font-weight: bold;
+padding: 0;
+text-align: center;</string>
+        </property>
+        <property name="text">
+         <string>Sign Up</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 0;
+padding-left: 5px;</string>
+        </property>
+        <property name="text">
+         <string>First Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="firstNameInput">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: &quot;#E1ECE1&quot;;
+padding: 8px 5px;
+border-radius: 10px;
+font-size: 14px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>First Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="firstNameError">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: &quot;red&quot;;
+padding: 0;
+padding-left: 5px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 0;
+padding-left: 5px;</string>
+        </property>
+        <property name="text">
+         <string>Last Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lastNameInput">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: &quot;#E1ECE1&quot;;
+padding: 8px 5px;
+border-radius: 10px;
+font-size: 14px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Last Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lastNameError">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: &quot;red&quot;;
+padding: 0;
+padding-left: 5px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 0;
+padding-left: 5px;</string>
+        </property>
+        <property name="text">
+         <string>Phone Number</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="phoneInput">
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777210</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: &quot;#E1ECE1&quot;;
+padding: 8px 5px;
+border-radius: 10px;
+font-size: 14px;</string>
+        </property>
+        <property name="placeholderText">
+         <string>Phone Number</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="phoneError">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: &quot;red&quot;;
+padding: 0;
+padding-left: 5px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding: 0;
+padding-left: 5px;</string>
+        </property>
+        <property name="text">
+         <string>Password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="passwordInput">
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: &quot;#E1ECE1&quot;;
+padding: 8px 5px;
+border-radius: 10px;
+font-size: 14px;</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::EchoMode::Password</enum>
+        </property>
+        <property name="dragEnabled">
+         <bool>false</bool>
+        </property>
+        <property name="placeholderText">
+         <string>Password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="passwordError">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: &quot;red&quot;;
+padding: 0;
+padding-left: 5px;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="loginError">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: &quot;#ff0000&quot;;
+text-align: &quot;center&quot;;
+padding: 0;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>Already have an account ?</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="loginBtn">
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: transparent;</string>
+        </property>
+        <property name="text">
+         <string>Log In</string>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+       <widget class="QPushButton" name="signUpBtn">
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>28</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Product Sans Medium</family>
+          <fontweight>DemiBold</fontweight>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius: 10px; 
+background-color: &quot;#D3E8D2&quot;;
+padding: 5px;
+font-weight: 600;</string>
+        </property>
+        <property name="text">
+         <string>Sign Up</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
