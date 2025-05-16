@@ -10,18 +10,18 @@ Description("Rghyapp Group"),
 settings(GroupSettings())
 {}
 
-Group::Group(string &name,vector<User> &users, vector<Message> &messages, map<int, Roles> &Members_Roles, string &ImagePath,
+Group::Group(string &name,vector<int> &users, set<MessageModel> &messages, map<int, Roles> &Members_Roles, string &ImagePath,
     string &Description, GroupSettings &settings) :
-ChatRoom(name, users, messages),
+ChatRoomModel(name, users, messages),
 ImagePath(ImagePath),
 Description(Description),
 settings(settings),
 Members_Roles(Members_Roles)
 {}
 
-Group::Group(long long Id, string &name, vector<User> &users, vector<Message> &messages, map<int, Roles> &Members_Roles, string &ImagePath,
+Group::Group(long long Id, string &name, vector<int> &users, set<MessageModel> &messages, map<int, Roles> &Members_Roles, string &ImagePath,
     string &Description, GroupSettings &settings) :
-ChatRoom(Id,name, users, messages),
+ChatRoomModel(Id,name, users, messages),
 Members_Roles(Members_Roles),
 settings(settings),
 ImagePath(ImagePath),
@@ -65,16 +65,9 @@ void Group::Change_Member_Role(User& member, Roles Role) {
 
 void Group::Add_Member(int Member) {
     //todo
-}
+    users.push_back(Member);
 
-void Group::Add_Member(User& member) {
-    users.push_back(member);
 }
-
 void Group::Remove_Member(int Member) {
-    //todo
-}
-
-void Group::Remove_Member(User& member) {
-    //users.erase(find(users.begin(), users.end(), member));
+    users.erase(find(users.begin(), users.end(), Member));
 }

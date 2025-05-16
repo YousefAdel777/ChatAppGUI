@@ -14,12 +14,12 @@ tm Date::getNow() {
 
 tm Date::fromJson(const json &json) {
     tm timeStruct{};
-    timeStruct.tm_year = json.at("year").get<int>();
-    timeStruct.tm_mon = json.at("month").get<int>();
-    timeStruct.tm_mday = json.at("day").get<int>();
-    timeStruct.tm_hour = json.at("hour").get<int>();
-    timeStruct.tm_min = json.at("minute").get<int>();
-    timeStruct.tm_sec = json.at("second").get<int>();
+    timeStruct.tm_year = json["time"]["year"].get<int>();
+    timeStruct.tm_mon = json["time"]["month"].get<int>();
+    timeStruct.tm_mday = json["time"]["day"].get<int>();
+    timeStruct.tm_hour = json["time"]["hour"].get<int>();
+    timeStruct.tm_min = json["time"]["minute"].get<int>();
+    timeStruct.tm_sec = json["time"]["second"].get<int>();
     return timeStruct;
 }
 

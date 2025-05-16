@@ -15,7 +15,7 @@ User::User(
     const string &password,
     const string &firstName,
     const string &lastName,
-    const priority_queue<ChatRoom> &chatRooms,
+    const priority_queue<ChatRoomModel> &chatRooms,
     const set<Story> &stories,
     const set<int> &contacts,
     const UserProfileDescription &userProfileDescription,
@@ -44,7 +44,7 @@ User::User(
     const string &password,
     const string &firstName,
     const string &lastName,
-    const priority_queue<ChatRoom> &chatRooms,
+    const priority_queue<ChatRoomModel> &chatRooms,
     const set<Story> &stories,
     const set<int> &contacts,
     const UserProfileDescription &userProfileDescription
@@ -105,11 +105,11 @@ void User::setMobileNumber(const string &mobileNumber) {
 }
 
 
-priority_queue<ChatRoom> User::getChatRooms() {
+priority_queue<ChatRoomModel> User::getChatRooms() {
     return chatRooms;
 }
 
-void User::setChatRooms(const priority_queue<ChatRoom> &chatRooms) {
+void User::setChatRooms(const priority_queue<ChatRoomModel> &chatRooms) {
     this->chatRooms = chatRooms;
 }
 
@@ -182,12 +182,12 @@ void User::addContact(int userId) {
 }
 
 User User::fromJson(const json &json) {
-    priority_queue<ChatRoom> chatRooms;
+    priority_queue<ChatRoomModel> chatRooms;
     set<Story> stories;
     set<User> contacts;
     UserProfileDescription userProfileDescription = UserProfileDescription::fromJson(json["userProfileDescription"]);
     for (const auto &chatRoom : json["chatRooms"]) {
-        chatRooms.push(ChatRoom::fromJson(chatRoom));
+        chatRooms.push(ChatRoomModel::fromJson(chatRoom));
     }
     for (const auto &story: json["stories"]) {
         Story storedStory = Story::fromJson(story);
@@ -210,7 +210,7 @@ User User::fromJson(const json &json) {
         json["lastSeenVisibility"].get<unordered_set<int>>(),
         json["blocked"].get<unordered_set<int>>(),
         json["seenVisibility"].get<unordered_set<int>>()
-    );
+        );
 }
 
 json User::toJson() {
@@ -228,7 +228,7 @@ json User::toJson() {
     json["contacts"] = contacts;
     json["chatRooms"] = json::array();
     while (!chatRooms.empty()) {
-        ChatRoom chatRoom = chatRooms.top();
+        ChatRoomModel chatRoom = chatRooms.top();
         json["chatRooms"].push_back(chatRoom.toJson());
         chatRooms.pop();
     }
@@ -260,7 +260,7 @@ void User::deleteAccount() {
 }
 
 void User::writeUsers() {
-    ofstream file("../../src/data/users.json");
+    ofstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/users.json");
     json json = json::array();
     if (!file.is_open()) {
         throw runtime_error("Failed to open users.json");
@@ -273,7 +273,7 @@ void User::writeUsers() {
 }
 
 void User::readUsers() {
-    ifstream file("../../src/data/users.json");
+    ifstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/users.json");
     json json;
     if (!file.is_open()) {
         throw runtime_error("Failed to open users.json");
@@ -461,8 +461,4 @@ void User::logout() {
 
 bool User::hasContact(int userId) {
     return contacts.find(userId) != contacts.end();
-}
-
-void User::addStory(const Story &story) {
-    stories.insert(story);
 }

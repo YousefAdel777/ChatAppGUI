@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/2.png</file>
+        <file>Resources/3.png</file>
+        <file>Resources/AttachmentIcon.png</file>
+        <file>Resources/delete.png</file>
+        <file>Resources/FileBig.png</file>
+        <file>Resources/MIC.png</file>
+        <file>Resources/pause.png</file>
+        <file>Resources/PHOTO.png</file>
+        <file>Resources/play.png</file>
+        <file>Resources/Read.png</file>
+        <file>Resources/unRead.png</file>
+        <file>icons/3 dots.png</file>
+        <file>icons/Arrow.png</file>
+        <file>icons/attach.png</file>
+        <file>icons/BackArrow.png</file>
+        <file>icons/block.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/group.png</file>
+        <file>icons/info.png</file>
+        <file>icons/mic.png</file>
+        <file>icons/pause.png</file>
+        <file>icons/pfp.png</file>
+        <file>icons/search.png</file>
+        <file>icons/SelectAll.png</file>
+        <file>icons/send.png</file>
+    </qresource>
+</RCC>

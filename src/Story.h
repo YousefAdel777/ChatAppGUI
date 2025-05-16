@@ -8,9 +8,8 @@
 #include<ctime>
 #include<iostream>
 
-#include "User.h"
-#include "Date.h"
-class Date;
+#include "./User.h"
+#include "./Date.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -22,8 +21,6 @@ class Story {
     string storyPhotoPath;
     string storyText;
     set<int> excludedIds;
-    inline static vector<Story> stories;
-    string storyColor;
 
 public:
     Story(const int &userId,
@@ -31,14 +28,6 @@ public:
           const string &storyText,
           const string &storyPhotoPath,
           const set<int> &excludedIds);
-
-    Story(const int &userId,
-          const tm &publishTime,
-          const string &storyText,
-          const string &storyPhotoPath,
-          const set<int> &excludedIds,
-          const string& storyColor
-          );
 
     void setId(const int &id);
 
@@ -56,10 +45,6 @@ public:
 
     string getStoryText() const;
 
-    void setStoryColor(const string& storyColor);
-
-    string getStoryColor() const;
-
     static Story fromJson(const json &json);
 
     json toJson();
@@ -70,17 +55,9 @@ public:
 
     void includeContact(const int &id);
 
-    bool isExcluded(const int &id) const;
+    bool isExcluded(const int &id);
 
     bool operator<(const Story &story) const;
-
-    static void readStories();
-
-    static void writeStories();
-
-    static set<Story> retrieveStoriesByUserId(const int &userId);
-
-    void save();
 };
 
 

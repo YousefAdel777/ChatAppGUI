@@ -14,14 +14,12 @@
 #include <bcrypt/src/bcrypt.h>
 #include <regex>
 
-#include "ChatRoom.h"
-#include "Story.h"
 #include "UserProfileDescription.h"
 using namespace std;
 using json = nlohmann::json;
 
 class Story;
-class ChatRoom;
+class ChatRoomModel;
 class UserProfileDescription;
 
 class User {
@@ -33,7 +31,7 @@ class User {
     string password;
     string firstName;
     string lastName;
-    priority_queue<ChatRoom> chatRooms;
+    priority_queue<ChatRoomModel> chatRooms;
     set<Story> stories;
     set<int> contacts;
     UserProfileDescription userProfileDescription;
@@ -48,7 +46,7 @@ public:
         const string &password,
         const string &firstName,
         const string &lastName,
-        const priority_queue<ChatRoom> &chatRooms,
+        const priority_queue<ChatRoomModel> &chatRooms,
         const set<Story> &stories,
         const set<int> &contacts,
         const UserProfileDescription &userProfileDescription,
@@ -56,18 +54,18 @@ public:
         unordered_set<int> lastSeenVisibility,
         unordered_set<int> blocked,
         unordered_set<int> seenVisibility
-    );
+        );
 
     User(
         const string &mobileNumber,
         const string &password,
         const string &firstName,
         const string &lastName,
-        const priority_queue<ChatRoom> &chatRooms,
+        const priority_queue<ChatRoomModel> &chatRooms,
         const set<Story> &stories,
         const set<int> &contacts,
         const UserProfileDescription &userProfileDescription
-    );
+        );
 
     User();
 
@@ -95,9 +93,9 @@ public:
 
     void setContacts(const set<int> &contacts);
 
-    priority_queue<ChatRoom> getChatRooms();
+    priority_queue<ChatRoomModel> getChatRooms();
 
-    void setChatRooms(const priority_queue<ChatRoom> &chatRooms);
+    void setChatRooms(const priority_queue<ChatRoomModel> &chatRooms);
 
     set<Story> getStories();
 
@@ -186,7 +184,9 @@ public:
     static void logout();
 
     bool hasContact(int userId);
-    void addStory(const Story& story);
 };
 
+
+#include "ChatRoomModel.h"
+#include "Story.h"
 #endif //USER_H

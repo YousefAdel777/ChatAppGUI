@@ -4,7 +4,7 @@
 
 #ifndef GROUP_H
 #define GROUP_H
-#include "ChatRoom.h"
+#include "ChatRoomModel.h"
 #include <string>
 using namespace std;
 enum class Roles {
@@ -13,7 +13,7 @@ enum class Roles {
     USER,
     OWNER
 };
-class Group : ChatRoom {
+class Group : ChatRoomModel {
     string ImagePath;
     string Description;
     class GroupSettings {
@@ -61,8 +61,8 @@ public:
     Group();
     Group(
         string &name,
-        vector<User> &users,
-        vector<Message> &messages,
+        vector<int> &users,
+        set<MessageModel> &messages,
         map<int,Roles> &MemberRoles,
         string &ImagePath,
         string &Description,
@@ -71,8 +71,8 @@ public:
     Group(
         long long Id,
         string &name,
-        vector<User> &users,
-        vector<Message> &messages,
+        vector<int> &users,
+        set<MessageModel> &messages,
         map<int,Roles> &MemberRoles,
         string &ImagePath,
         string &Description
@@ -86,9 +86,7 @@ public:
     GroupSettings& getSettings();
     void Change_Member_Role(int member,Roles Role);
     void Change_Member_Role(User& member,Roles Role);
-    void Add_Member(User& member);
     void Add_Member(int Member);
-    void Remove_Member(User& member);
     void Remove_Member(int Member);
 
 };
