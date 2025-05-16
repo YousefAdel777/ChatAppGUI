@@ -41,7 +41,7 @@
        <string notr="true">background-color: #FBFDF6;</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="MainPrivacyWidget">
        <widget class="QWidget" name="verticalLayoutWidget_2">
@@ -109,8 +109,8 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="assets.qrc">
-              <normaloff>:/icons/Arrow.png</normaloff>:/icons/Arrow.png</iconset>
+             <iconset resource="img.qrc">
+              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
              <bool>false</bool>
@@ -236,8 +236,8 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="assets.qrc">
-              <normaloff>:/icons/Arrow.png</normaloff>:/icons/Arrow.png</iconset>
+             <iconset resource="img.qrc">
+              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -387,8 +387,8 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="assets.qrc">
-              <normaloff>:/icons/Arrow.png</normaloff>:/icons/Arrow.png</iconset>
+             <iconset resource="img.qrc">
+              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -495,8 +495,8 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="assets.qrc">
-              <normaloff>:/icons/Arrow.png</normaloff>:/icons/Arrow.png</iconset>
+             <iconset resource="img.qrc">
+              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -558,8 +558,8 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="assets.qrc">
-          <normaloff>:/icons/BackArrow.png</normaloff>:/icons/BackArrow.png</iconset>
+         <iconset resource="img.qrc">
+          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -746,8 +746,8 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="assets.qrc">
-          <normaloff>:/icons/BackArrow.png</normaloff>:/icons/BackArrow.png</iconset>
+         <iconset resource="img.qrc">
+          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -878,7 +878,7 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="img.qrc">
           <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
@@ -1010,7 +1010,7 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset>
+         <iconset resource="img.qrc">
           <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
@@ -1131,8 +1131,8 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="assets.qrc">
-          <normaloff>:/icons/BackArrow.png</normaloff>:/icons/BackArrow.png</iconset>
+         <iconset resource="img.qrc">
+          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1237,8 +1237,8 @@ backGround-color: rgb(186, 223, 184);
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="assets.qrc">
-           <normaloff>:/icons/search.png</normaloff>:/icons/search.png</iconset>
+          <iconset resource="../../ChatAppGUI/res.qrc">
+           <normaloff>:/icons/icons/search.png</normaloff>:/icons/icons/search.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1248,7 +1248,7 @@ backGround-color: rgb(186, 223, 184);
          </property>
         </widget>
        </widget>
-       <widget class="QPushButton" name="ExcludeContactsBack_3">
+       <widget class="QPushButton" name="ExcludeContactsSelectAll">
         <property name="geometry">
          <rect>
           <x>420</x>
@@ -1262,19 +1262,19 @@ backGround-color: rgb(186, 223, 184);
 background-color: #FBFDF6;
 border-radius: 15px;
 }
-QPushButton#ExcludeContactsBack_3:hover{
+QPushButton#ExcludeContactsSelectAll:hover{
 background-color:rgb(238, 240, 233);
 }
-QPushButton#ExcludeContactsBack_3:pressed{
-backGround-color: rgb(186, 223, 184);
+QPushButton#ExcludeContactsSelectAll:pressed{
+backGround-color: rgb(198, 217, 197);
 }</string>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="assets.qrc">
-          <normaloff>:/icons/SelectAll.png</normaloff>:/icons/SelectAll.png</iconset>
+         <iconset resource="../../ChatAppGUI/res.qrc">
+          <normaloff>:/icons/icons/SelectAll.png</normaloff>:/icons/icons/SelectAll.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1283,6 +1283,35 @@ backGround-color: rgb(186, 223, 184);
          </size>
         </property>
        </widget>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="geometry">
+         <rect>
+          <x>68</x>
+          <y>90</y>
+          <width>350</width>
+          <height>354</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>340</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>348</width>
+           <height>352</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -1290,7 +1319,8 @@ backGround-color: rgb(186, 223, 184);
   </widget>
  </widget>
  <resources>
-  <include location="assets.qrc"/>
+  <include location="img.qrc"/>
+  <include location="../../ChatAppGUI/res.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -2,10 +2,13 @@
 #define PRIVACYSETTINGS_H
 
 #include <QWidget>
+#include "ContactWidget.h"
 #include <QPushButton>
 #include <QPainterPath>
 #include <QRegion>
-#include <string.h>
+#include <map>
+#include <unordered_set>
+//#include <string.h>
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -43,6 +46,19 @@ class Widget : public QWidget
         Main
     }
         CurrentWidget = Main;
+    vector<ContactWidget*> ContactWidgets;
+    map<long long,unordered_set<long long>> blocked;
+    map<long long,unordered_set<long long>> HideOnline;
+    map<long long,unordered_set<long long>> HideLastSeen;
+    map<long long,unordered_set<long long>> HidePhoto;
+    map<long long,unordered_set<long long>> HideAbout;
+    map<long long,unordered_set<long long>> HideStatus;
+
+
+    vector<long long> TmpContacts;
+    vector<long long> TmpUsers;
+    long long TmpID = 0;
+
 
 public:
     Widget(QWidget *parent = nullptr);
@@ -103,7 +119,16 @@ private slots:
 
     void on_StatusChoiceOnlyShareWith_clicked();
 
+    void on_ExcludeContactsSelectAll_clicked();
+
 private:
     Ui::Widget *ui;
+
+    void PrepareMyContactsExcept(vector<long long> Contacts,
+                                 unordered_set<long long> Excluded);
+
+    unordered_set<long long> SetMyContactsExcept(vector<ContactWidget*> v);
+
+    void FixButtonsBorder();
 };
 #endif // PRIVACYSETTINGS_H

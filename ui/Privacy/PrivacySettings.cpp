@@ -17,11 +17,8 @@ QRegion Widget::DrawTheButton(QPainterPath path, QRect rect, int radius)
     return mask;
 }
 
-Widget::Widget(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::Widget)
+void Widget::FixButtonsBorder()
 {
-    ui->setupUi(this);
     ui->LastSeenAndOnlineLabel->setAttribute(Qt::WA_TransparentForMouseEvents);
     ui->LastSeenAndOnlineCircle->setAttribute(Qt::WA_TransparentForMouseEvents);
     ui->LastSeenAndOnlineChoice->setAttribute(Qt::WA_TransparentForMouseEvents);
@@ -61,16 +58,70 @@ Widget::Widget(QWidget *parent)
     QPainterPath ExcludeContactsBackPath;
     QRect ExcludeContactsBackRect = ui->ExcludeContactsBack->rect();
     ui->ExcludeContactsBack->setMask(DrawTheButton(ExcludeContactsBackPath, ExcludeContactsBackRect, 12));
+}
+
+Widget::Widget(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::Widget)
+{
+    ui->setupUi(this);
+    ui->PrivacyWidgets->setCurrentWidget(ui->MainPrivacyWidget);
+    FixButtonsBorder();
     ui->LastSeenChoiceEveryone->click();
     ui->OnlineChoiceEveryone->click();
     ui->AboutChoiceEveryone->click();
     ui->ProfilePhotoChoiceEveryone->click();
     ui->StatusChoiceMyContacts->click();
+    for (int i = 0; i < 50; i++)
+    {
+        this->TmpContacts.push_back(1000 +  i);
+        this->TmpUsers.push_back(2000 + i);
+    }
 }
 
 Widget::~Widget()
 {
     delete ui;
+}
+
+void Widget::PrepareMyContactsExcept(vector<long long> Contacts,
+                                     unordered_set<long long> Excluded)
+{
+    QWidget *container = new QWidget();
+    QVBoxLayout *ContactLayout = new QVBoxLayout(container);
+    ContactLayout->setSpacing(3);
+    ContactLayout->setContentsMargins(0, 0, 0, 0);
+
+    for (auto i : Contacts)
+    {
+        ContactWidget *CW = new ContactWidget();
+        CW->setName(QString::number(i));
+        CW->setId(i);
+        this->ContactWidgets.push_back(CW);
+        if (!Excluded.empty() && Excluded.find(i) != Excluded.end())
+            CW->CheckCheckBox();
+        ContactLayout->addWidget(CW);
+    }
+
+    ContactLayout->addStretch();
+    container->setLayout(ContactLayout);
+    ui->scrollArea->setWidget(container);
+    ui->scrollArea->setWidgetResizable(true);
+    ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    container->adjustSize();
+    container->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
+}
+
+unordered_set<long long> Widget::SetMyContactsExcept(vector<ContactWidget*> v)
+{
+    unordered_set<long long> us;
+    for (auto i : v)
+    {
+        if (i->CheckBoxIsChecked())
+            us.insert(i->getId());
+    }
+    return us;
 }
 
 void Widget::on_LastSeenAndOnlineButton_clicked()
@@ -132,22 +183,80 @@ void Widget::on_AboutBack_clicked()
 void Widget::on_ExcludeContactsBack_clicked()
 {
     if (CurrentWidget == LastSeenAndOnline)
+    {
+        this->HideLastSeen[this->TmpID].clear();
+        this->HideLastSeen[this->TmpID] = SetMyContactsExcept(ContactWidgets);
+        for (auto i : TmpUsers)
+            this->HideLastSeen[this->TmpID].insert(i);
+        LastSeenContactsExeptNum = this->HideLastSeen[this->TmpID].size() - TmpUsers.size();
+        QString tmp = QString::number(LastSeenContactsExeptNum);
+        if (OnlineMode == Everyone)
+        {
+            ui->LastSeenAndOnlineChoice->setText(tmp + " Contacts excluded, Everyone");
+        }
+        else
+        {
+            ui->LastSeenAndOnlineChoice->setText(tmp + " Contacts excluded");
+        }
         ui->PrivacyWidgets->setCurrentWidget(ui->LastSeenAndOnlineWidget);
+    }
     else if (CurrentWidget == ProfilePhoto)
+    {
+        this->HidePhoto[this->TmpID] = SetMyContactsExcept(ContactWidgets);
+        for (auto i : TmpUsers)
+            this->HidePhoto[this->TmpID].insert(i);
+        ProfilePhotoContactsExeptNum = this->HidePhoto[this->TmpID].size() - TmpUsers.size();
+        QString tmp = QString::number(ProfilePhotoContactsExeptNum);
+        ui->ProfilePhotoChoice->setText(tmp + " Contacts excluded");
         ui->PrivacyWidgets->setCurrentWidget(ui->ProfilePhotoWidget);
+    }
     else if (CurrentWidget == About)
+    {
+        this->HideAbout[this->TmpID] = SetMyContactsExcept(ContactWidgets);
+        for (auto i : TmpUsers)
+            this->HideAbout[this->TmpID].insert(i);
+        AboutContactsExeptNum = this->HideAbout[this->TmpID].size() - TmpUsers.size();
+        QString tmp = QString::number(AboutContactsExeptNum);
+        ui->AboutChoice->setText(tmp + " Contacts excluded");
         ui->PrivacyWidgets->setCurrentWidget(ui->AboutWidget);
+    }
     else if (CurrentWidget == Status)
     {
+        if (StatusMode == MyContactsExept)
+        {
+            this->HideStatus[this->TmpID] = SetMyContactsExcept(ContactWidgets);
+            for (auto i : TmpUsers)
+                this->HideStatus[this->TmpID].insert(i);
+            StatusContactsExeptNum = this->HideStatus[this->TmpID].size() - TmpUsers.size();
+            QString tmp = QString::number(StatusContactsExeptNum);
+            ui->StatusChoice->setText(tmp + " Contacts excluded");
+        }
+        else if (StatusMode == OnlyShareWith)
+        {
+            unordered_set <long long> Tmp;
+            Tmp = SetMyContactsExcept(ContactWidgets);
+            this->HideStatus[this->TmpID].clear();
+            for (auto i : TmpUsers)
+                this->HideStatus[this->TmpID].insert(i);
+            for (auto i : TmpContacts)
+                if (Tmp.size() && Tmp.find(i) == Tmp.end())
+                    this->HideStatus[this->TmpID].insert(i);
+            StatusContactsShareWithNum = Tmp.size();
+            Tmp.clear();
+            QString tmp = QString::number(StatusContactsShareWithNum);
+            ui->StatusChoice->setText(tmp + " Contacts included");
+        }
         ui->PrivacyWidgets->setCurrentWidget(ui->StatusWidget);
         ui->ExcludeContactsWidgetLabel->setText("Exlcude contacts");
     }
+    ContactWidgets.clear();
 }
 
 
 void Widget::on_LastSeenChoiceEveryone_clicked()
 {
     LastSeenMode = Everyone;
+    this->HideLastSeen[this->TmpID].clear();
     if (OnlineMode == Everyone)
     {
         ui->LastSeenAndOnlineChoice->setText("Everyone, Everyone");
@@ -162,6 +271,8 @@ void Widget::on_LastSeenChoiceEveryone_clicked()
 void Widget::on_LastSeenChoiceMyContacts_clicked()
 {
     LastSeenMode = MyContacts;
+    for (auto i : TmpUsers)
+        this->HideLastSeen[this->TmpID].insert(i);
     if (OnlineMode == Everyone)
     {
         ui->LastSeenAndOnlineChoice->setText("My Contacts, Everyone");
@@ -175,23 +286,25 @@ void Widget::on_LastSeenChoiceMyContacts_clicked()
 
 void Widget::on_LastSeenChoiceMyContactsExept_clicked()
 {
-    LastSeenMode = MyContactsExept;
+    if (LastSeenMode != MyContactsExept)
+    {
+        this->HideLastSeen[this->TmpID].clear();
+        for (auto i : TmpUsers)
+            this->HideLastSeen[this->TmpID].insert(i);
+        LastSeenMode = MyContactsExept;
+    }
+    PrepareMyContactsExcept(this->TmpContacts, this->HideLastSeen[this->TmpID]);
     ui->PrivacyWidgets->setCurrentWidget(ui->ExcludeContactsWidget);
-    QString tmp = QString::number(LastSeenContactsExeptNum);
-    if (OnlineMode == Everyone)
-    {
-        ui->LastSeenAndOnlineChoice->setText(tmp + " Contacts excluded, Everyone");
-    }
-    else
-    {
-        ui->LastSeenAndOnlineChoice->setText(tmp + " Contacts excluded");
-    }
 }
 
 
 void Widget::on_LastSeenChoiceNobody_clicked()
 {
     LastSeenMode = Nobody;
+    for (auto i : TmpUsers)
+        this->HideLastSeen[this->TmpID].insert(i);
+    for (auto i : TmpContacts)
+        this->HideLastSeen[this->TmpID].insert(i);
     if (OnlineMode == Everyone)
     {
         ui->LastSeenAndOnlineChoice->setText("Nobody, Everyone");
@@ -206,6 +319,7 @@ void Widget::on_LastSeenChoiceNobody_clicked()
 void Widget::on_OnlineChoiceEveryone_clicked()
 {
     OnlineMode = Everyone;
+    this->HideOnline[this->TmpID].clear();
     if (LastSeenMode == Everyone)
         ui->LastSeenAndOnlineChoice->setText("Everyone, Everyone");
     else if (LastSeenMode == MyContacts)
@@ -223,6 +337,7 @@ void Widget::on_OnlineChoiceEveryone_clicked()
 void Widget::on_OnlineChoiceSameAsLastSeen_clicked()
 {
     OnlineMode = LastSeenMode;
+    this->HideOnline[this->TmpID] = this->HideLastSeen[this->TmpID];
     if (LastSeenMode == MyContactsExept)
     {
         QString tmp = QString::number(LastSeenContactsExeptNum);
@@ -240,6 +355,7 @@ void Widget::on_OnlineChoiceSameAsLastSeen_clicked()
 void Widget::on_AboutChoiceEveryone_clicked()
 {
     AboutMode = Everyone;
+    this->HideAbout[this->TmpID].clear();
     ui->AboutChoice->setText("Everyone");
 }
 
@@ -247,22 +363,33 @@ void Widget::on_AboutChoiceEveryone_clicked()
 void Widget::on_AboutChoiceMyContacts_clicked()
 {
     AboutMode = MyContacts;
+    for (auto i : TmpUsers)
+        this->HideAbout[this->TmpID].insert(i);
     ui->AboutChoice->setText("My contacts");
 }
 
 
 void Widget::on_AboutChoiceMyContactsExept_clicked()
 {
-    AboutMode = MyContactsExept;
+    if (AboutMode != MyContactsExept)
+    {
+        AboutMode = MyContactsExept;
+        this->HideAbout[this->TmpID].clear();
+        for (auto i : TmpUsers)
+            this->HideAbout[this->TmpID].insert(i);
+    }
+    PrepareMyContactsExcept(this->TmpContacts, this->HideAbout[this->TmpID]);
     ui->PrivacyWidgets->setCurrentWidget(ui->ExcludeContactsWidget);
-    QString tmp = QString::number(AboutContactsExeptNum);
-    ui->AboutChoice->setText(tmp + " Contacts excluded");
 }
 
 
 void Widget::on_AboutChoiceNobody_clicked()
 {
     AboutMode = Nobody;
+    for (auto i : TmpUsers)
+        this->HideAbout[this->TmpID].insert(i);
+    for (auto i : TmpContacts)
+        this->HideAbout[this->TmpID].insert(i);
     ui->AboutChoice->setText("Nobody");
 }
 
@@ -270,6 +397,7 @@ void Widget::on_AboutChoiceNobody_clicked()
 void Widget::on_ProfilePhotoChoiceEveryone_clicked()
 {
     ProfilePhotoMode = Everyone;
+    this->HidePhoto[this->TmpID].clear();
     ui->ProfilePhotoChoice->setText("Everyone");
 }
 
@@ -277,22 +405,33 @@ void Widget::on_ProfilePhotoChoiceEveryone_clicked()
 void Widget::on_ProfilePhotoChoiceMyContacts_clicked()
 {
     ProfilePhotoMode = MyContacts;
+    for (auto i : TmpUsers)
+        this->HidePhoto[this->TmpID].insert(i);
     ui->ProfilePhotoChoice->setText("My Contacts");
 }
 
 
 void Widget::on_ProfilePhotoChoiceMyContactsExept_clicked()
 {
-    ProfilePhotoMode = MyContactsExept;
+    if (ProfilePhotoMode != MyContactsExept)
+    {
+        ProfilePhotoMode = MyContactsExept;
+        this->HidePhoto[this->TmpID].clear();
+        for (auto i : TmpUsers)
+            this->HidePhoto[this->TmpID].insert(i);
+    }
+    PrepareMyContactsExcept(this->TmpContacts, this->HidePhoto[this->TmpID]);
     ui->PrivacyWidgets->setCurrentWidget(ui->ExcludeContactsWidget);
-    QString tmp = QString::number(ProfilePhotoContactsExeptNum);
-    ui->ProfilePhotoChoice->setText(tmp + " Contacts excluded");
 }
 
 
 void Widget::on_ProfilePhotoChoiceNobody_clicked()
 {
     ProfilePhotoMode = Nobody;
+    for (auto i : TmpUsers)
+        this->HidePhoto[this->TmpID].insert(i);
+    for (auto i : TmpContacts)
+        this->HidePhoto[this->TmpID].insert(i);
     ui->ProfilePhotoChoice->setText("Nobody");
 }
 
@@ -300,25 +439,65 @@ void Widget::on_ProfilePhotoChoiceNobody_clicked()
 void Widget::on_StatusChoiceMyContacts_clicked()
 {
     StatusMode = MyContacts;
+    for (auto i : TmpUsers)
+        this->HideStatus[this->TmpID].insert(i);
     ui->StatusChoice->setText("My Contacts");
 }
 
 
 void Widget::on_StatusChoiceMyContactsExept_clicked()
 {
-    StatusMode = MyContactsExept;
+    if (StatusMode != MyContactsExept)
+    {
+        StatusMode = MyContactsExept;
+        this->HideStatus[this->TmpID].clear();
+        for (auto i : TmpUsers)
+            this->HideStatus[this->TmpID].insert(i);
+    }
+    PrepareMyContactsExcept(this->TmpContacts, this->HideStatus[this->TmpID]);
     ui->PrivacyWidgets->setCurrentWidget(ui->ExcludeContactsWidget);
-    QString tmp = QString::number(StatusContactsExeptNum);
-    ui->StatusChoice->setText(tmp + " Contacts excluded");
 }
 
 
 void Widget::on_StatusChoiceOnlyShareWith_clicked()
 {
-    StatusMode = OnlyShareWith;
+    unordered_set <long long> Tmp;
+    if (StatusMode == OnlyShareWith)
+    {
+        for (auto i : TmpContacts)
+            if (this->HideStatus[this->TmpID].size() && this->HideStatus[this->TmpID].find(i) == this->HideStatus[this->TmpID].end())
+                Tmp.insert(i);
+
+    }
+    else
+    {
+        StatusMode = OnlyShareWith;
+        this->HideStatus[this->TmpID].clear();
+        for (auto i : TmpUsers)
+            this->HideStatus[this->TmpID].insert(i);
+    }
+    PrepareMyContactsExcept(this->TmpContacts, Tmp);
+    Tmp.clear();
     ui->ExcludeContactsWidgetLabel->setText("Select Contacts");
     ui->PrivacyWidgets->setCurrentWidget(ui->ExcludeContactsWidget);
-    QString tmp = QString::number(StatusContactsShareWithNum);
-    ui->StatusChoice->setText(tmp + " Contacts included");
+}
+
+
+void Widget::on_ExcludeContactsSelectAll_clicked()
+{
+    int TmpCnt = 0;
+    for (auto i : this->ContactWidgets)
+        if (i->CheckBoxIsChecked())
+            TmpCnt++;
+    if (TmpCnt > this->TmpContacts.size() / 2)
+    {
+        for (auto i : this->ContactWidgets)
+            i->UnCheckCheckBox();
+    }
+    else
+    {
+        for (auto i : this->ContactWidgets)
+            i->CheckCheckBox();
+    }
 }
 
