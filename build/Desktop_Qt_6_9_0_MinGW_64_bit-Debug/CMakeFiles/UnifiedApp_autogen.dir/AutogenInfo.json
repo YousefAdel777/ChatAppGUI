@@ -520,6 +520,12 @@
 			null
 		],
 		[
+			"C:/Users/Dell/Desktop/ChatAppGUI/UnifiedApp/ui/AddStoryPage/AddStoryPage.h",
+			"MU",
+			"AR7SVPG4GV/moc_AddStoryPage.cpp",
+			null
+		],
+		[
 			"C:/Users/Dell/Desktop/ChatAppGUI/UnifiedApp/ui/Login/login.h",
 			"MU",
 			"LXUA4WWMYO/moc_login.cpp",
@@ -541,6 +547,12 @@
 			"C:/Users/Dell/Desktop/ChatAppGUI/UnifiedApp/ui/SignUp/signup.h",
 			"MU",
 			"NOIXB72TXM/moc_signup.cpp",
+			null
+		],
+		[
+			"C:/Users/Dell/Desktop/ChatAppGUI/UnifiedApp/ui/StatusWindow/StatusWindow.h",
+			"MU",
+			"ETX4RBLXTM/moc_StatusWindow.cpp",
 			null
 		]
 	],
@@ -706,6 +718,11 @@
 			null
 		],
 		[
+			"C:/Users/Dell/Desktop/ChatAppGUI/UnifiedApp/ui/AddStoryPage/AddStoryPage.cpp",
+			"MU",
+			null
+		],
+		[
 			"C:/Users/Dell/Desktop/ChatAppGUI/UnifiedApp/ui/Login/login.cpp",
 			"MU",
 			null
@@ -722,6 +739,11 @@
 		],
 		[
 			"C:/Users/Dell/Desktop/ChatAppGUI/UnifiedApp/ui/SignUp/signup.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Dell/Desktop/ChatAppGUI/UnifiedApp/ui/StatusWindow/StatusWindow.cpp",
 			"MU",
 			null
 		]

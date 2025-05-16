@@ -186,6 +186,7 @@ public:
     static void logout();
 
     bool hasContact(int userId);
+    void addStory(const Story& story);
 };
 
 #endif //USER_H

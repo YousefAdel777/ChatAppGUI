@@ -1,23 +1,59 @@
 {
   "blocked": [],
   "chatRooms": [],
-  "contacts": [],
-  "firstName": "adsasdasda",
-  "id": 2,
+  "contacts": [
+    34,
+    35
+  ],
+  "firstName": "Bruce",
+  "id": 33,
   "infoVisibility": [],
-  "lastName": "tatt",
+  "lastName": "Wayne",
   "lastSeenVisibility": [],
-  "mobileNumber": "+20202002020",
-  "password": "$2b$10$s3RG2Yr4MzxzoKgtT5mt2OlHDHYUU09ezS.Pbn8gKncyeYstdjdtS",
+  "mobileNumber": "11",
+  "password": "1",
   "seenVisibility": [],
-  "stories": [],
+  "stories": [
+    {
+      "excludedIds": [],
+      "publishTime": {
+        "time": {
+          "day": 16,
+          "hour": 6,
+          "minute": 29,
+          "month": 5,
+          "second": 19,
+          "year": 2025
+        }
+      },
+      "storyPhotoPath": "C:/Users/Dell/Desktop/freepik__upload__31384.png",
+      "storyText": "qt 4 life",
+      "userId": 33
+    },
+    {
+      "excludedIds": [],
+      "publishTime": {
+        "time": {
+          "day": 16,
+          "hour": 6,
+          "minute": 28,
+          "month": 5,
+          "second": 33,
+          "year": 2025
+        }
+      },
+      "storyPhotoPath": "",
+      "storyText": "الله اكبر",
+      "userId": 33
+    }
+  ],
   "userProfileDescription": {
-    "About": "asdasdasdasdasd",
-    "Name": "",
-    "Phone": "",
+    "About": "I use Rghyapp",
+    "Name": "User34",
+    "Phone": "Not avaliable",
     "SocialMediaLinks": [],
-    "VisibilityOption": true,
-    "id": 3,
-    "imagePath": "../../src/data/images/freepik__upload__31384.png"
+    "VisibilityOption": false,
+    "id": 34,
+    "imagePath": "defaultPhoto"
   }
 }

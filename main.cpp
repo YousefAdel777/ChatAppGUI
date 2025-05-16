@@ -7,6 +7,7 @@
 #include "User.h"
 #include "ui/Settings/settings.h"
 #include "ui/Login/login.h"
+#include "ui/StatusWindow/StatusWindow.h"
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -15,8 +16,10 @@ int main(int argc, char *argv[])
     User::readCurrentUser();
 
     if (User::getCurrentUser().has_value()) {
-        Settings *settings = new Settings;
-        settings->show();
+        // Settings *settings = new Settings;
+        // settings->show();
+        StatusWindow *status = new StatusWindow();
+        status->show();
     }
     else {
         Login *login = new Login;

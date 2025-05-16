@@ -462,3 +462,7 @@ void User::logout() {
 bool User::hasContact(int userId) {
     return contacts.find(userId) != contacts.end();
 }
+
+void User::addStory(const Story &story) {
+    stories.insert(story);
+}

@@ -65,6 +65,12 @@ set(PROJECT_SOURCES
     ui/Settings/settings.cpp
     ui/Settings/settings.h
     ui/Settings/settings.ui
+    ui/AddStoryPage/AddStoryPage.cpp
+    ui/AddStoryPage/AddStoryPage.h
+    ui/AddStoryPage/addStoryPage.ui
+    ui/StatusWindow/StatusWindow.cpp
+    ui/StatusWindow/StatusWindow.h
+    ui/StatusWindow/StatusWindow.ui
     ${RESOURCE_FILES}
     ui/Settings/settings.cpp
     ui/Settings/settings.h
@@ -90,6 +96,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         sending.h sending.cpp sending.ui
         recorder.h recorder.cpp
         recording.h recording.cpp recording.ui
+
 
     )
     set_property(TARGET UnifiedApp APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
