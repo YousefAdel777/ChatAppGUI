@@ -29,7 +29,7 @@
     <enum>QFrame::Shape::NoFrame</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="mainPage">
     <widget class="QWidget" name="centralwidget" native="true">
@@ -38,7 +38,7 @@
        <x>0</x>
        <y>0</y>
        <width>420</width>
-       <height>436</height>
+       <height>641</height>
       </rect>
      </property>
      <widget class="QWidget" name="widget" native="true">
@@ -96,8 +96,8 @@
           <string>Text</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>../../../../../Downloads/T.png</normaloff>../../../../../Downloads/T.png</iconset>
+          <iconset resource="../../assets.qrc">
+           <normaloff>:/icons/T.png</normaloff>:/icons/T.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -143,8 +143,8 @@
           <string>Media</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>../../icons/color-palette-black.png</normaloff>../../icons/color-palette-black.png</iconset>
+          <iconset resource="../../assets.qrc">
+           <normaloff>:/icons/black-color-palette.png</normaloff>:/icons/black-color-palette.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -172,7 +172,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../../res.qrc">:/icons/icons/art.png</pixmap>
+       <pixmap resource="../../assets.qrc">:/icons/art.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -487,8 +487,8 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../../res.qrc">
-       <normaloff>:/icons/icons/send-story.png</normaloff>:/icons/icons/send-story.png</iconset>
+      <iconset resource="../../assets.qrc">
+       <normaloff>:/icons/blackSend.png</normaloff>:/icons/blackSend.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -757,8 +757,8 @@
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="../../res.qrc">
-                <normaloff>:/icons/icons/whiteclose.png</normaloff>:/icons/icons/whiteclose.png</iconset>
+               <iconset resource="../../assets.qrc">
+                <normaloff>:/icons/whiteclose.png</normaloff>:/icons/whiteclose.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -806,8 +806,8 @@
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../../res.qrc">
-             <normaloff>:/icons/icons/color-palette.png</normaloff>:/icons/icons/color-palette.png</iconset>
+            <iconset resource="../../assets.qrc">
+             <normaloff>:/icons/color-palette.png</normaloff>:/icons/color-palette.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -960,8 +960,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../../res.qrc">
-       <normaloff>:/icons/icons/whiteclose.png</normaloff>:/icons/icons/whiteclose.png</iconset>
+      <iconset resource="../../assets.qrc">
+       <normaloff>:/icons/whiteclose.png</normaloff>:/icons/whiteclose.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1117,8 +1117,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../../res.qrc">
-       <normaloff>:/icons/icons/send-story.png</normaloff>:/icons/icons/send-story.png</iconset>
+      <iconset resource="../../assets.qrc">
+       <normaloff>:/icons/blackSend.png</normaloff>:/icons/blackSend.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1224,8 +1224,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../../res.qrc">
-       <normaloff>:/icons/icons/folder.png</normaloff>:/icons/icons/folder.png</iconset>
+      <iconset resource="../../assets.qrc">
+       <normaloff>:/icons/folder.png</normaloff>:/icons/folder.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1248,7 +1248,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </widget>
  </widget>
  <resources>
-  <include location="../../res.qrc"/>
+  <include location="../../assets.qrc"/>
  </resources>
  <connections/>
 </ui>

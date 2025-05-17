@@ -33,7 +33,7 @@ class StatusWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    StatusWindow(QWidget *parent = nullptr);
+    StatusWindow(User& user, QWidget *parent = nullptr);
 
     ~StatusWindow();
 

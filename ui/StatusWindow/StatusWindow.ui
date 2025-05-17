@@ -164,10 +164,9 @@ padding-left: 5px;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">image: url(:/icons/icons/plus.png);
-    background-color: transparent;
-    border: none;
-</string>
+            <string notr="true">background-color: transparent;
+border: none;
+image: url(:/icons/plus.png);</string>
            </property>
            <property name="text">
             <string/>
@@ -186,9 +185,9 @@ padding-left: 5px;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">image: url(:/icons/icons/close.png);
-    background-color: transparent;
-    border: none;
+            <string notr="true">background-color: transparent;
+border: none;
+image: url(:/icons/close.png);
 </string>
            </property>
            <property name="text">
@@ -552,7 +551,7 @@ color: #000;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/icons/icons/unhappy.png);</string>
+     <string notr="true">image: url(:/icons/unhappy.png);</string>
     </property>
     <property name="text">
      <string/>
@@ -720,7 +719,7 @@ border: none;</string>
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/icons/icons/previousButton.png);
+           <string notr="true">image: url(:/icons/previousButton.png);
 background-color: transparent;
 border: none;
 color: rgba(255, 255, 255, 128);</string>
@@ -900,7 +899,7 @@ color: #FFF;</string>
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/icons/icons/nextButton.png);
+           <string notr="true">image: url(:/icons/nextButton.png);
 background-color: transparent;
 border: none;</string>
           </property>

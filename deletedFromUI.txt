@@ -1,0 +1,89 @@
+
+// void StatusWindow::initializeStoriesPage(User &user) {
+//     ui->storyContentBox->setVisible(false);
+//     ui->myStoriesButton->setVisible(false);
+//     clearStories(ui->stories);
+//     set<Story>userStories = user.getStories();
+//     int contactIndex = 0;
+//     if (userStories.size()) {
+//         ui->myStoriesButton->setVisible(true);
+
+//         contactButtons.append(ui->myStoriesButton);
+
+//         ui->myStoriesButton->setStyleSheet(defaultMyStoriesStyle);
+
+
+//         connect(ui->myStoriesButton, &QPushButton::clicked, this, [this, userStories, contactIndex]() {
+//             // Reset previous selection
+//             if (selectedUser >= 0 && selectedUser < contactButtons.size()) {
+//                 if(!selectedUser){
+//                     contactButtons[selectedUser]->setStyleSheet(defaultMyStoriesStyle);
+//                 }
+//                 else{
+//                     contactButtons[selectedUser]->setStyleSheet(defaultStyle);
+//                 }
+//             }
+
+//             // Set new selection
+//             if (contactIndex >= 0 && contactIndex < contactButtons.size()) {
+//                 contactButtons[contactIndex]->setStyleSheet(selectedStyle);
+//                 selectedUser = contactIndex;
+//                 showUserStories(userStories);
+//             }
+//         });
+//         contactIndex++;
+//     }
+//     set<User>contacts;
+//     for(const int& id : user.getContacts()){
+//         optional<User> optContact = User::getUser(id);
+//         if(optContact.has_value()){
+//             User contact = optContact.value();
+//             contacts.insert(contact);
+//         }
+//     }
+
+//     for (User contact : contacts) {  // Use const reference
+//         set<Story> contactStories;
+//         for (Story story : contact.getStories()) {  // Use const reference
+//             if (!story.isExcluded(contact.getId())) {
+//                 contactStories.insert(story);
+//             }
+//         }
+
+//         if (!contactStories.empty()) {
+//             QPushButton* contactButton = new QPushButton(
+//                 QString::fromStdString(contact.getFirstName() + " " + contact.getLastName()),
+//                 ui->stories
+//                 );
+
+//             // Store button reference
+//             contactButtons.append(contactButton);
+
+
+
+//             contactButton->setStyleSheet(defaultStyle);
+//             contactButton->setFixedSize(401, 81);
+//             contactButton->setCursor(Qt::PointingHandCursor);
+
+//             connect(contactButton, &QPushButton::clicked, this, [this, contactStories, contactIndex]() {
+//                 // Reset previous selection
+//                 if (selectedUser >= 0 && selectedUser < contactButtons.size()) {
+//                     if(!selectedUser){
+//                         contactButtons[selectedUser]->setStyleSheet(defaultMyStoriesStyle);
+//                     }
+//                     contactButtons[selectedUser]->setStyleSheet(defaultStyle);
+//                 }
+
+//                 // Set new selection
+//                 if (contactIndex >= 0 && contactIndex < contactButtons.size()) {
+//                     contactButtons[contactIndex]->setStyleSheet(selectedStyle);
+//                     selectedUser = contactIndex;
+//                     showUserStories(contactStories);
+//                 }
+//             });
+
+//             ui->stories->layout()->addWidget(contactButton);
+//             contactIndex++;
+//         }
+//     }
+// }

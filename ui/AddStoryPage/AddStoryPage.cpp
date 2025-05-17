@@ -48,6 +48,7 @@ void AddStoryPage::on_publishButton_clicked() {
         Story story(user.getId(), Date::getNow(), storyText, "", {}, storyColor);
         user.addStory(story);
         user.save();
+        qDebug() << user.getStories().size();
         User::setCurrentUser(user);
         ui->addStoryWindow->setCurrentIndex(0);
     }
@@ -195,9 +196,9 @@ void AddStoryPage::selectButton(int colorIndex) {
 
 void AddStoryPage::selectMedia() {
     mediaPath = QFileDialog::getOpenFileName(this,
-                                                     tr("Select media file"),
-                                                     QCoreApplication::applicationDirPath(),
-                                                     tr("Image Files (*.jpg *.png *.bmp)"));
+                                             tr("Select media file"),
+                                             QCoreApplication::applicationDirPath(),
+                                             tr("Image Files (*.jpg *.png *.bmp)"));
     if (!mediaPath.isEmpty()) {
         initializeMediaPage(mediaPath);
     }

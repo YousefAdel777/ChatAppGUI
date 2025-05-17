@@ -1,0 +1,18 @@
+<RCC>
+  <qresource prefix="/assets">
+    <file>assets/arrow.png</file>
+    <file>assets/close.png</file>
+    <file>assets/nextCircle.png</file>
+    <file>assets/notVisitedStory.png</file>
+    <file>assets/smallOval.png</file>
+    <file>assets/visitedStory.png</file>
+    <file>assets/bigOval.png</file>
+    <file>assets/plus.png</file>
+    <file>assets/nextButton.png</file>
+    <file>assets/previousButton.png</file>
+    <file>assets/unhappy.png</file>
+    <file>assets/art.png</file>
+    <file>assets/whiteclose.png</file>
+    <file>assets/color-palette.png</file>
+  </qresource>
+</RCC>
