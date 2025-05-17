@@ -178,7 +178,7 @@ padding: 50px;</string>
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../img.qrc">:/icons/icons/user.png</pixmap>
+             <pixmap resource="../../assets.qrc">:/icons/user.png</pixmap>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -396,7 +396,7 @@ border-radius: 20px;</string>
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../img.qrc">:/icons/icons/padlock.png</pixmap>
+             <pixmap resource="../../assets.qrc">:/icons/padlock.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -442,8 +442,8 @@ background-color: &quot;#D3E8D2&quot;;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../../img.qrc">
-              <normaloff>:/icons/icons/arrow-right.png</normaloff>:/icons/icons/arrow-right.png</iconset>
+             <iconset resource="../../assets.qrc">
+              <normaloff>:/icons/arrow-right.png</normaloff>:/icons/arrow-right.png</iconset>
             </property>
            </widget>
           </item>
@@ -473,7 +473,7 @@ background-color: &quot;#D3E8D2&quot;;</string>
           <number>0</number>
          </property>
          <item alignment="Qt::AlignmentFlag::AlignHCenter">
-          <widget class="QScrollArea" name="scrollArea">
+          <widget class="QScrollArea" name="profileScrollArea">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -574,7 +574,7 @@ font-size: 30px</string>
                      <x>40</x>
                      <y>0</y>
                      <width>64</width>
-                     <height>64</height>
+                     <height>81</height>
                     </rect>
                    </property>
                    <property name="maximumSize">
@@ -590,7 +590,7 @@ font-size: 30px</string>
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap resource="../../img.qrc">:/icons/icons/user.png</pixmap>
+                    <pixmap resource="../../assets.qrc">:/icons/user.png</pixmap>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -600,7 +600,7 @@ font-size: 30px</string>
                    <property name="geometry">
                     <rect>
                      <x>80</x>
-                     <y>40</y>
+                     <y>50</y>
                      <width>30</width>
                      <height>30</height>
                     </rect>
@@ -1206,7 +1206,9 @@ border-radius: 16px;</string>
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="privacySettings" native="true"/>
+          <widget class="QWidget" name="privacySettings" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_3"/>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -1217,7 +1219,7 @@ border-radius: 16px;</string>
   </layout>
  </widget>
  <resources>
-  <include location="../../img.qrc"/>
+  <include location="../../assets.qrc"/>
  </resources>
  <connections/>
 </ui>

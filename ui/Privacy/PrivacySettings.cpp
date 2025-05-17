@@ -72,11 +72,6 @@ Widget::Widget(QWidget *parent)
     ui->AboutChoiceEveryone->click();
     ui->ProfilePhotoChoiceEveryone->click();
     ui->StatusChoiceMyContacts->click();
-    for (int i = 0; i < 50; i++)
-    {
-        this->TmpContacts.push_back(1000 +  i);
-        this->TmpUsers.push_back(2000 + i);
-    }
 }
 
 Widget::~Widget()
@@ -84,8 +79,8 @@ Widget::~Widget()
     delete ui;
 }
 
-void Widget::PrepareMyContactsExcept(vector<long long> Contacts,
-                                     unordered_set<long long> Excluded)
+void Widget::PrepareMyContactsExcept(set<int> Contacts,
+                                     unordered_set<int> Excluded)
 {
     QWidget *container = new QWidget();
     QVBoxLayout *ContactLayout = new QVBoxLayout(container);
@@ -113,9 +108,9 @@ void Widget::PrepareMyContactsExcept(vector<long long> Contacts,
     container->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
 }
 
-unordered_set<long long> Widget::SetMyContactsExcept(vector<ContactWidget*> v)
+unordered_set<int> Widget::SetMyContactsExcept(vector<ContactWidget*> v)
 {
-    unordered_set<long long> us;
+    unordered_set<int> us;
     for (auto i : v)
     {
         if (i->CheckBoxIsChecked())
@@ -233,7 +228,7 @@ void Widget::on_ExcludeContactsBack_clicked()
         }
         else if (StatusMode == OnlyShareWith)
         {
-            unordered_set <long long> Tmp;
+            unordered_set <int> Tmp;
             Tmp = SetMyContactsExcept(ContactWidgets);
             this->HideStatus[this->TmpID].clear();
             for (auto i : TmpUsers)
@@ -461,7 +456,7 @@ void Widget::on_StatusChoiceMyContactsExept_clicked()
 
 void Widget::on_StatusChoiceOnlyShareWith_clicked()
 {
-    unordered_set <long long> Tmp;
+    unordered_set <int> Tmp;
     if (StatusMode == OnlyShareWith)
     {
         for (auto i : TmpContacts)

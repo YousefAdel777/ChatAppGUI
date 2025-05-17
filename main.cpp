@@ -6,6 +6,7 @@
 #include  "User.h"
 #include "Login.h"
 #include "Story.h"
+#include "ui/Settings/settings.h"
 using namespace std;
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
@@ -33,10 +34,22 @@ int main(int argc, char *argv[]) {
     // User user = User::getCurrentUser().value();
     // StatusWindow *s = new StatusWindow(user);
     // s->show();
-    MainWindow *d = new MainWindow();
-    d->show();
+    User::readUsers();
+    User::readCurrentUser();
+    optional<User> optUser = User::getCurrentUser();
+    if (!optUser.has_value()) {
+        Login *login = new Login();
+        login->show();
+    }
+    else {
+        Settings * s = new Settings();
+        s->show();
+        // MainWindow *d = new MainWindow();
+        // d->show();
+    }
     if(app.exec()==0)
     {
+        User::writeCurrentUser();
         // User::writeUsers();
         // ChatRoomModel::writeChatRoomModels();
         return 0;

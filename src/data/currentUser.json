@@ -1,59 +1,23 @@
 {
   "blocked": [],
   "chatRooms": [],
-  "contacts": [
-    34,
-    35
-  ],
+  "contacts": [],
   "firstName": "Bruce",
-  "id": 33,
+  "id": 1,
   "infoVisibility": [],
-  "lastName": "Wayne",
+  "lastName": "Wayne1",
   "lastSeenVisibility": [],
-  "mobileNumber": "11",
-  "password": "1",
+  "mobileNumber": "+2012345678",
+  "password": "$2b$10$g1mX34nLSFUlmZfQDGsf0eh1T2.04I5JXOsNu6NO.lyWj6AMwO5u6",
   "seenVisibility": [],
-  "stories": [
-    {
-      "excludedIds": [],
-      "publishTime": {
-        "time": {
-          "day": 16,
-          "hour": 6,
-          "minute": 29,
-          "month": 5,
-          "second": 19,
-          "year": 2025
-        }
-      },
-      "storyPhotoPath": "C:/Users/Dell/Desktop/freepik__upload__31384.png",
-      "storyText": "qt 4 life",
-      "userId": 33
-    },
-    {
-      "excludedIds": [],
-      "publishTime": {
-        "time": {
-          "day": 16,
-          "hour": 6,
-          "minute": 28,
-          "month": 5,
-          "second": 33,
-          "year": 2025
-        }
-      },
-      "storyPhotoPath": "",
-      "storyText": "الله اكبر",
-      "userId": 33
-    }
-  ],
+  "stories": [],
   "userProfileDescription": {
-    "About": "I use Rghyapp",
-    "Name": "User34",
-    "Phone": "Not avaliable",
+    "About": "Test",
+    "Name": "",
+    "Phone": "",
     "SocialMediaLinks": [],
-    "VisibilityOption": false,
-    "id": 34,
-    "imagePath": "defaultPhoto"
+    "VisibilityOption": true,
+    "id": 1,
+    "imagePath": ""
   }
 }

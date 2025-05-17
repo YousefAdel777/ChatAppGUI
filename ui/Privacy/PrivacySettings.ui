@@ -41,7 +41,7 @@
        <string notr="true">background-color: #FBFDF6;</string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="MainPrivacyWidget">
        <widget class="QWidget" name="verticalLayoutWidget_2">
@@ -109,8 +109,8 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
+             <iconset resource="../../assets.qrc">
+              <normaloff>:/icons/Arrow.png</normaloff>:/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
              <bool>false</bool>
@@ -236,8 +236,8 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
+             <iconset resource="../../assets.qrc">
+              <normaloff>:/icons/Arrow.png</normaloff>:/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -387,8 +387,8 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
+             <iconset resource="../../assets.qrc">
+              <normaloff>:/icons/Arrow.png</normaloff>:/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -495,8 +495,8 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
+             <iconset resource="../../assets.qrc">
+              <normaloff>:/icons/Arrow.png</normaloff>:/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -558,8 +558,8 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+         <iconset resource="../../assets.qrc">
+          <normaloff>:/icons/BackArrow.png</normaloff>:/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -746,8 +746,8 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+         <iconset resource="../../assets.qrc">
+          <normaloff>:/icons/BackArrow.png</normaloff>:/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -878,8 +878,8 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+         <iconset resource="../../assets.qrc">
+          <normaloff>:/icons/BackArrow.png</normaloff>:/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1178,6 +1178,9 @@ color: #0E1F12;</string>
           <height>41</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border: none</string>
+        </property>
         <property name="title">
          <string>GroupBox</string>
         </property>
@@ -1200,7 +1203,9 @@ color: #0E1F12;</string>
 padding: 10px 5px;
 border-radius: 20px;
 font-size: 11pt;
-color: #424941;</string>
+color: #424941;
+border: none;
+</string>
          </property>
          <property name="inputMask">
           <string/>
@@ -1298,6 +1303,9 @@ backGround-color: rgb(198, 217, 197);
           <height>0</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border: none</string>
+        </property>
         <property name="widgetResizable">
          <bool>true</bool>
         </property>
@@ -1306,8 +1314,8 @@ backGround-color: rgb(198, 217, 197);
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>348</width>
-           <height>352</height>
+           <width>350</width>
+           <height>354</height>
           </rect>
          </property>
         </widget>

@@ -4,6 +4,7 @@
 #include <QWidget>
 
 #include "User.h"
+#include "ui/Privacy/PrivacySettings.h"
 using namespace std;
 
 
@@ -38,6 +39,7 @@ private:
     void initializeAbout(string about);
     void initializeEditInputs(User &user);
     void validateInputs();
+    Widget *privacy;
 };
 
 

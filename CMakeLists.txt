@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.19)
 project(ChatApp LANGUAGES CXX)
 
 # Set path to Qt installation
-set(CMAKE_PREFIX_PATH "E:/Programes/QT/6.9.0/mingw_64/lib/cmake")
+set(CMAKE_PREFIX_PATH "D:/Qt/6.9.0/mingw_64/lib/cmake")
 
 # Find required Qt components
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Multimedia)
+find_package(Qt6 6.9 REQUIRED COMPONENTS Core Widgets Multimedia)
 
 # Qt setup helper
 qt_standard_project_setup()
@@ -72,6 +72,8 @@ qt_add_executable(ChatApp
     ui/Search/search.cpp ui/Search/search.h ui/Search/search.ui
     chatcard.cpp chatcard.h chatcard.ui utilities.cpp utilities.h
     mainwindow.cpp mainwindow.h mainwindow.ui
+
+
 
 
 )
