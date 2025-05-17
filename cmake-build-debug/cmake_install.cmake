@@ -1,8 +1,8 @@
-# Install script for directory: E:/Projects/qtesting/ChatApp
+# Install script for directory: C:/Users/Dell/Desktop/chat-2/ChatAppGUI
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ChatApp")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,21 +34,21 @@ endif()
 
 # Set path to fallback-tool for dependency-resolution.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "E:/Programes/CLion 2024.3.1.1/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "D:/CLion 2024.3.5/bin/mingw/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "E:/Projects/qtesting/ChatApp/cmake-build-debug/ChatApp.exe")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Users/Dell/Desktop/chat-2/ChatAppGUI/cmake-build-debug/ChatApp.exe")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ChatApp.exe" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ChatApp.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "E:/Programes/CLion 2024.3.1.1/bin/mingw/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ChatApp.exe")
+      execute_process(COMMAND "D:/CLion 2024.3.5/bin/mingw/bin/strip.exe" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ChatApp.exe")
     endif()
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("E:/Projects/qtesting/ChatApp/cmake-build-debug/.qt/deploy_ChatApp_b296194f9a.cmake")
+  include("C:/Users/Dell/Desktop/chat-2/ChatAppGUI/cmake-build-debug/.qt/deploy_ChatApp_b296194f9a.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -66,6 +66,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "E:/Projects/qtesting/ChatApp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/Dell/Desktop/chat-2/ChatAppGUI/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
