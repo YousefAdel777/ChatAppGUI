@@ -5,6 +5,7 @@
 #ifndef SEARCHENGINE_H
 #define SEARCHENGINE_H
 
+#include <set>
 #include <unordered_map>
 #include <vector>
 #include <string>
@@ -15,6 +16,7 @@ class Vertex {
     std::unordered_map<char, int> next;
     bool output;
     int frequency;
+    std::unordered_set<int> ids;
 
     Vertex();
 };
@@ -26,10 +28,13 @@ class SearchEngine {
      std::unordered_set<char> list;
      SearchEngine();
      void addWord(std::string&);
+    void addWordWithId(std::string&, int);
      bool search(std::string&);
      std::vector<std::string> autoComplete(std::string&, int);
+    std::unordered_set<int> getIds(std::string&);
 
   private:
+    void collectIds(int node, std::unordered_set<int>& result);
      void dfs_construct(int v, std::string&, std::vector<std::string>&, int limit);
 };
 

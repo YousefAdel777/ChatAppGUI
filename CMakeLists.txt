@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 message(STATUS "CMake executable path: ${CMAKE_CURRENT_SOURCE_DIR}")
 
-set(CMAKE_TOOLCHAIN_FILE "E:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
+# set(CMAKE_TOOLCHAIN_FILE "E:/vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "")
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Qml Quick)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Qml Quick Multimedia)
@@ -47,7 +47,7 @@ include_directories(${CMAKE_SOURCE_DIR}/ui/SignUp)
 include_directories(${CMAKE_SOURCE_DIR}/ui/Privacy)
 
 
-link_directories("E:\\vcpkg\\vcpkg\\installed\\x64-windows\\lib")
+# link_directories("E:\\vcpkg\\vcpkg\\installed\\x64-windows\\lib")
 
 set(PROJECT_SOURCES
 
@@ -65,8 +65,15 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         main.cpp
          Helper.h
          assets.qrc
-         src/data/images/freepik__upload__31384.png src/data/chatRooms.json src/data/currentUser.json src/data/users.json src/libs/bcrypt/src/bcrypt.cpp src/libs/bcrypt/src/bcrypt.h src/libs/bcrypt/src/blowfish.cpp src/libs/bcrypt/src/node_blf.h src/libs/bcrypt/src/openbsd.h src/libs/json.hpp src/ChatRoomModel.cpp src/ChatRoomModel.h src/Database.cpp src/Database.h src/Date.cpp src/Date.h src/Group.cpp src/Group.h  src/MessageModel.cpp src/MessageModel.h src/Privacy.cpp src/Privacy.h src/SearchEngine.cpp src/SearchEngine.h src/Status.cpp src/status.h src/Story.cpp src/Story.h src/User.cpp src/User.h src/UserProfileDescription.cpp src/UserProfileDescription.h ui/ChatRoom/Footer/currentselectedcontainer.cpp ui/ChatRoom/Footer/currentselectedcontainer.h ui/ChatRoom/Footer/currentselectedcontainer.ui ui/ChatRoom/Footer/filescomponent.cpp ui/ChatRoom/Footer/filescomponent.h ui/ChatRoom/Footer/filescomponent.ui ui/ChatRoom/Footer/photocomponent.cpp ui/ChatRoom/Footer/photocomponent.h ui/ChatRoom/Footer/photocomponent.ui ui/ChatRoom/Footer/recorder.cpp ui/ChatRoom/Footer/recorder.h ui/ChatRoom/Footer/recording.cpp ui/ChatRoom/Footer/recording.h ui/ChatRoom/Footer/recording.ui ui/ChatRoom/Footer/sending.cpp ui/ChatRoom/Footer/sending.h ui/ChatRoom/Footer/sending.ui ui/ChatRoom/Header/About.cpp ui/ChatRoom/Header/About.h ui/ChatRoom/Header/About.ui ui/ChatRoom/Header/header.cpp ui/ChatRoom/Header/Header.h ui/ChatRoom/Header/header.ui ui/ChatRoom/Messages/GUI/Normal/AttachmentCard.cpp ui/ChatRoom/Messages/GUI/Normal/AttachmentCard.h ui/ChatRoom/Messages/GUI/Normal/imagemessage.cpp ui/ChatRoom/Messages/GUI/Normal/imagemessage.h ui/ChatRoom/Messages/GUI/Normal/textmessage.cpp ui/ChatRoom/Messages/GUI/Normal/TextMessage.h ui/ChatRoom/Messages/GUI/Normal/voicemessage.cpp ui/ChatRoom/Messages/GUI/Normal/VoiceMessage.h ui/ChatRoom/Messages/GUI/Normal/waveformslilder.cpp ui/ChatRoom/Messages/GUI/Normal/waveformslilder.h ui/ChatRoom/Messages/GUI/Reply/replydocumentmessage.cpp ui/ChatRoom/Messages/GUI/Reply/replydocumentmessage.h ui/ChatRoom/Messages/GUI/Reply/replydocumentmessage.ui ui/ChatRoom/Messages/GUI/Reply/replyimagemessage.cpp ui/ChatRoom/Messages/GUI/Reply/replyimagemessage.h ui/ChatRoom/Messages/GUI/Reply/replyimagemessage.ui ui/ChatRoom/Messages/GUI/Reply/replytextmessage.cpp ui/ChatRoom/Messages/GUI/Reply/replytextmessage.h ui/ChatRoom/Messages/GUI/Reply/replytextmessage.ui ui/ChatRoom/Messages/GUI/Reply/replyvoicemessage.cpp ui/ChatRoom/Messages/GUI/Reply/replyvoicemessage.h ui/ChatRoom/Messages/GUI/Reply/replyvoicemessage.ui ui/ChatRoom/Messages/GUI/container.cpp ui/ChatRoom/Messages/GUI/container.h ui/ChatRoom/Messages/GUI/container.ui ui/ChatRoom/Messages/GUI/message.cpp ui/ChatRoom/Messages/GUI/message.h ui/ChatRoom/Messages/GUI/messagereceived.cpp ui/ChatRoom/Messages/GUI/messagereceived.h ui/ChatRoom/Messages/GUI/messagesent.cpp ui/ChatRoom/Messages/GUI/messagesent.h ui/ChatRoom/chatroom.cpp ui/ChatRoom/ChatRoom.h ui/ChatRoom/chatroom.ui ui/Login/login.cpp ui/Login/login.h ui/Login/login.ui ui/Privacy/PrivacySettings.cpp ui/Privacy/PrivacySettings.h ui/Privacy/PrivacySettings.ui ui/Settings/SocialLinksDialog/sociallinksdialog.cpp ui/Settings/SocialLinksDialog/sociallinksdialog.h ui/Settings/SocialLinksDialog/sociallinksdialog.ui ui/Settings/settings.cpp ui/Settings/settings.h ui/Settings/settings.ui ui/SignUp/signup.cpp ui/SignUp/signup.h ui/SignUp/signup.ui
-    )
+         src/data/images/freepik__upload__31384.png src/data/chatRooms.json src/data/currentUser.json src/data/users.json src/libs/bcrypt/src/bcrypt.cpp src/libs/bcrypt/src/bcrypt.h src/libs/bcrypt/src/blowfish.cpp src/libs/bcrypt/src/node_blf.h src/libs/bcrypt/src/openbsd.h src/libs/json.hpp src/ChatRoomModel.cpp src/ChatRoomModel.h src/Database.cpp src/Database.h src/Date.cpp src/Date.h src/Group.cpp src/Group.h  src/MessageModel.cpp src/MessageModel.h src/Privacy.cpp src/Privacy.h src/Status.cpp src/status.h src/Story.cpp src/Story.h src/User.cpp src/User.h src/UserProfileDescription.cpp src/UserProfileDescription.h ui/ChatRoom/Footer/currentselectedcontainer.cpp ui/ChatRoom/Footer/currentselectedcontainer.h ui/ChatRoom/Footer/currentselectedcontainer.ui ui/ChatRoom/Footer/filescomponent.cpp ui/ChatRoom/Footer/filescomponent.h ui/ChatRoom/Footer/filescomponent.ui ui/ChatRoom/Footer/photocomponent.cpp ui/ChatRoom/Footer/photocomponent.h ui/ChatRoom/Footer/photocomponent.ui ui/ChatRoom/Footer/recorder.cpp ui/ChatRoom/Footer/recorder.h ui/ChatRoom/Footer/recording.cpp ui/ChatRoom/Footer/recording.h ui/ChatRoom/Footer/recording.ui ui/ChatRoom/Footer/sending.cpp ui/ChatRoom/Footer/sending.h ui/ChatRoom/Footer/sending.ui ui/ChatRoom/Header/About.cpp ui/ChatRoom/Header/About.h ui/ChatRoom/Header/About.ui ui/ChatRoom/Header/header.cpp ui/ChatRoom/Header/Header.h ui/ChatRoom/Header/header.ui ui/ChatRoom/Messages/GUI/Normal/AttachmentCard.cpp ui/ChatRoom/Messages/GUI/Normal/AttachmentCard.h ui/ChatRoom/Messages/GUI/Normal/imagemessage.cpp ui/ChatRoom/Messages/GUI/Normal/imagemessage.h ui/ChatRoom/Messages/GUI/Normal/textmessage.cpp ui/ChatRoom/Messages/GUI/Normal/TextMessage.h ui/ChatRoom/Messages/GUI/Normal/voicemessage.cpp ui/ChatRoom/Messages/GUI/Normal/VoiceMessage.h ui/ChatRoom/Messages/GUI/Normal/waveformslilder.cpp ui/ChatRoom/Messages/GUI/Normal/waveformslilder.h ui/ChatRoom/Messages/GUI/Reply/replydocumentmessage.cpp ui/ChatRoom/Messages/GUI/Reply/replydocumentmessage.h ui/ChatRoom/Messages/GUI/Reply/replydocumentmessage.ui ui/ChatRoom/Messages/GUI/Reply/replyimagemessage.cpp ui/ChatRoom/Messages/GUI/Reply/replyimagemessage.h ui/ChatRoom/Messages/GUI/Reply/replyimagemessage.ui ui/ChatRoom/Messages/GUI/Reply/replytextmessage.cpp ui/ChatRoom/Messages/GUI/Reply/replytextmessage.h ui/ChatRoom/Messages/GUI/Reply/replytextmessage.ui ui/ChatRoom/Messages/GUI/Reply/replyvoicemessage.cpp ui/ChatRoom/Messages/GUI/Reply/replyvoicemessage.h ui/ChatRoom/Messages/GUI/Reply/replyvoicemessage.ui ui/ChatRoom/Messages/GUI/container.cpp ui/ChatRoom/Messages/GUI/container.h ui/ChatRoom/Messages/GUI/container.ui ui/ChatRoom/Messages/GUI/message.cpp ui/ChatRoom/Messages/GUI/message.h ui/ChatRoom/Messages/GUI/messagereceived.cpp ui/ChatRoom/Messages/GUI/messagereceived.h ui/ChatRoom/Messages/GUI/messagesent.cpp ui/ChatRoom/Messages/GUI/messagesent.h ui/ChatRoom/chatroom.cpp ui/ChatRoom/ChatRoom.h ui/ChatRoom/chatroom.ui ui/Login/login.cpp ui/Login/login.h ui/Login/login.ui ui/Privacy/PrivacySettings.cpp ui/Privacy/PrivacySettings.h ui/Privacy/PrivacySettings.ui ui/Settings/SocialLinksDialog/sociallinksdialog.cpp ui/Settings/SocialLinksDialog/sociallinksdialog.h ui/Settings/SocialLinksDialog/sociallinksdialog.ui ui/Settings/settings.cpp ui/Settings/settings.h ui/Settings/settings.ui ui/SignUp/signup.cpp ui/SignUp/signup.h ui/SignUp/signup.ui
+          ui/Privacy/ContactWidget.cpp
+          ui/Privacy/ContactWidget.h
+          ui/Privacy/ContactWidget.ui
+          ui/Search/search.cpp
+          ui/Search/search.h
+          ui/Search/search.ui
+          src/SearchEngine.cpp src/SearchEngine.h
+       )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QtLearning APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
@@ -85,7 +92,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(QtLearning PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6::Multimedia Qt6::Qml Qt6::Quick mpg123)
+target_link_libraries(QtLearning PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6::Multimedia Qt6::Qml Qt6::Quick)
 
 # Copy DLL after build so it's available at runtime
 

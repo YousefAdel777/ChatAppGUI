@@ -87,3 +87,58 @@ std::vector<std::string> SearchEngine::autoComplete(std::string& word, int limit
   dfs_construct(v, cur, res, limit);
   return res;
 }
+
+void SearchEngine::addWordWithId(std::string& word, int id) {
+  int v = 0;
+  for (auto c : word) {
+    list.insert(c);
+    if (trie[v].next.count(c) != 1) {
+      trie[v].next[c] = trie.size();
+      trie.emplace_back();
+    }
+    v = trie[v].next[c];
+    trie[v].frequency++;
+  }
+  trie[v].output = true;
+  trie[v].ids.insert(id);
+}
+
+void SearchEngine::collectIds(int node, std::unordered_set<int>& result) {
+  if (trie[node].output) {
+    result.insert(trie[node].ids.begin(), trie[node].ids.end());
+  }
+  for (const auto& entry : trie[node].next) {
+    collectIds(entry.second, result);
+  }
+}
+
+// Then modify your getIds method like this:
+std::unordered_set<int> SearchEngine::getIds(std::string& word) {
+  std::unordered_set<int> result;
+  int v = 0;
+  for (char c : word) {
+    if (trie[v].next.count(c) != 1) {
+      return result;
+    }
+    v = trie[v].next[c];
+  }
+
+  collectIds(v, result);
+  return result;
+}
+
+
+// std::unordered_set<int> SearchEngine::getIds(std::string& word) {
+//   std::unordered_set<int> result;
+//   int v = 0;
+//   for (auto c : word) {
+//     if (trie[v].next.count(c) != 1) {
+//       return result;
+//     }
+//     v = trie[v].next[c];
+//   }
+//   if (trie[v].output) {
+//     return trie[v].ids;
+//   }
+//   return result;
+// }

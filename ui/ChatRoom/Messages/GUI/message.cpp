@@ -1,6 +1,8 @@
 #include "message.h"
 #include <QScrollBar>
 #include <QMouseEvent>
+
+#include "ChatRoomModel.h"
 using namespace std;
 Message:: Message(MessageModel content,Message* Reply,QWidget *parent):
     QWidget(parent),Content(content),Reply(Reply) {
@@ -24,7 +26,6 @@ void Message::mousePressEvent(QMouseEvent *event){
 void Message::setContent(MessageModel& content){
 
 }
-
 
 Message::~Message(){
 }

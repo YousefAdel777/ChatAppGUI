@@ -4,16 +4,25 @@
 #include<QMenu>
 #include <QGraphicsDropShadowEffect>
 #include <ChatRoom.h>
-Header::Header(QWidget *parent)
+
+#include "Search/search.h"
+
+Header::Header(int id, QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::header)
+    , ui(new Ui::header), id(id)
 {
     ui->setupUi(this);
+    initializeSearchBar();
     auto* shadow = new QGraphicsDropShadowEffect;
     shadow->setBlurRadius(12);
     shadow->setOffset(1,3);
     shadow->setColor(QColor(0, 0, 0, 150));
     ui->widget_3->setGraphicsEffect(shadow);
+    ui->closeSearch->setVisible(false);
+    connect(ui->Search, &QPushButton::clicked, this, &Header::on_search_clicked);
+    connect(ui->closeSearch, &QPushButton::clicked, this, &Header::on_close_search_clicked);
+    connect(searchBar, &Search::searchDone, this, &Header::searchDone);
+    searchBar->setVisible(false);
 }
 
 Header::~Header()
@@ -41,6 +50,29 @@ void Header::on_LastSeen_clicked()
     QPoint globalPos = ui->Name->mapToGlobal(QPoint(0, ui->Name->height()));
     a->move(globalPos);
     a->show();
+}
+
+void Header::on_search_clicked() {
+    searchBar->setVisible(true);
+    ui->Search->setVisible(false);
+    ui->closeSearch->setVisible(true);
+}
+
+void Header::initializeSearchBar() {
+    unordered_map<int, string> contents;
+    optional<ChatRoomModel> chat_room = ChatRoomModel::getChatRoomModel(id);
+    for (MessageModel msg : chat_room->getMessages()) {
+        contents[msg.getMessageID()] = msg.getContent();
+    }
+    searchBar = new Search(contents, searchResultsIds);
+    ui->searchPlaceholder->addWidget(searchBar);
+}
+
+void Header::on_close_search_clicked() {
+    ui->Search->setVisible(true);
+    searchBar->setVisible(false);
+    ui->closeSearch->setVisible(false);
+    emit searchCancel();
 }
 
 void Header::on_Dots_clicked()

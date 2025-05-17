@@ -31,7 +31,7 @@ class User {
     string password;
     string firstName;
     string lastName;
-    priority_queue<ChatRoomModel> chatRooms;
+    priority_queue<long long> chatRooms;
     set<Story> stories;
     set<int> contacts;
     UserProfileDescription userProfileDescription;
@@ -46,7 +46,7 @@ public:
         const string &password,
         const string &firstName,
         const string &lastName,
-        const priority_queue<ChatRoomModel> &chatRooms,
+        const priority_queue<long long> &chatRooms,
         const set<Story> &stories,
         const set<int> &contacts,
         const UserProfileDescription &userProfileDescription,
@@ -61,7 +61,7 @@ public:
         const string &password,
         const string &firstName,
         const string &lastName,
-        const priority_queue<ChatRoomModel> &chatRooms,
+        const priority_queue<long long> &chatRooms,
         const set<Story> &stories,
         const set<int> &contacts,
         const UserProfileDescription &userProfileDescription
@@ -93,9 +93,9 @@ public:
 
     void setContacts(const set<int> &contacts);
 
-    priority_queue<ChatRoomModel> getChatRooms();
+    priority_queue<long long> getChatRooms();
 
-    void setChatRooms(const priority_queue<ChatRoomModel> &chatRooms);
+    void setChatRooms(const priority_queue<long long> &chatRooms);
 
     set<Story> getStories();
 
@@ -184,6 +184,7 @@ public:
     static void logout();
 
     bool hasContact(int userId);
+    void addStory(Story story);
 };
 
 

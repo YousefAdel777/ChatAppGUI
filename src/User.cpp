@@ -15,7 +15,7 @@ User::User(
     const string &password,
     const string &firstName,
     const string &lastName,
-    const priority_queue<ChatRoomModel> &chatRooms,
+    const priority_queue<long long> &chatRooms,
     const set<Story> &stories,
     const set<int> &contacts,
     const UserProfileDescription &userProfileDescription,
@@ -44,7 +44,7 @@ User::User(
     const string &password,
     const string &firstName,
     const string &lastName,
-    const priority_queue<ChatRoomModel> &chatRooms,
+    const priority_queue<long long> &chatRooms,
     const set<Story> &stories,
     const set<int> &contacts,
     const UserProfileDescription &userProfileDescription
@@ -105,11 +105,11 @@ void User::setMobileNumber(const string &mobileNumber) {
 }
 
 
-priority_queue<ChatRoomModel> User::getChatRooms() {
+priority_queue<long long> User::getChatRooms() {
     return chatRooms;
 }
 
-void User::setChatRooms(const priority_queue<ChatRoomModel> &chatRooms) {
+void User::setChatRooms(const priority_queue<long long> &chatRooms) {
     this->chatRooms = chatRooms;
 }
 
@@ -182,12 +182,12 @@ void User::addContact(int userId) {
 }
 
 User User::fromJson(const json &json) {
-    priority_queue<ChatRoomModel> chatRooms;
+    priority_queue<long long> chatRooms;
     set<Story> stories;
     set<User> contacts;
     UserProfileDescription userProfileDescription = UserProfileDescription::fromJson(json["userProfileDescription"]);
     for (const auto &chatRoom : json["chatRooms"]) {
-        chatRooms.push(ChatRoomModel::fromJson(chatRoom));
+        chatRooms.push(chatRoom);
     }
     for (const auto &story: json["stories"]) {
         Story storedStory = Story::fromJson(story);
@@ -228,8 +228,8 @@ json User::toJson() {
     json["contacts"] = contacts;
     json["chatRooms"] = json::array();
     while (!chatRooms.empty()) {
-        ChatRoomModel chatRoom = chatRooms.top();
-        json["chatRooms"].push_back(chatRoom.toJson());
+        long long chatRoom = chatRooms.top();
+        json["chatRooms"].push_back(chatRoom);
         chatRooms.pop();
     }
     json["stories"] = json::array();
@@ -461,4 +461,8 @@ void User::logout() {
 
 bool User::hasContact(int userId) {
     return contacts.find(userId) != contacts.end();
+}
+
+void User::addStory(Story story) {
+    stories.insert(story);
 }

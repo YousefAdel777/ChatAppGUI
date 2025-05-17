@@ -25,5 +25,25 @@
         <file>icons/search.png</file>
         <file>icons/SelectAll.png</file>
         <file>icons/send.png</file>
+        <file>icons/arrow-right.png</file>
+        <file>icons/arrow-story.png</file>
+        <file>icons/art.png</file>
+        <file>icons/bigOval.png</file>
+        <file>icons/close.png</file>
+        <file>icons/color-palette.png</file>
+        <file>icons/folder.png</file>
+        <file>icons/nextButton.png</file>
+        <file>icons/nextCircle.png</file>
+        <file>icons/notVisitedStory.png</file>
+        <file>icons/padlock.png</file>
+        <file>icons/plus.png</file>
+        <file>icons/previousButton.png</file>
+        <file>icons/send-story.png</file>
+        <file>icons/smallOval.png</file>
+        <file>icons/T.png</file>
+        <file>icons/unhappy.png</file>
+        <file>icons/user.png</file>
+        <file>icons/visitedStory.png</file>
+        <file>icons/whiteclose.png</file>
     </qresource>
 </RCC>

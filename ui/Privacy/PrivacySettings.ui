@@ -109,7 +109,7 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="img.qrc">
+             <iconset>
               <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
@@ -236,7 +236,7 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="img.qrc">
+             <iconset>
               <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
@@ -387,7 +387,7 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="img.qrc">
+             <iconset>
               <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
@@ -495,7 +495,7 @@ border-radius: 15px;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="img.qrc">
+             <iconset>
               <normaloff>:/icons/icons/Arrow.png</normaloff>:/icons/icons/Arrow.png</iconset>
             </property>
             <property name="checkable">
@@ -558,7 +558,7 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="img.qrc">
+         <iconset>
           <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
@@ -746,7 +746,7 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="img.qrc">
+         <iconset>
           <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
@@ -878,7 +878,7 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="img.qrc">
+         <iconset>
           <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
@@ -1010,7 +1010,7 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="img.qrc">
+         <iconset>
           <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
@@ -1131,8 +1131,8 @@ backGround-color: rgb(186, 223, 184);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="img.qrc">
-          <normaloff>:/icons/icons/BackArrow.png</normaloff>:/icons/icons/BackArrow.png</iconset>
+         <iconset resource="../../assets.qrc">
+          <normaloff>:/icons/BackArrow.png</normaloff>:/icons/BackArrow.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -1237,8 +1237,8 @@ backGround-color: rgb(186, 223, 184);
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="../../ChatAppGUI/res.qrc">
-           <normaloff>:/icons/icons/search.png</normaloff>:/icons/icons/search.png</iconset>
+          <iconset resource="../../assets.qrc">
+           <normaloff>:/icons/search.png</normaloff>:/icons/search.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -1273,7 +1273,7 @@ backGround-color: rgb(198, 217, 197);
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="../../ChatAppGUI/res.qrc">
+         <iconset>
           <normaloff>:/icons/icons/SelectAll.png</normaloff>:/icons/icons/SelectAll.png</iconset>
         </property>
         <property name="iconSize">
@@ -1319,8 +1319,7 @@ backGround-color: rgb(198, 217, 197);
   </widget>
  </widget>
  <resources>
-  <include location="img.qrc"/>
-  <include location="../../ChatAppGUI/res.qrc"/>
+  <include location="../../assets.qrc"/>
  </resources>
  <connections/>
 </ui>

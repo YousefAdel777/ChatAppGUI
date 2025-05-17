@@ -89,6 +89,7 @@ void Container::AddRight(Message* msg){
     msg->MessageBubble->pos = h;
     h+=msg->height();
     connect(msg,&Message::MessageDeleted,this,[=](Message* msg){
+        cout << msg->Content.userID << endl;
         if(msg->Content.userID==User::getCurrentUser()->getId()){
             chat->model->removeMessage(msg->Content.messageID);
             ui->verticalLayout->removeWidget(msg);
@@ -257,6 +258,37 @@ void Container::sendMessage(MessageModel msg){
         cancelReplyButton = nullptr;
     }
     CurrentReply =nullptr;
+}
+
+void Container::clearMessages() {
+    ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
+    if (!chat) return;
+    QLayoutItem* item;
+    while ((item = ui->verticalLayout->takeAt(0))) {
+        if (item->widget()) {
+            item->widget()->deleteLater();
+        }
+        delete item;
+    }
+}
+
+void Container::showNoResults() {
+    ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
+    if (!chat) return;
+    QLabel* noResultsLabel = new QLabel(this);
+    noResultsLabel->setTextFormat(Qt::RichText);
+    noResultsLabel->setText("<b>No messages found</b>");
+
+    noResultsLabel->setAlignment(Qt::AlignCenter);
+    noResultsLabel->setStyleSheet(
+        "QLabel {"
+        "  color: #666;"
+        "  font-size: 14px;"
+        "  margin: 20px;"
+        "}"
+    );
+
+    ui->verticalLayout->addWidget(noResultsLabel);
 }
 
 void Container::resizeEvent(QResizeEvent *event){

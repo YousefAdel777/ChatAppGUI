@@ -14,6 +14,10 @@ class ChatRoom : public QWidget
 {
     Q_OBJECT
 
+private slots:
+    void handleSearch(std::vector<int> ids);
+    void handleSearchCancel();
+
 public:
     explicit ChatRoom(int id,QWidget *parent = nullptr);
     int msgId = 0;
@@ -25,6 +29,10 @@ public:
     Container *chat;
     Header *headerBar;
     Sending * sendBar;
+
+private:
+    int id;
+
 };
 
 #endif // CHATROOM_H

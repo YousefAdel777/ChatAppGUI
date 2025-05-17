@@ -3,12 +3,12 @@
 #include "Helper.h"
 ChatRoom::ChatRoom(int id,QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::ChatRoom)
+    , ui(new Ui::ChatRoom), id(id)
 {
     ui->setupUi(this);
     chat = new Container(this);
     sendBar = new Sending(this);
-    headerBar = new Header(this);
+    headerBar = new Header(id, this);
     sendBar->setFixedWidth(width());
     headerBar->setFixedWidth(width());
     chat->setFixedSize(width(),height()-sendBar->height()-headerBar->height());
@@ -27,6 +27,8 @@ ChatRoom::ChatRoom(int id,QWidget *parent)
             sendBar->container->setGeometry(sendBar->geometry().left(),h,width(),sendBar->container->geometry().height());
         }
     });
+    connect(headerBar, &Header::searchDone, this, &ChatRoom::handleSearch);
+    connect(headerBar, &Header::searchCancel, this, &ChatRoom::handleSearchCancel);
     model = ChatRoomModel::getChatRoomModel(id);
     if(model.has_value())
     {
@@ -46,6 +48,27 @@ ChatRoom::ChatRoom(int id,QWidget *parent)
         }else{
             headerBar->getName()->setText(User::getUser(model->getUsers()[1])->getFirstName().data());
         }
+    }
+}
+
+void ChatRoom::handleSearch(std::vector<int> ids) {
+    chat->clearMessages();
+    optional<ChatRoomModel> chat_room_model = ChatRoomModel::getChatRoomModel(id);
+    if (ids.empty()) {
+        chat->showNoResults();
+        return;
+    }
+    for (auto x:ids) {
+        MessageModel msg = chat_room_model->getMessage(x);
+        chat->sendMessage(msg);
+    }
+}
+
+void ChatRoom::handleSearchCancel() {
+    chat->clearMessages();
+    for(auto x:model->getMessages()){
+        chat->sendMessage(x);
+        msgId = max(msgId,x.getMessageID());
     }
 }
 

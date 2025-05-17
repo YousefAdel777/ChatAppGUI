@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": 1,
+    "messages": [
+      {
+        "content": "asdasd",
+        "datatype": 1,
+        "id": 1,
+        "option": 1,
+        "prompt": "",
+        "reply_message_id": -1,
+        "status": {
+          "DeletedFor": [],
+          "SeenBy": [],
+          "seen": false,
+          "size": 1,
+          "time": 1747447096
+        },
+        "user_id": 3
+      },
+      {
+        "content": "adasdasd",
+        "datatype": 1,
+        "id": 2,
+        "option": 1,
+        "prompt": "",
+        "reply_message_id": -1,
+        "status": {
+          "DeletedFor": [],
+          "SeenBy": [],
+          "seen": false,
+          "size": 1,
+          "time": 1747447107
+        },
+        "user_id": 3
+      }
+    ],
+    "name": "asdasd",
+    "users": [
+      3,
+      1
+    ]
+  }
+]
