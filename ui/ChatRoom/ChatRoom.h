@@ -16,7 +16,8 @@ class ChatRoom : public QWidget
 
 private slots:
     void handleSearch(std::vector<int> ids);
-    void handleSearchCancel();
+    void handleSearchCancel(string query);
+    void handleSearchStart();
 
 public:
     explicit ChatRoom(int id,QWidget *parent = nullptr);
@@ -32,7 +33,7 @@ public:
 
 private:
     int id;
-
+    int resultsCount;
 };
 
 #endif // CHATROOM_H

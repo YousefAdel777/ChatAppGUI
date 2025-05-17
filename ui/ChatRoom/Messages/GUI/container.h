@@ -20,6 +20,9 @@ public:
     void sendMessage(MessageModel msg);
     void clearMessages();
     void showNoResults();
+    void deleteSearchResults();
+    void showMessages();
+    void removeNoResultsLabel();
     VoiceMessage* CurrentPlayed;
     QPushButton *cancelReplyButton;
     Message* CurrentReply = nullptr;

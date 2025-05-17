@@ -52,7 +52,11 @@ ChatRoom::ChatRoom(int id,QWidget *parent)
 }
 
 void ChatRoom::handleSearch(std::vector<int> ids) {
+    if (resultsCount > 0) {
+        chat->deleteSearchResults();
+    }
     chat->clearMessages();
+    resultsCount = 0;
     optional<ChatRoomModel> chat_room_model = ChatRoomModel::getChatRoomModel(id);
     if (ids.empty()) {
         chat->showNoResults();
@@ -61,10 +65,20 @@ void ChatRoom::handleSearch(std::vector<int> ids) {
     for (auto x:ids) {
         MessageModel msg = chat_room_model->getMessage(x);
         chat->sendMessage(msg);
+        resultsCount += 1;
     }
 }
 
-void ChatRoom::handleSearchCancel() {
+void ChatRoom::handleSearchCancel(string query) {
+    if (!query.empty() || resultsCount > 0) {
+        chat->deleteSearchResults();
+    }
+    if (resultsCount == 0) chat->removeNoResultsLabel();
+    chat->showMessages();
+    resultsCount = 0;
+}
+
+void ChatRoom::handleSearchStart() {
     chat->clearMessages();
     for(auto x:model->getMessages()){
         chat->sendMessage(x);

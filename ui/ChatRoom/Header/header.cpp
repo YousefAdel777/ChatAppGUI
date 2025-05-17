@@ -56,6 +56,7 @@ void Header::on_search_clicked() {
     searchBar->setVisible(true);
     ui->Search->setVisible(false);
     ui->closeSearch->setVisible(true);
+    emit searchStart();
 }
 
 void Header::initializeSearchBar() {
@@ -72,7 +73,7 @@ void Header::on_close_search_clicked() {
     ui->Search->setVisible(true);
     searchBar->setVisible(false);
     ui->closeSearch->setVisible(false);
-    emit searchCancel();
+    emit searchCancel("");
 }
 
 void Header::on_Dots_clicked()

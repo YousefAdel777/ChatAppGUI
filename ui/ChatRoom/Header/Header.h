@@ -19,8 +19,9 @@ public:
     Search *search;
 
 signals:
-    void searchCancel();
+    void searchCancel(string query);
     void searchDone(vector<int> ids);
+    void searchStart();
 
 private slots:
     void on_Name_clicked();
