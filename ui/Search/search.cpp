@@ -32,6 +32,7 @@ void Search::performSearch() {
         ids.insert(matches.begin(), matches.end());
     }
     resultsIds.assign(ids.begin(), ids.end());
+    cout << "test" ;
     emit searchDone(resultsIds);
 }
 
