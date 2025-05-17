@@ -10,7 +10,7 @@
 using namespace std;
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
-    // ChatRoomModel::readChatRoomModels();
+    ChatRoomModel::readChatRoomModels();
     // User::readUsers();
     // Login *login = new Login;
     // login->show();
@@ -42,8 +42,10 @@ int main(int argc, char *argv[]) {
         login->show();
     }
     else {
-        Settings * s = new Settings();
-        s->show();
+        // Settings * s = new Settings();
+        // s->show();
+        ChatRoom *chat = new ChatRoom(1);
+        chat->show();
         // MainWindow *d = new MainWindow();
         // d->show();
     }
@@ -51,7 +53,7 @@ int main(int argc, char *argv[]) {
     {
         User::writeCurrentUser();
         // User::writeUsers();
-        // ChatRoomModel::writeChatRoomModels();
+        ChatRoomModel::writeChatRoomModels();
         return 0;
     }else{
         return 0;

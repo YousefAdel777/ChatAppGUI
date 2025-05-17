@@ -23,23 +23,27 @@ Search::~Search() {
 
 void Search::performSearch() {
     std::string query = ui->searchIn->text().toStdString();
-    std::istringstream iss(query);
     std::string token;
     std::unordered_set<int> ids;
-
-    while (iss >> token) {
+    std::string lowercase_query;
+    lowercase_query.reserve(query.size());
+    std::transform(query.begin(), query.end(), std::back_inserter(lowercase_query), [](unsigned char c){ return std::tolower(c); });
+    std::istringstream ss(lowercase_query);
+    while (ss >> token) {
         auto matches = searchEngine.getIds(token);
         ids.insert(matches.begin(), matches.end());
     }
     resultsIds.assign(ids.begin(), ids.end());
-    cout << "test" ;
     emit searchDone(resultsIds);
 }
 
 void Search::handle_split() {
-    for (const auto& [id, content] : contents) {
-        std::istringstream ss(content);
+    for (const auto& [id, content] : contents) {  
         std::string token;
+        std::string lowercase_content;
+        lowercase_content.reserve(content.size());
+        std::transform(content.begin(), content.end(), std::back_inserter(lowercase_content), [](unsigned char c){ return std::tolower(c); });
+        std::istringstream ss(lowercase_content);
 
         while (ss >> token) {
             searchEngine.addWordWithId(token, id);

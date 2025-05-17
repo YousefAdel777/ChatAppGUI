@@ -260,23 +260,60 @@ void Container::sendMessage(MessageModel msg){
     CurrentReply =nullptr;
 }
 
+void Container::showMessages() {
+    ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
+    if (!chat) return;
+    for (int i = 0; i < ui->verticalLayout->count(); ++i) {
+        QLayoutItem* item = ui->verticalLayout->itemAt(i);
+        if (item && item->widget()) {
+            item->widget()->setVisible(true);
+        }
+    }
+}
+
 void Container::clearMessages() {
     ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
     if (!chat) return;
-    QLayoutItem* item;
-    while ((item = ui->verticalLayout->takeAt(0))) {
-        if (item->widget()) {
-            item->widget()->deleteLater();
+    for (int i = 0; i < ui->verticalLayout->count(); ++i) {
+        QLayoutItem* item = ui->verticalLayout->itemAt(i);
+        if (item && item->widget()) {
+            item->widget()->setVisible(false);
         }
-        delete item;
+    }
+    // while ((item = ui->verticalLayout->takeAt(0))) {
+    //     if (item->widget()) {
+    //         item->widget()->deleteLater();
+    //     }
+    //     delete item;
+    // }
+}
+
+void Container::deleteSearchResults() {
+    ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
+    if (!chat) return;
+    int i = 0;
+    while (i < ui->verticalLayout->count()) {
+        QLayoutItem* item = ui->verticalLayout->itemAt(i);
+        if (item && item->widget() && item->widget()->isVisible()) {
+            cout << "asdasd" << endl;
+            item->widget()->deleteLater();
+            ui->verticalLayout->removeItem(item);
+            delete item;
+        } else {
+            i++;
+        }
     }
 }
 
 void Container::showNoResults() {
     ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
     if (!chat) return;
+    if (QLabel* label = findChild<QLabel*>("noResultsLabel")) {
+        return;
+    }
     QLabel* noResultsLabel = new QLabel(this);
     noResultsLabel->setTextFormat(Qt::RichText);
+    noResultsLabel->setObjectName("noResultsLabel");
     noResultsLabel->setText("<b>No messages found</b>");
 
     noResultsLabel->setAlignment(Qt::AlignCenter);
@@ -289,6 +326,13 @@ void Container::showNoResults() {
     );
 
     ui->verticalLayout->addWidget(noResultsLabel);
+}
+
+void Container::removeNoResultsLabel() {
+    if (QLabel* label = findChild<QLabel*>("noResultsLabel")) {
+        ui->verticalLayout->removeWidget(label);
+        label->deleteLater();
+    }
 }
 
 void Container::resizeEvent(QResizeEvent *event){
