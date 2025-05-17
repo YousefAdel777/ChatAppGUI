@@ -280,12 +280,7 @@ void Container::clearMessages() {
             item->widget()->setVisible(false);
         }
     }
-    // while ((item = ui->verticalLayout->takeAt(0))) {
-    //     if (item->widget()) {
-    //         item->widget()->deleteLater();
-    //     }
-    //     delete item;
-    // }
+
 }
 
 void Container::deleteSearchResults() {
