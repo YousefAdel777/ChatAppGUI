@@ -12,18 +12,19 @@ using namespace nlohmann;
 class User;
 using namespace std;
 class ChatRoomModel {
-    long long id;
-    string name;
 protected:
     vector<int> users;
     set<MessageModel> messages;
     //SearchEngine searcher;
     inline static long long Id_Generator = 0;
     inline static unordered_map<int,ChatRoomModel>ChatRoomModels;
+    long long id;
+    string name;
+    bool type;
 public:
     ChatRoomModel();
-    ChatRoomModel(long long id, string name, vector<int> &users, set<MessageModel> &messages);
-    ChatRoomModel(string name, vector<int> &users, set<MessageModel> &messages);
+    ChatRoomModel(long long id,bool type, string name, vector<int> &users, set<MessageModel> &messages);
+    ChatRoomModel(string name,bool type, vector<int> &users, set<MessageModel> &messages);
     long long getId();
     string getName();
     const vector<int>& getUsers();
@@ -38,7 +39,7 @@ public:
     void removeMessage(long long id);
     static optional<ChatRoomModel>  getChatRoomModel(int id);
     static ChatRoomModel fromJson(const json &json);
-    json toJson();
+    virtual json toJson();
     void save();
     static void writeChatRoomModels();
     static void readChatRoomModels();
