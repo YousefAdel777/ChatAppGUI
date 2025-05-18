@@ -610,6 +610,12 @@
 			null
 		],
 		[
+			"C:/Users/Dell/Desktop/chat-2/ChatAppGUI/ui/CreateGroup/creategroup.h",
+			"MU",
+			"JNALEKQPLJ/moc_creategroup.cpp",
+			null
+		],
+		[
 			"C:/Users/Dell/Desktop/chat-2/ChatAppGUI/ui/Login/login.h",
 			"MU",
 			"LXUA4WWMYO/moc_login.cpp",
@@ -919,6 +925,11 @@
 		],
 		[
 			"C:/Users/Dell/Desktop/chat-2/ChatAppGUI/ui/ChatRoom/chatroom.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Dell/Desktop/chat-2/ChatAppGUI/ui/CreateGroup/creategroup.cpp",
 			"MU",
 			null
 		],
