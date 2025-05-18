@@ -25,6 +25,8 @@ public:
 
     ~Search();
 
+    void addContent(int id, string content);
+
 signals:
     void searchDone(vector<int> resultsIds);
 private slots:

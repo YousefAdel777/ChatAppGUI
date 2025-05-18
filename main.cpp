@@ -7,13 +7,14 @@
 #include "Login.h"
 #include "Story.h"
 #include "ui/Settings/settings.h"
+#include "AboutG.h"
 using namespace std;
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     ChatRoomModel::readChatRoomModels();
+   // Login* login = new Login();
+    //login->show();
     // User::readUsers();
-    // Login *login = new Login;
-    // login->show();
     // User bruce("11", "1", "Bruce", "Wayne", {}, {}, {}, {});
     // User barbra("?", "2", "Barbra", "Gordan", {}, {}, {}, {});
     // User dick("?", "2", "Dick", "GraySon", {}, {}, {}, {});
@@ -36,16 +37,17 @@ int main(int argc, char *argv[]) {
     // s->show();
     User::readUsers();
     User::readCurrentUser();
+    //User::getCurrentUser()->addContact(User::getUser(1)->getId());
     optional<User> optUser = User::getCurrentUser();
     if (!optUser.has_value()) {
-        Login *login = new Login();
-        login->show();
+       // Login *login = new Login();
+        //login->show();
     }
     else {
         // Settings * s = new Settings();
         // s->show();
-        ChatRoom *chat = new ChatRoom(1);
-        chat->show();
+        AboutG *g = new AboutG(1,1);
+        g->show();
         // MainWindow *d = new MainWindow();
         // d->show();
     }

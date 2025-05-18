@@ -3,25 +3,28 @@
 //
 #include "./ChatRoom.h"
 #include <QCoreApplication>
+#include <Group.h>
 ChatRoomModel::ChatRoomModel() :
     id(++Id_Generator),
     name("ChatRoomModel"+to_string(id))
 {
     //save();
 }
-ChatRoomModel::ChatRoomModel(long long id, string name, vector<int> &users, set<MessageModel> &messages):
+ChatRoomModel::ChatRoomModel(long long id,bool type, string name, vector<int> &users, set<MessageModel> &messages):
     id(id),
     name(name),
     users(users),
-    messages(messages)
+    messages(messages),
+    type(type)
 {
     save();
 }
-ChatRoomModel::ChatRoomModel(string name, vector<int> &users, set<MessageModel> &messages):
+ChatRoomModel::ChatRoomModel(string name,bool type, vector<int> &users, set<MessageModel> &messages):
     id(++Id_Generator),
     name(name),
     users(users),
-    messages(messages)
+    messages(messages),
+    type(type)
 {
     save();
 }
@@ -85,6 +88,7 @@ ChatRoomModel ChatRoomModel::fromJson(const json &json) {
     }
     return ChatRoomModel(
         json["id"].get<long long>(),
+        json["type"].get<bool>(),
         json["name"].get<string>(),
         users,
         messages
@@ -92,6 +96,7 @@ ChatRoomModel ChatRoomModel::fromJson(const json &json) {
 }
 json ChatRoomModel::toJson() {
     json json;
+    json["type"] = type;
     json["id"] = id;
     json["name"] = name;
     json["users"] = json::array();
@@ -128,7 +133,10 @@ void ChatRoomModel::readChatRoomModels() {
     file >> json;
     file.close();
     for (const auto &ChatRoomModel : json) {
-        ChatRoomModels[ChatRoomModel["id"].get<long long>()]=fromJson(ChatRoomModel);
+        if(ChatRoomModel["type"].get<bool>()==0)
+            ChatRoomModels[ChatRoomModel["id"].get<long long>()]=fromJson(ChatRoomModel);
+        else
+            ChatRoomModels[ChatRoomModel["id"].get<long long>()]=Group::(ChatRoomModel);
     }
 }
 bool ChatRoomModel::operator<(const ChatRoomModel &ChatRoomModel) const {
