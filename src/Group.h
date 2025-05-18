@@ -7,7 +7,7 @@
 #include "ChatRoomModel.h"
 #include <string>
 using namespace std;
-class Group : ChatRoomModel {
+class Group : public ChatRoomModel {
     enum Roles {
         NOT_MEMBER=0,
         MEMBER=1,

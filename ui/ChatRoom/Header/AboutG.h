@@ -22,7 +22,7 @@ public:
     QVBoxLayout *contactLayout;
     QWidget *container;
     static QVector<MemberCard*> memberCards;
-    explicit AboutG(int GroupId,int OwnerId,QWidget *parent = nullptr);
+    explicit AboutG(int GroupId,int OwnerId,string path,string name,string des,QWidget *parent = nullptr);
     ~AboutG();
 
 private slots:

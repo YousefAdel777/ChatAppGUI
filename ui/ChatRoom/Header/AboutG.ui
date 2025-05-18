@@ -81,13 +81,13 @@ border-top-left-radius:25px;</string>
                <rect>
                 <x>0</x>
                 <y>100</y>
-                <width>471</width>
+                <width>481</width>
                 <height>35</height>
                </rect>
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout">
                <item alignment="Qt::AlignmentFlag::AlignHCenter">
-                <widget class="QLabel" name="label_3">
+                <widget class="QLabel" name="name">
                  <property name="styleSheet">
                   <string notr="true">font-size:15pt;
 color:black;
@@ -104,12 +104,12 @@ font-weight:bold;</string>
               <property name="geometry">
                <rect>
                 <x>0</x>
-                <y>130</y>
-                <width>471</width>
+                <y>140</y>
+                <width>481</width>
                 <height>32</height>
                </rect>
               </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
                <item alignment="Qt::AlignmentFlag::AlignHCenter">
                 <widget class="QLabel" name="MembersNo">
                  <property name="styleSheet">
@@ -123,50 +123,62 @@ color:gray;</string>
                </item>
               </layout>
              </widget>
-             <widget class="QWidget" name="widget_4" native="true">
+             <widget class="QWidget" name="horizontalLayoutWidget_3">
               <property name="geometry">
                <rect>
-                <x>190</x>
-                <y>10</y>
-                <width>90</width>
-                <height>90</height>
+                <x>0</x>
+                <y>0</y>
+                <width>481</width>
+                <height>92</height>
                </rect>
               </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:gray;
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                <widget class="QWidget" name="widget_4" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>90</width>
+                   <height>90</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:gray;
 border-radius:45px;</string>
-              </property>
-              <widget class="QLabel" name="label">
-               <property name="geometry">
-                <rect>
-                 <x>14</x>
-                 <y>17</y>
-                 <width>60</width>
-                 <height>60</height>
-                </rect>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="cursor">
-                <cursorShape>ArrowCursor</cursorShape>
-               </property>
-               <property name="styleSheet">
-                <string notr="true"/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="pixmap">
-                <pixmap resource="../../../assets.qrc">:/icons/group-users.png</pixmap>
-               </property>
-               <property name="scaledContents">
-                <bool>true</bool>
-               </property>
-              </widget>
+                 </property>
+                 <widget class="QLabel" name="Photo">
+                  <property name="geometry">
+                   <rect>
+                    <x>14</x>
+                    <y>17</y>
+                    <width>60</width>
+                    <height>60</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>60</width>
+                    <height>60</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>ArrowCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../../../assets.qrc">:/icons/group-users.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
              </widget>
             </widget>
            </item>
@@ -316,7 +328,7 @@ color:black;</string>
                <string>Description</string>
               </property>
              </widget>
-             <widget class="QLabel" name="label_6">
+             <widget class="QLabel" name="desc">
               <property name="geometry">
                <rect>
                 <x>49</x>

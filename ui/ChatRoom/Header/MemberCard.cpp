@@ -29,6 +29,11 @@ MemberCard::~MemberCard()
 
 void MemberCard::on_pushButton_clicked()
 {
+    if(ui->pushButton->text()=="Owner") return;
+    if(ui->pushButton->text()=="Admin")
+        ui->pushButton->setText("Memeber");
+    else
+        ui->pushButton->setText("Admin");
 
 }
 

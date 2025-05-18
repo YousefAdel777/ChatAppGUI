@@ -16,6 +16,9 @@ public:
     explicit MemberCard(QWidget *parent = nullptr);
     explicit MemberCard(QString path,QString name,QString role,QWidget *parent = nullptr);
     ~MemberCard();
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::MemberCard *ui;
 };

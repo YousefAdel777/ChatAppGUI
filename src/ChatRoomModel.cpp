@@ -136,7 +136,7 @@ void ChatRoomModel::readChatRoomModels() {
         if(ChatRoomModel["type"].get<bool>()==0)
             ChatRoomModels[ChatRoomModel["id"].get<long long>()]=fromJson(ChatRoomModel);
         else
-            ChatRoomModels[ChatRoomModel["id"].get<long long>()]=Group::(ChatRoomModel);
+            ChatRoomModels[ChatRoomModel["id"].get<long long>()]=Group::fromJson(ChatRoomModel);
     }
 }
 bool ChatRoomModel::operator<(const ChatRoomModel &ChatRoomModel) const {

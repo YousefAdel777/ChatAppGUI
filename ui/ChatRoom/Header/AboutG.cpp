@@ -4,13 +4,17 @@
 #include "User.h"
 #include <iostream>
 QVector<MemberCard*> AboutG::memberCards;
-AboutG::AboutG(int GroupId,int OwnerId,QWidget *parent)
+AboutG::AboutG(int GroupId,int OwnerId,string path,string name,string des,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AboutG)
 {
     ui->setupUi(this);
     members = 0;
-
+    QPixmap pix(path.c_str());
+    ui->Photo->setPixmap(pix);
+    ui->Photo->setScaledContents(true);
+    ui->desc->setText(des.c_str());
+    ui->name->setText(name.c_str());
     a = new AddMembers(GroupId);
     container = new QWidget();
     contactLayout = new QVBoxLayout(container);
@@ -22,7 +26,6 @@ AboutG::AboutG(int GroupId,int OwnerId,QWidget *parent)
     }
     auto card = new MemberCard(User::getCurrentUser()->getUserProfileDescription().getImagePath().c_str(),User::getCurrentUser()->getFirstName().c_str()+QString(" ")+User::getCurrentUser()->getLastName().c_str(),"Owner");
     memberCards.push_back(card);
-    std::cout << User::getCurrentUser()->getUserProfileDescription().getImagePath() << std::endl;
     for(auto card:memberCards){
         contactLayout->addWidget(card);
         ++members;
