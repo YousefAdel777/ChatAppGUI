@@ -108,7 +108,7 @@
         "status": {
           "DeletedFor": [],
           "SeenBy": [],
-          "seen": false,
+          "seen": true,
           "size": 1,
           "time": 1747530886
         },
@@ -124,7 +124,7 @@
         "status": {
           "DeletedFor": [],
           "SeenBy": [],
-          "seen": false,
+          "seen": true,
           "size": 1,
           "time": 1747530908
         },

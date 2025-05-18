@@ -5,8 +5,10 @@
 #include "mainwindow.h"
 #include  "User.h"
 #include "Login.h"
+#include "removefromgroup.h"
 #include "Story.h"
 #include "ui/Settings/settings.h"
+#include "ui/AddContact/addcontact.h"
 using namespace std;
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
@@ -44,15 +46,19 @@ int main(int argc, char *argv[]) {
     else {
         // Settings * s = new Settings();
         // s->show();
-        ChatRoom *chat = new ChatRoom(1);
-        chat->show();
+        // ChatRoom *chat = new ChatRoom(1);
+        // chat->show();
+        // RemoveFromGroup *removeFromGroup = new RemoveFromGroup();
+        // removeFromGroup->show();
         // MainWindow *d = new MainWindow();
         // d->show();
+        AddContact * addContact = new AddContact();
+        addContact->show();
     }
     if(app.exec()==0)
     {
         User::writeCurrentUser();
-        // User::writeUsers();
+        User::writeUsers();
         ChatRoomModel::writeChatRoomModels();
         return 0;
     }else{

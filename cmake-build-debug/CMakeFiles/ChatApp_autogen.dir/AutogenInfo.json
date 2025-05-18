@@ -466,6 +466,12 @@
 			null
 		],
 		[
+			"C:/Users/Dell/Desktop/chat-2/ChatAppGUI/ui/AddContact/addcontact.h",
+			"MU",
+			"KLZVCGRDDO/moc_addcontact.cpp",
+			null
+		],
+		[
 			"C:/Users/Dell/Desktop/chat-2/ChatAppGUI/ui/AddStoryPage/AddStoryPage.h",
 			"MU",
 			"AR7SVPG4GV/moc_AddStoryPage.cpp",
@@ -793,6 +799,11 @@
 		],
 		[
 			"C:/Users/Dell/Desktop/chat-2/ChatAppGUI/src/libs/bcrypt/src/blowfish.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/Dell/Desktop/chat-2/ChatAppGUI/ui/AddContact/addcontact.cpp",
 			"MU",
 			null
 		],

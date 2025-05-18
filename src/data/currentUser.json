@@ -1,7 +1,9 @@
 {
   "blocked": [],
   "chatRooms": [],
-  "contacts": [],
+  "contacts": [
+    2
+  ],
   "firstName": "Bruce",
   "id": 1,
   "infoVisibility": [],

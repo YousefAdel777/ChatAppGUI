@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "blocked": [],
+    "chatRooms": [],
+    "contacts": [
+      2
+    ],
+    "firstName": "Bruce",
+    "id": 1,
+    "infoVisibility": [],
+    "lastName": "Wayne1",
+    "lastSeenVisibility": [],
+    "mobileNumber": "+2012345678",
+    "password": "$2b$10$g1mX34nLSFUlmZfQDGsf0eh1T2.04I5JXOsNu6NO.lyWj6AMwO5u6",
+    "seenVisibility": [],
+    "stories": [],
+    "userProfileDescription": {
+      "About": "Test",
+      "Name": "",
+      "Phone": "",
+      "SocialMediaLinks": [],
+      "VisibilityOption": true,
+      "id": 1,
+      "imagePath": ""
+    }
+  },
+  {
+    "blocked": [],
+    "chatRooms": [],
+    "contacts": [],
+    "firstName": "Contact",
+    "id": 2,
+    "infoVisibility": [],
+    "lastName": "1",
+    "lastSeenVisibility": [],
+    "mobileNumber": "+2012345679",
+    "password": "$2b$10$g1mX34nLSFUlmZfQDGsf0eh1T2.04I5JXOsNu6NO.lyWj6AMwO5u6",
+    "seenVisibility": [],
+    "stories": [],
+    "userProfileDescription": {
+      "About": "Test",
+      "Name": "",
+      "Phone": "",
+      "SocialMediaLinks": [],
+      "VisibilityOption": true,
+      "id": 1,
+      "imagePath": ""
+    }
+  }
+]
