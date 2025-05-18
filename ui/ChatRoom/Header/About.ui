@@ -36,7 +36,7 @@
           <x>0</x>
           <y>0</y>
           <width>480</width>
-          <height>700</height>
+          <height>696</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -92,7 +92,7 @@ border-top-left-radius:25px;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../../assets.qrc">:/icons/pfp.png</pixmap>
+               <pixmap>:/icons/icons/pfp.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -187,7 +187,7 @@ color:gray;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../../assets.qrc">:/icons/info.png</pixmap>
+               <pixmap resource="assets.qrc">:/icons/info.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -301,7 +301,7 @@ color:gray;</string>
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../../../assets.qrc">:/icons/group.png</pixmap>
+               <pixmap resource="assets.qrc">:/icons/group.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -408,7 +408,7 @@ padding:4px;
   </layout>
  </widget>
  <resources>
-  <include location="../../../assets.qrc"/>
+  <include location="assets.qrc"/>
  </resources>
  <connections/>
 </ui>

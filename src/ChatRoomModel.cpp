@@ -8,7 +8,7 @@ ChatRoomModel::ChatRoomModel() :
     id(++Id_Generator),
     name("ChatRoomModel"+to_string(id))
 {
-    //save();
+    type = 0;
 }
 ChatRoomModel::ChatRoomModel(long long id,bool type, string name, vector<int> &users, set<MessageModel> &messages):
     id(id),

@@ -9,7 +9,7 @@
 Search::Search(std::unordered_map<int, std::string> contents, std::vector<int> resultsIds, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Search),
-    contents(contents),
+    contents(std::move(contents)),
     resultsIds(std::move(resultsIds))
 {
     ui->setupUi(this);
@@ -35,19 +35,6 @@ void Search::performSearch() {
     }
     resultsIds.assign(ids.begin(), ids.end());
     emit searchDone(resultsIds);
-}
-
-void Search::addContent(int id, string content) {
-    std::string lowercase_content;
-    lowercase_content.reserve(content.size());
-    std::transform(content.begin(), content.end(), std::back_inserter(lowercase_content), [](unsigned char c){ return std::tolower(c); });
-    contents[id] = lowercase_content;
-    std::istringstream ss(lowercase_content);
-    std::string token;
-
-    while (ss >> token) {
-        searchEngine.addWordWithId(token, id);
-    }
 }
 
 void Search::handle_split() {

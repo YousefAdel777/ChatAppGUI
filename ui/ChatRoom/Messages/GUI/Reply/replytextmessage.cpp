@@ -13,7 +13,8 @@ ReplyTextMessage::ReplyTextMessage(TextMessage* msg,QWidget *parent)
     if(msg->Content.getUserID()==User::getCurrentUser()->getId()){
         ui->Sender->setText("You");
     }else
-        ui->Sender->setText(to_string(msg->Content.getUserID()).data());    auto* shadow = new QGraphicsDropShadowEffect;
+        ui->Sender->setText(User::getUser(msg->Content.getUserID())->getFirstName().data());
+    auto* shadow = new QGraphicsDropShadowEffect;
     shadow->setBlurRadius(12);
     shadow->setOffset(1,3);
     shadow->setColor(QColor(0, 0, 0, 150));

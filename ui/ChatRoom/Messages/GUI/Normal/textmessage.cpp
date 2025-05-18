@@ -2,6 +2,8 @@
 #include <QVBoxLayout>
 #include <iostream>
 #include <QApplication>
+#include <User.h>
+
 using namespace std;
 TextMessage::TextMessage(MessageModel msg,Message* Reply,QWidget *parent) :
     Message(msg,Reply,parent) {
@@ -13,7 +15,7 @@ TextMessage::TextMessage(MessageModel msg,Message* Reply,QWidget *parent) :
     layout->addWidget(textData);
     layout->setAlignment(Qt::AlignTop);
     layout->setSpacing(0);
-    if(msg.type==MessageModel::SENT)
+    if (msg.getUserID()==User::getCurrentUser()->getId())
     {
         ReadStatus = new QLabel();
         ReadStatus->setFixedSize(15,15);
@@ -54,7 +56,7 @@ void TextMessage::Adjust() {
     QFontMetrics fm(font);
     QRect r = fm.boundingRect(0, 0, w-20,INT_MAX,Qt::TextWordWrap,textData->text());
     textData->setFixedHeight(r.height()+20);
-    if(Content.type==MessageModel::SENT){
+    if (Content.getUserID()==User::getCurrentUser()->getId()){
         setFixedSize(w,r.height()+h+40);
         ReadStatusContainer->setGeometry(QRect(w-30,r.height()+h,30,30));
     }else{

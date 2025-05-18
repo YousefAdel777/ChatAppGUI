@@ -260,3 +260,9 @@ void StatusWindow::initializeUserImage(string imagePath, QLabel *uiImage) {
 
     uiImage->setPixmap(dest.scaled(85, 85));
 }
+
+void StatusWindow::on_closeButton_clicked()
+{
+    emit backClicked();
+}
+

@@ -6,21 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>491</width>
-    <height>100</height>
+    <width>354</width>
+    <height>83</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>491</width>
-    <height>100</height>
+    <width>354</width>
+    <height>83</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>354</width>
+    <height>83</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: transparent;
+   <string notr="true">background-color: #D3E8D2;
 border: none;
 border-radius: 30px;
 text-align: left;
@@ -32,13 +44,24 @@ color: #000;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>491</width>
-     <height>100</height>
+     <width>351</width>
+     <height>81</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>81</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>81</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: transparent;
-border: none;
+    <string notr="true">border: none;
 border-radius: 30px;
 text-align: left;
 color: #000;
@@ -48,9 +71,9 @@ color: #000;
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>20</y>
-      <width>60</width>
-      <height>60</height>
+      <y>18</y>
+      <width>50</width>
+      <height>50</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -66,25 +89,12 @@ color: #000;
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="message">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>50</y>
-      <width>171</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>This is some long message</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="name">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>30</y>
-      <width>121</width>
+      <y>34</y>
+      <width>251</width>
       <height>20</height>
      </rect>
     </property>
@@ -96,19 +106,6 @@ color: #000;
     </property>
     <property name="text">
      <string>Ali Abdelhady</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="time">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>30</y>
-      <width>31</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>08:39</string>
     </property>
    </widget>
   </widget>

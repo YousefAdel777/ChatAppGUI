@@ -1,64 +1,25 @@
 #include <QApplication>
-#include "ChatRoom.h"
-#include "ChatRoomModel.h"
-#include "StatusWindow/StatusWindow.h"
+#include "chatlist.h"
 #include "mainwindow.h"
 #include  "User.h"
 #include "Login.h"
-#include "removefromgroup.h"
-#include "Story.h"
-#include "CreateGroup/creategroup.h"
-#include "ui/Settings/settings.h"
-#include "ui/AddContact/addcontact.h"
 using namespace std;
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     ChatRoomModel::readChatRoomModels();
-    // User::readUsers();
-    // Login *login = new Login;
-    // login->show();
-    // User bruce("11", "1", "Bruce", "Wayne", {}, {}, {}, {});
-    // User barbra("?", "2", "Barbra", "Gordan", {}, {}, {}, {});
-    // User dick("?", "2", "Dick", "GraySon", {}, {}, {}, {});
-    // Story stor1(bruce.getId(), Date::getNow(), "الله اكبر", "", {});
-    // Story stor2(barbra.getId(), Date::getNow(), "الله اكبر", "", {});
-    // Story stor3(dick.getId(), Date::getNow(), "انطر ابلاكاش", "", {});
-    // bruce.addStory(stor1);
-    // barbra.addStory(stor2);
-    // dick.addStory(stor3);
-    // bruce.addContact(barbra.getId());
-    // barbra.addContact(bruce.getId());
-    // bruce.addContact(dick.getId());
-    // dick.addContact(bruce.getId());
-    // barbra.save();
-    // bruce.save();
-    // dick.save();
-    // User::setCurrentUser(bruce);
-    // User user = User::getCurrentUser().value();
-    // StatusWindow *s = new StatusWindow(user);
-    // s->show();
     User::readUsers();
-    User::readCurrentUser();
-    optional<User> optUser = User::getCurrentUser();
-    if (!optUser.has_value()) {
-        Login *login = new Login();
-        login->show();
+    User::setCurrentUser(User::getUsers()[1]);
+    auto model = ChatRoomModel::getChatRoomModel(2);
+    if(!model.has_value()){
+        model = ChatRoomModel();
+        model->setName(User::getUser(2)->getFirstName());
+        vector<int> x = {User::getCurrentUser()->getId(),2};
+        model->setUsers(x);
     }
-    else {
-        // Settings * s = new Settings();
-        // s->show();
-        // ChatRoom *chat = new ChatRoom(1);
-        // chat->show();
-        // RemoveFromGroup *removeFromGroup = new RemoveFromGroup();
-        // removeFromGroup->show();
-        // MainWindow *d = new MainWindow();
-        // d->show();
-        CreateGroup *createGroup = new CreateGroup();
-        createGroup->show();
-    }
+    MainWindow window;
+    window.show();
     if(app.exec()==0)
     {
-        User::writeCurrentUser();
         User::writeUsers();
         ChatRoomModel::writeChatRoomModels();
         return 0;

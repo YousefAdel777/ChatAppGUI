@@ -11,7 +11,7 @@ ReplyDocumentMessage::ReplyDocumentMessage(AttachmentCard *msg,QWidget *parent)
     if(msg->Content.getUserID()==User::getCurrentUser()->getId()){
         ui->Sender->setText("You");
     }else
-        ui->Sender->setText(to_string(msg->Content.getUserID()).data());
+        ui->Sender->setText(User::getUser(msg->Content.getUserID())->getFirstName().data());
     ui->FileName->setWordWrap(true);
     auto* shadow = new QGraphicsDropShadowEffect;
     shadow->setBlurRadius(12);

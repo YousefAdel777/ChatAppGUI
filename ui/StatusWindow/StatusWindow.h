@@ -59,6 +59,9 @@ private slots:
 
     void on_addStoryButton_clicked();
 
+    void on_closeButton_clicked();
+signals:
+    void backClicked();
 private:
     QListView recentStories;
     Ui::StoriesWindow *ui;

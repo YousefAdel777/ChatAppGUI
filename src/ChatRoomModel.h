@@ -20,8 +20,9 @@ protected:
     inline static unordered_map<int,ChatRoomModel>ChatRoomModels;
     long long id;
     string name;
-    bool type;
 public:
+    bool type;
+
     ChatRoomModel();
     ChatRoomModel(long long id,bool type, string name, vector<int> &users, set<MessageModel> &messages);
     ChatRoomModel(string name,bool type, vector<int> &users, set<MessageModel> &messages);

@@ -1,5 +1,7 @@
 #include "imagemessage.h"
 #include <QVBoxLayout>
+#include <User.h>
+
 ImageMessage::ImageMessage(MessageModel msg,Message* Reply,QWidget *parent)
     : Message(msg,Reply,parent)
 {
@@ -7,7 +9,6 @@ ImageMessage::ImageMessage(MessageModel msg,Message* Reply,QWidget *parent)
     Image = new HighQualityImage(msg.getContent().data(),width()-30,this);
     QVBoxLayout *bubbleLayout = new QVBoxLayout(this);
     bubbleLayout->setAlignment(Qt::AlignTop);
-    bubbleLayout->addWidget(Image);
     bubbleLayout->setSpacing(0);
     Image->setStyleSheet("background-color:rgb(214, 240, 209)");
     if(msg.getPrompt().size())
@@ -17,7 +18,7 @@ ImageMessage::ImageMessage(MessageModel msg,Message* Reply,QWidget *parent)
         bubbleLayout->addWidget(label);
     }else
         label = nullptr;
-    if(msg.type==MessageModel::SENT)
+    if (msg.getUserID()==User::getCurrentUser()->getId())
     {
         ReadStatus = new QLabel();
         ReadStatus->setFixedSize(15,15);
@@ -61,14 +62,23 @@ void ImageMessage::resizeEvent(QResizeEvent *event){
 void ImageMessage::Adjust(){
     setFixedWidth(std::min(width(),300));
     Image->setFixedWidth(width()-15);
+    Image->Adjust();
+
     int h = 0;
     if(label!=nullptr)
         label->setFixedWidth(width()-15),label->Adjust(),h+=label->height();
     if(Content.option==MessageModel::REPLY)
+    {
+        if(Reply->Reply->Content.datatype==MessageModel::IMAGE){
+            setFixedWidth(max(Image->width()+15,245));
+        }
         h+=Reply->height();
+    }else{
+        setFixedWidth(Image->width()+15);
+    }
     Image->Adjust();
     setFixedHeight(Image->height()+35+h);
-    if(Content.type == MessageModel::SENT){
+    if (Content.getUserID()==User::getCurrentUser()->getId()){
         ReadStatusContainer->setGeometry(width()-30,height()-40,30,30);
     }
 }

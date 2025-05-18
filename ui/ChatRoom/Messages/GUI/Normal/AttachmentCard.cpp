@@ -4,6 +4,7 @@
 #include <QPainter>
 #include <QStyleOption>
 #include <QMimeDatabase>
+#include <User.h>
 #include <MessageModel.h>
 AttachmentCard::AttachmentCard(MessageModel& msg,Message* Reply,QWidget *parent)
     : Message(msg,Reply,parent), filePath(msg.getContent().data())
@@ -71,7 +72,7 @@ AttachmentCard::AttachmentCard(MessageModel& msg,Message* Reply,QWidget *parent)
 
     connect(openBtn, &QPushButton::clicked, this, &AttachmentCard::onOpenClicked);
     connect(saveBtn, &QPushButton::clicked, this, &AttachmentCard::onSaveAsClicked);
-    if(msg.type==MessageModel::SENT)
+    if (msg.getUserID()==User::getCurrentUser()->getId())
     {
         ReadStatus = new QLabel(this);
         ReadStatus->setFixedSize(15,15);
@@ -111,7 +112,7 @@ void AttachmentCard::onSaveAsClicked() {
 }
 
 void AttachmentCard::Adjust(){
-    if(Content.type==MessageModel::SENT)
+    if (Content.getUserID()==User::getCurrentUser()->getId())
         ReadStatusContainer->setGeometry(QRect(width()-30,height()-40,30,30));
 }
 

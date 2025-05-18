@@ -64,6 +64,5 @@
         <file>icons/group-users.png</file>
         <file>icons/leave.png</file>
         <file>icons/add.png</file>
-        <file>icons/noWrite.png</file>
     </qresource>
 </RCC>

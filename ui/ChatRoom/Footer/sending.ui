@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>886</width>
-    <height>69</height>
+    <height>71</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -103,7 +103,7 @@ backGround-color: rgb(186, 223, 184);
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="assets.qrc">
+             <iconset resource="../../../assets.qrc">
               <normaloff>:/icons/attach.png</normaloff>:/icons/attach.png</iconset>
             </property>
             <property name="iconSize">
@@ -208,7 +208,7 @@ backGround-color: rgb(186, 223, 184);
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="assets.qrc">
+             <iconset resource="../../../assets.qrc">
               <normaloff>:/icons/mic.png</normaloff>:/icons/mic.png</iconset>
             </property>
             <property name="iconSize">
@@ -229,7 +229,7 @@ backGround-color: rgb(186, 223, 184);
   </layout>
  </widget>
  <resources>
-  <include location="assets.qrc"/>
+  <include location="../../../assets.qrc"/>
  </resources>
  <connections/>
 </ui>

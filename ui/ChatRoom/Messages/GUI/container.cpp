@@ -89,7 +89,6 @@ void Container::AddRight(Message* msg){
     msg->MessageBubble->pos = h;
     h+=msg->height();
     connect(msg,&Message::MessageDeleted,this,[=](Message* msg){
-        cout << msg->Content.userID << endl;
         if(msg->Content.userID==User::getCurrentUser()->getId()){
             chat->model->removeMessage(msg->Content.messageID);
             ui->verticalLayout->removeWidget(msg);
@@ -115,6 +114,10 @@ void Container::animate(){
         anim->setEasingCurve(QEasingCurve::OutCubic);
         anim->start(QAbstractAnimation::DeleteWhenStopped);
     });
+}
+void Container::clearChat(){
+    for(auto& message: messages)
+        message->MessageDeleted(message);
 }
 void Container::sendMessage(MessageModel msg){
     if(msg.status.CheckDeletedFor(User::getCurrentUser()->getId()))
@@ -160,7 +163,7 @@ void Container::sendMessage(MessageModel msg){
         if(CurrentReply){
             animate();
         }
-        if (msg.type==MessageModel::RECEIVED)
+        if (msg.getUserID()!=User::getCurrentUser()->getId())
         {
             auto message =new  MessageReceived(0,x);
             AddLeft(message);
@@ -190,7 +193,7 @@ void Container::sendMessage(MessageModel msg){
         if(CurrentReply){
             animate();
         }
-        if (msg.type==MessageModel::RECEIVED)
+        if (msg.getUserID()!=User::getCurrentUser()->getId())
         {
             auto message =new  MessageReceived(0,x);
             AddLeft(message);
@@ -211,7 +214,7 @@ void Container::sendMessage(MessageModel msg){
         if(CurrentReply){
             animate();
         }
-        if (msg.type==MessageModel::RECEIVED)
+        if (msg.getUserID()!=User::getCurrentUser()->getId())
         {
 
             auto message =new  MessageReceived(0,x);
@@ -233,7 +236,7 @@ void Container::sendMessage(MessageModel msg){
         if(CurrentReply){
             animate();
         }
-        if (msg.type==MessageModel::RECEIVED)
+        if (msg.getUserID()!=User::getCurrentUser()->getId())
         {
             auto message =new  MessageReceived(0,x);
             AddLeft(message);
@@ -258,75 +261,6 @@ void Container::sendMessage(MessageModel msg){
         cancelReplyButton = nullptr;
     }
     CurrentReply =nullptr;
-}
-
-void Container::showMessages() {
-    ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
-    if (!chat) return;
-    for (int i = 0; i < ui->verticalLayout->count(); ++i) {
-        QLayoutItem* item = ui->verticalLayout->itemAt(i);
-        if (item && item->widget()) {
-            item->widget()->setVisible(true);
-        }
-    }
-}
-
-void Container::clearMessages() {
-    ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
-    if (!chat) return;
-    for (int i = 0; i < ui->verticalLayout->count(); ++i) {
-        QLayoutItem* item = ui->verticalLayout->itemAt(i);
-        if (item && item->widget()) {
-            item->widget()->setVisible(false);
-        }
-    }
-
-}
-
-void Container::deleteSearchResults() {
-    ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
-    if (!chat) return;
-    int i = 0;
-    while (i < ui->verticalLayout->count()) {
-        QLayoutItem* item = ui->verticalLayout->itemAt(i);
-        if (item && item->widget() && item->widget()->isVisible()) {
-            item->widget()->deleteLater();
-            ui->verticalLayout->removeItem(item);
-            delete item;
-        } else {
-            i++;
-        }
-    }
-}
-
-void Container::showNoResults() {
-    ChatRoom* chat = dynamic_cast<ChatRoom*>(parentWidget());
-    if (!chat) return;
-    if (QLabel* label = findChild<QLabel*>("noResultsLabel")) {
-        return;
-    }
-    QLabel* noResultsLabel = new QLabel(this);
-    noResultsLabel->setTextFormat(Qt::RichText);
-    noResultsLabel->setObjectName("noResultsLabel");
-    noResultsLabel->setText("<b>No messages found</b>");
-
-    noResultsLabel->setAlignment(Qt::AlignCenter);
-    noResultsLabel->setStyleSheet(
-        "QLabel {"
-        "  color: #666;"
-        "  font-size: 14px;"
-        "  margin: 20px;"
-        "}"
-    );
-
-    ui->verticalLayout->addWidget(noResultsLabel);
-}
-
-void Container::removeNoResultsLabel() {
-    if (QLabel* label = findChild<QLabel*>("noResultsLabel")) {
-        ui->verticalLayout->removeWidget(label);
-        label->deleteLater();
-    }
 }
 
 void Container::resizeEvent(QResizeEvent *event){

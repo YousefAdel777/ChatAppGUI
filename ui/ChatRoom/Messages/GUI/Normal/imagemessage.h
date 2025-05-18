@@ -27,9 +27,11 @@ public:
             reader.setAutoTransform(true);
             image = reader.read();
             aspectRatio = static_cast<double>(image.height()) / image.width();
+            originalSize = image.width();
             setFixedSize(fixedWidth, int(fixedWidth*aspectRatio));
         }
         void Adjust(){
+            setFixedWidth(min(originalSize,width()));
             setFixedHeight(int(width() * aspectRatio));
         }
         string getPath(){
@@ -56,6 +58,7 @@ public:
     private:
         QImage image;
         int fixedWidth;
+        int originalSize;
         double aspectRatio;
         string path;
     } *Image;

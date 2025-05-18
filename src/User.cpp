@@ -220,7 +220,7 @@ json User::toJson() {
     json["password"] = password;
     json["firstName"] = firstName;
     json["lastName"] = lastName;
-    json["contacts"] = contacts;
+    json["contacts"] = json::array();
     json["infoVisibility"] = infoVisibility;
     json["seenVisibility"] = seenVisibility;
     json["lastSeenVisibility"] = lastSeenVisibility;
@@ -242,7 +242,6 @@ json User::toJson() {
 
 void User::save() {
     for (auto it = users.begin(); it != users.end(); ++it) {
-        cout << it->getId() << endl;
         if (it->getId() == getId()) {
             *it = *this;
             return;
