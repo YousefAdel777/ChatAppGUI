@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPushButton>
 
+#include "MessageModel.h"
 #include "Search/search.h"
 
 namespace Ui {
@@ -16,7 +17,7 @@ public:
     explicit Header(int id, QWidget *parent = nullptr);
     ~Header();
     QPushButton* getName();
-    Search *search;
+    void addSearchContent(MessageModel msg);
 
 signals:
     void searchCancel(string query);

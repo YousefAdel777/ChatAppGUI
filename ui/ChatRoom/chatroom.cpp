@@ -7,8 +7,8 @@ ChatRoom::ChatRoom(int id,QWidget *parent)
 {
     ui->setupUi(this);
     chat = new Container(this);
-    sendBar = new Sending(this);
     headerBar = new Header(id, this);
+    sendBar = new Sending(this);
     sendBar->setFixedWidth(width());
     headerBar->setFixedWidth(width());
     chat->setFixedSize(width(),height()-sendBar->height()-headerBar->height());
@@ -29,6 +29,7 @@ ChatRoom::ChatRoom(int id,QWidget *parent)
     });
     connect(headerBar, &Header::searchDone, this, &ChatRoom::handleSearch);
     connect(headerBar, &Header::searchCancel, this, &ChatRoom::handleSearchCancel);
+    connect(sendBar, &Sending::messageSent, this, &ChatRoom::addSearchContent);
     model = ChatRoomModel::getChatRoomModel(id);
     if(model.has_value())
     {
@@ -84,6 +85,10 @@ void ChatRoom::handleSearchStart() {
         chat->sendMessage(x);
         msgId = max(msgId,x.getMessageID());
     }
+}
+
+void ChatRoom::addSearchContent(MessageModel msg) {
+    headerBar->addSearchContent(msg);
 }
 
 void ChatRoom::resizeEvent(QResizeEvent *event){

@@ -59,6 +59,11 @@ void Header::on_search_clicked() {
     emit searchStart();
 }
 
+void Header::addSearchContent(MessageModel msg) {
+    if (msg.getContent().empty()) return;
+    searchBar->addContent(msg.getMessageID(), msg.getContent());
+}
+
 void Header::initializeSearchBar() {
     unordered_map<int, string> contents;
     optional<ChatRoomModel> chat_room = ChatRoomModel::getChatRoomModel(id);
