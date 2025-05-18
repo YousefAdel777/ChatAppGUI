@@ -286,12 +286,12 @@ border-radius:45px;</string>
               </property>
               <property name="icon">
                <iconset resource="../../../assets.qrc">
-                <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
+                <normaloff>:/icons/noWrite.png</normaloff>:/icons/noWrite.png</iconset>
               </property>
               <property name="iconSize">
                <size>
-                <width>30</width>
-                <height>30</height>
+                <width>60</width>
+                <height>60</height>
                </size>
               </property>
              </widget>
