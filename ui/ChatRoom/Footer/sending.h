@@ -6,6 +6,7 @@
 #include <photocomponent.h>
 #include <filescomponent.h>
 #include <QWidget>
+#include "Message.h"
 namespace Ui {
 class Sending;
 }
@@ -26,6 +27,7 @@ private slots:
     void on_recordBtn_clicked();
 signals:
     void sizeChanged();
+    void messageSent(MessageModel msg);
 private:
     bool status = 0;
     Ui::Sending *ui;

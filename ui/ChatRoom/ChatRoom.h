@@ -18,6 +18,7 @@ private slots:
     void handleSearch(std::vector<int> ids);
     void handleSearchCancel(string query);
     void handleSearchStart();
+    void addSearchContent(MessageModel msg);
 
 public:
     explicit ChatRoom(int id,QWidget *parent = nullptr);

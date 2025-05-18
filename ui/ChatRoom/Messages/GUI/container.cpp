@@ -290,7 +290,6 @@ void Container::deleteSearchResults() {
     while (i < ui->verticalLayout->count()) {
         QLayoutItem* item = ui->verticalLayout->itemAt(i);
         if (item && item->widget() && item->widget()->isVisible()) {
-            cout << "asdasd" << endl;
             item->widget()->deleteLater();
             ui->verticalLayout->removeItem(item);
             delete item;
