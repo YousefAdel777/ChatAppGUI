@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
     else {
         // Settings * s = new Settings();
         // s->show();
-        AboutG *g = new AboutG(1,1);
+        AboutG *g = new AboutG(1,1,"C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI4/icons/group-users.png","test","testttttttttt");
         g->show();
         // MainWindow *d = new MainWindow();
         // d->show();
