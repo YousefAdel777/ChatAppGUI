@@ -79,7 +79,9 @@ font-size: 14px;</string>
    <item>
     <widget class="QLabel" name="phoneErr">
      <property name="styleSheet">
-      <string notr="true">color: &quot;red&quot;;\npadding: 0;\npadding-left: 5px;</string>
+      <string notr="true">color: &quot;red&quot;;\n
+padding: 0;\n
+padding-left: 5px;</string>
      </property>
      <property name="text">
       <string/>
