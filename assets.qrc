@@ -60,5 +60,9 @@
         <file>icons/status.png</file>
         <file>icons/style.qss</file>
         <file>icons/user.png</file>
+        <file>icons/check.png</file>
+        <file>icons/group-users.png</file>
+        <file>icons/leave.png</file>
+        <file>icons/add.png</file>
     </qresource>
 </RCC>
