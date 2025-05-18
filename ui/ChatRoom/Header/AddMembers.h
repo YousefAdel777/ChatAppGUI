@@ -18,7 +18,8 @@ class AddMembers : public QWidget
 public:
     QWidget *container;
     QVBoxLayout *contactLayout;
-    explicit AddMembers(QWidget *parent = nullptr);
+    explicit AddMembers(int id,QWidget *parent = nullptr);
+    int GroupId;
     ~AddMembers();
     void clearLayout(QLayout *layout);
 public slots:

@@ -29,6 +29,6 @@ MemberCard::~MemberCard()
 
 void MemberCard::on_pushButton_clicked()
 {
-
+    if(ui->pushButton->)
 }
 

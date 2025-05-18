@@ -14,7 +14,8 @@ class AddInGroup : public QWidget
 public:
     bool isChecked;
     QLabel *photo,*name;
-    explicit AddInGroup(QWidget *parent = nullptr);
+    explicit AddInGroup(int id,QWidget *parent = nullptr);
+    int UserId;
     ~AddInGroup();
 
 private slots:

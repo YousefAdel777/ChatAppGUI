@@ -3,20 +3,23 @@
 #include "AddInGroup.h"
 #include<QVector>
 #include"AboutG.h"
+#include "User.h"
+#include "ChatRoom.h"
 using namespace std;
-AddMembers::AddMembers(QWidget *parent)
+AddMembers::AddMembers(int id,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AddMembers)
 {
     ui->setupUi(this);
+    GroupId = id;
     container = new QWidget();
     contactLayout = new QVBoxLayout(container);
     contactLayout->setSpacing(3);
     contactLayout->setContentsMargins(0,0,0,0);
-    for(int i = 0;i<2;++i){
-        AddInGroup *m = new AddInGroup;
+    for(auto id : User::getCurrentUser()->getContacts()){
+        AddInGroup *m = new AddInGroup(id);
         contactLayout->addWidget(m);
-    }
+    } 
     contactLayout->addStretch();
     container->setLayout(contactLayout);
     ui->scrollArea->setWidget(container);
@@ -43,6 +46,8 @@ void AddMembers::on_added_clicked()
             if (AddInGroup* card = qobject_cast<AddInGroup*>(w)) {
                 if (card->isChecked) {
                     members.push_back(new MemberCard(card->photo->property("imagepath").toString(),card->name->text(),"Member"));
+                    //TODO
+                    //curGroup.addMemeber(card->UserId);
                 }
             }
         }

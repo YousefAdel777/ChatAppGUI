@@ -1,14 +1,20 @@
 #include "AddInGroup.h"
 #include "ui_AddInGroup.h"
-
-AddInGroup::AddInGroup(QWidget *parent)
+#include "User.h"
+AddInGroup::AddInGroup(int id,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AddInGroup)
 {
     ui->setupUi(this);
     isChecked = 0;
+    UserId = id;
+    QPixmap pix(User::getUser(id)->getUserProfileDescription().getImagePath().c_str());
+    ui->label->setPixmap(pix);
+    ui->label->setScaledContents(true);
+    ui->label_2->setText(QString(User::getUser(id)->getFirstName().c_str())+" "+ QString(User::getUser(id)->getFirstName().c_str()));
     photo = ui->label;
     name = ui->label_2;
+
 }
 
 AddInGroup::~AddInGroup()
