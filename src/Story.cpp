@@ -1,5 +1,5 @@
 #include "Story.h"
-
+#include <QCoreApplication>
 Story::Story(
     const int &userId,
     const tm &publishTime,
@@ -81,7 +81,7 @@ bool Story::operator<(const Story &story) const {
     // return storyText > story.getStoryText();
 }
 void Story::readStories() {
-    ifstream file("../data/stories.json");
+    ifstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/stories.json");
     json json;
     if (!file.is_open()) {
         throw runtime_error("Failed to open users.json");
@@ -98,7 +98,7 @@ void Story::readStories() {
 }
 
 void Story::writeStories() {
-    ofstream file("../data/stories.json");
+    ofstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/stories.json");
     json json = json::array();
     if (!file.is_open()) {
         throw runtime_error("Failed to open users.json");
@@ -127,7 +127,8 @@ Story Story::fromJson(const json &json) {
         Date::fromJson(json["publishTime"]),
         json["storyText"].get<string>(),
         json["storyPhotoPath"].get<string>(),
-        excluded
+        excluded,
+        json["storyColor"].get<string>()
         );
 }
 
@@ -139,6 +140,7 @@ json Story::toJson() {
     json["storyText"] = storyText;
     json["storyPhotoPath"] = storyPhotoPath;
     json["excludedIds"] = excludedIds;
+    json["storyColor"] = storyColor;
     return json;
 }
 

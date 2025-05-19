@@ -8,7 +8,7 @@ ChatRoomModel::ChatRoomModel() :
     id(++Id_Generator),
     name("ChatRoomModel"+to_string(id))
 {
-    //save();
+    type = 0;
 }
 ChatRoomModel::ChatRoomModel(long long id,bool type, string name, vector<int> &users, set<MessageModel> &messages):
     id(id),
@@ -113,7 +113,7 @@ void ChatRoomModel::save() {
     ChatRoomModels[id]=*this;
 }
 void ChatRoomModel::writeChatRoomModels() {
-    ofstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/ChatRooms.json");
+    ofstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/chatRooms.json");
     json json = json::array();
     if (!file.is_open()) {
         throw runtime_error("Failed to open ChatRoomModels.json");
@@ -125,7 +125,7 @@ void ChatRoomModel::writeChatRoomModels() {
     file.close();
 }
 void ChatRoomModel::readChatRoomModels() {
-    ifstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/ChatRooms.json");
+    ifstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/chatRooms.json");
     json json;
     if (!file.is_open()) {
         throw runtime_error("Failed to open ChatRoomModels.json");

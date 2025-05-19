@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+#include "ChatWidget.h"
+#include "StatusWindow/StatusWindow.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -19,5 +22,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    ChatWidget *Mainwidget;
+    StatusWindow *Status;
 };
 #endif // MAINWINDOW_H

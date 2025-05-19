@@ -32,7 +32,6 @@ class SearchEngine {
      bool search(std::string&);
      std::vector<std::string> autoComplete(std::string&, int);
     std::unordered_set<int> getIds(std::string&);
-    // void clear();
 
   private:
     void collectIds(int node, std::unordered_set<int>& result);

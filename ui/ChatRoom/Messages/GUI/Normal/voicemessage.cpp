@@ -2,6 +2,7 @@
 #define VOICEMESSAGE_CPP
 #include "VoiceMessage.h"
 #include <QPainter>
+#include <User.h>
 #include "Helper.h"
 using namespace std;
 VoiceMessage::VoiceMessage(MessageModel msg,Message* Reply,QWidget *parent):
@@ -68,7 +69,7 @@ VoiceMessage::VoiceMessage(MessageModel msg,Message* Reply,QWidget *parent):
     layout1->addWidget(MessageBubble);
     MessageBubble->setFixedHeight(55);
     MessageBubble->setLayout(layout);
-    if(msg.type==MessageModel::SENT)
+    if (msg.getUserID()==User::getCurrentUser()->getId())
     {
         ReadStatus = new QLabel(this);
         ReadStatus->setFixedSize(15,15);
@@ -109,7 +110,7 @@ void VoiceMessage::paintEvent(QPaintEvent *event) {
 void VoiceMessage::Adjust(){
     setFixedWidth(min(max(width(),70),300));
     MessageBubble->setFixedWidth(min(max(width(),70),300));
-    if(Content.type==MessageModel::SENT)
+    if (Content.getUserID()==User::getCurrentUser()->getId())
         ReadStatusContainer->setGeometry(QRect(min(max(width(),70),300)-30,height()-38,30,30));
 }
 

@@ -112,6 +112,7 @@ void SearchEngine::collectIds(int node, std::unordered_set<int>& result) {
   }
 }
 
+// Then modify your getIds method like this:
 std::unordered_set<int> SearchEngine::getIds(std::string& word) {
   std::unordered_set<int> result;
   int v = 0;
@@ -125,3 +126,19 @@ std::unordered_set<int> SearchEngine::getIds(std::string& word) {
   collectIds(v, result);
   return result;
 }
+
+
+// std::unordered_set<int> SearchEngine::getIds(std::string& word) {
+//   std::unordered_set<int> result;
+//   int v = 0;
+//   for (auto c : word) {
+//     if (trie[v].next.count(c) != 1) {
+//       return result;
+//     }
+//     v = trie[v].next[c];
+//   }
+//   if (trie[v].output) {
+//     return trie[v].ids;
+//   }
+//   return result;
+// }

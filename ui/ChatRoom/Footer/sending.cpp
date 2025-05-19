@@ -149,7 +149,6 @@ void Sending::on_recordBtn_clicked()
                     MessageModel msg3(++chat->msgId,User::getCurrentUser()->getId(),MessageModel::IMAGE,MessageModel::SENT,MessageModel::NORMAL,-1,comp->Image->getPath(),Status());
                     comp->deleteRequest(comp);
                     chat->chat->sendMessage(msg3);
-                    emit messageSent(msg3);
                 }
                 chat->chat->CurrentReply = temp;
                 PhotoComponent *comp = dynamic_cast<PhotoComponent*>(container->getContainer()->itemAt(0)->widget());
@@ -157,7 +156,6 @@ void Sending::on_recordBtn_clicked()
                 comp->deleteRequest(comp);
                 chat->chat->sendMessage(msg3);
                 ui->textEdit->clear();
-                emit messageSent(msg3);
             }else if(container){
                 Message* temp = chat->chat->CurrentReply;
                 chat->chat->CurrentReply = nullptr;
@@ -166,20 +164,18 @@ void Sending::on_recordBtn_clicked()
                     MessageModel msg3(++chat->msgId,User::getCurrentUser()->getId(),MessageModel::DOCUMENT,MessageModel::SENT,MessageModel::NORMAL,-1,comp->getPath(),Status());
                     comp->deleteRequest(comp);
                     chat->chat->sendMessage(msg3);
-                    emit messageSent(msg3);
                 }
                 chat->chat->CurrentReply = temp;
                 FilesComponent *comp = dynamic_cast<FilesComponent*>(container->getContainer()->itemAt(0)->widget());
                 MessageModel msg3(++chat->msgId,User::getCurrentUser()->getId(),MessageModel::DOCUMENT,MessageModel::SENT,MessageModel::NORMAL,-1,comp->getPath(),Status());
                 comp->deleteRequest(comp);
                 chat->chat->sendMessage(msg3);
-                emit messageSent(msg3);
+
             }
             else{
                 MessageModel msg5(++chat->msgId,User::getCurrentUser()->getId(),MessageModel::TEXT,MessageModel::SENT,MessageModel::NORMAL,-1,ui->textEdit->document()->toRawText().toStdString(),Status());
                 chat->chat->sendMessage(msg5);
                 ui->textEdit->clear();
-                emit messageSent(msg5);
             }
         }
     }else{

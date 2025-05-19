@@ -13,7 +13,25 @@
     "mobileNumber": "+2012345678",
     "password": "$2b$10$g1mX34nLSFUlmZfQDGsf0eh1T2.04I5JXOsNu6NO.lyWj6AMwO5u6",
     "seenVisibility": [],
-    "stories": [],
+    "stories": [
+      {
+        "excludedIds": [],
+        "publishTime": {
+          "time": {
+            "day": 19,
+            "hour": 3,
+            "minute": 38,
+            "month": 5,
+            "second": 9,
+            "year": 2025
+          }
+        },
+        "storyColor": "\ncolor: rgb(255, 255, 255);background-color: #6AF273;",
+        "storyPhotoPath": "",
+        "storyText": "Test",
+        "userId": 1
+      }
+    ],
     "userProfileDescription": {
       "About": "Test",
       "Name": "",
@@ -36,7 +54,42 @@
     "mobileNumber": "+2012345679",
     "password": "$2b$10$g1mX34nLSFUlmZfQDGsf0eh1T2.04I5JXOsNu6NO.lyWj6AMwO5u6",
     "seenVisibility": [],
-    "stories": [],
+    "stories": [
+      {
+        "excludedIds": [],
+        "publishTime": {
+          "time": {
+            "day": 19,
+            "hour": 3,
+            "minute": 36,
+            "month": 5,
+            "second": 51,
+            "year": 2025
+          }
+        },
+        "storyColor": "",
+        "storyPhotoPath": "C:/Users/Dell/Desktop/freepik__upload__31384.png",
+        "storyText": "404",
+        "userId": 2
+      },
+      {
+        "excludedIds": [],
+        "publishTime": {
+          "time": {
+            "day": 19,
+            "hour": 3,
+            "minute": 36,
+            "month": 5,
+            "second": 41,
+            "year": 2025
+          }
+        },
+        "storyColor": "\ncolor: rgb(255, 255, 255);background-color: #44E2F4;",
+        "storyPhotoPath": "",
+        "storyText": "Test",
+        "userId": 2
+      }
+    ],
     "userProfileDescription": {
       "About": "Test",
       "Name": "",

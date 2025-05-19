@@ -13,7 +13,8 @@ ReplyImageMessage::ReplyImageMessage(ImageMessage* msg,QWidget *parent)
     if(msg->Content.getUserID()==User::getCurrentUser()->getId()){
         ui->Sender->setText("You");
     }else
-        ui->Sender->setText(to_string(msg->Content.getUserID()).data());    MinWidth = std::max(200,ui->Sender->sizeHint().width());
+        ui->Sender->setText(User::getUser(msg->Content.getUserID())->getFirstName().data());
+    MinWidth = std::max(200,ui->Sender->sizeHint().width());
     ui->horizontalLayout_4->addWidget(image);
     ui->Content->setWordWrap(true);
     auto* shadow = new QGraphicsDropShadowEffect;

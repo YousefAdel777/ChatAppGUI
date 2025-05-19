@@ -4,25 +4,16 @@
 #include<QMenu>
 #include <QGraphicsDropShadowEffect>
 #include <ChatRoom.h>
-
-#include "Search/search.h"
-
-Header::Header(int id, QWidget *parent)
+Header::Header(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::header), id(id)
+    , ui(new Ui::header)
 {
     ui->setupUi(this);
-    initializeSearchBar();
     auto* shadow = new QGraphicsDropShadowEffect;
     shadow->setBlurRadius(12);
     shadow->setOffset(1,3);
     shadow->setColor(QColor(0, 0, 0, 150));
     ui->widget_3->setGraphicsEffect(shadow);
-    ui->closeSearch->setVisible(false);
-    connect(ui->Search, &QPushButton::clicked, this, &Header::on_search_clicked);
-    connect(ui->closeSearch, &QPushButton::clicked, this, &Header::on_close_search_clicked);
-    connect(searchBar, &Search::searchDone, this, &Header::searchDone);
-    searchBar->setVisible(false);
 }
 
 Header::~Header()
@@ -52,37 +43,9 @@ void Header::on_LastSeen_clicked()
     a->show();
 }
 
-void Header::on_search_clicked() {
-    searchBar->setVisible(true);
-    ui->Search->setVisible(false);
-    ui->closeSearch->setVisible(true);
-    emit searchStart();
-}
-
-void Header::addSearchContent(MessageModel msg) {
-    if (msg.getContent().empty()) return;
-    searchBar->addContent(msg.getMessageID(), msg.getContent());
-}
-
-void Header::initializeSearchBar() {
-    unordered_map<int, string> contents;
-    optional<ChatRoomModel> chat_room = ChatRoomModel::getChatRoomModel(id);
-    for (MessageModel msg : chat_room->getMessages()) {
-        contents[msg.getMessageID()] = msg.getContent();
-    }
-    searchBar = new Search(contents, searchResultsIds);
-    ui->searchPlaceholder->addWidget(searchBar);
-}
-
-void Header::on_close_search_clicked() {
-    ui->Search->setVisible(true);
-    searchBar->setVisible(false);
-    ui->closeSearch->setVisible(false);
-    emit searchCancel("");
-}
-
 void Header::on_Dots_clicked()
 {
+    ChatRoom *chat = dynamic_cast<ChatRoom*>(parentWidget());
     QMenu contextMenu(this);
     contextMenu.setWindowOpacity(0.9);
     contextMenu.setAttribute(Qt::WA_TranslucentBackground);
@@ -91,22 +54,44 @@ void Header::on_Dots_clicked()
                               "border-radius: 10px; padding: 8px; } "
                               "QMenu::item { color: white; padding: 8px 15px;font-size: 10pt; } "
                               "QMenu::item:selected { background-color: rgba(255, 255, 255, 40); }");
-    QAction ViewContactAction("View Contact", this);
-    QAction SearchAction("Search", this);
-    QAction BlockAction("Block", this);
-    QAction ClearChatAction("Clear Chat", this);
+    QAction ViewContactAction("View Contact");
+    QAction SearchAction("Search");
+    QAction ClearChatAction("Clear Chat");
     contextMenu.addAction(&ViewContactAction);
     contextMenu.addAction(&SearchAction);
-    contextMenu.addAction(&BlockAction);
     contextMenu.addAction(&ClearChatAction);
+    if(User::getCurrentUser()->getBlocked().find(chat->model->getUsers()[chat->model->getUsers()[0]==User::getCurrentUser()->getId()])
+        !=User::getCurrentUser()->getBlocked().end()){
+        QAction *BlockAction = new QAction("Unblock");
+        connect(BlockAction, &QAction::triggered, this, [=](){
+            User::getCurrentUser()->removeBlocked(chat->model->getUsers()[chat->model->getUsers()[0]==User::getCurrentUser()->getId()]);
+            User::setCurrentUser(User::getUser(User::getCurrentUser()->getId()).value());
+
+            chat->Update();
+        });
+        contextMenu.addAction(BlockAction);
+    }
+    else{
+        QAction *BlockAction = new QAction("Block");
+        connect(BlockAction, &QAction::triggered, this, [=](){
+            User::getCurrentUser()->addBlocked(chat->model->getUsers()[chat->model->getUsers()[0]==User::getCurrentUser()->getId()]);
+            User::setCurrentUser(User::getUser(User::getCurrentUser()->getId()).value());
+            chat->Update();
+        });
+        contextMenu.addAction(BlockAction);
+    }
     // Connect actions to demo handlers
     auto showMessage = [](const QString &msg) {
 
     };
-    connect(&ViewContactAction, &QAction::triggered, this, [=](){ showMessage("Reply clicked"); });
+    connect(&ViewContactAction, &QAction::triggered, this, [=](){
+        on_Name_clicked();
+    });
     connect(&SearchAction, &QAction::triggered, this, [=](){ showMessage("Copy clicked"); });
-    connect(&BlockAction, &QAction::triggered, this, [=](){ showMessage("Forward clicked"); });
-    connect(&ClearChatAction, &QAction::triggered, this, [=](){ showMessage("Pin clicked"); });
+
+    connect(&ClearChatAction, &QAction::triggered, this, [=](){
+        chat->chat->clearChat();
+    });
     QPoint pos = mapToGlobal(QPoint(geometry().right()-contextMenu.sizeHint().width(),ui->Dots->geometry().bottom()+20));
     contextMenu.exec(pos);
 }

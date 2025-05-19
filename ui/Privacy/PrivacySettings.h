@@ -2,14 +2,10 @@
 #define PRIVACYSETTINGS_H
 
 #include <QWidget>
-#include <User.h>
-#include "ContactWidget.h"
 #include <QPushButton>
 #include <QPainterPath>
 #include <QRegion>
-#include <map>
-#include <unordered_set>
-//#include <string.h>
+#include <string.h>
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -33,7 +29,7 @@ class Widget : public QWidget
         Nobody,
         OnlyShareWith
     }
-    LastSeenMode = Everyone,
+        LastSeenMode = Everyone,
         OnlineMode = Everyone,
         AboutMode = Everyone,
         ProfilePhotoMode = Everyone,
@@ -46,20 +42,7 @@ class Widget : public QWidget
         Status,
         Main
     }
-    CurrentWidget = Main;
-    vector<ContactWidget*> ContactWidgets;
-    map<int,unordered_set<int>> blocked;
-    map<int,unordered_set<int>> HideOnline;
-    map<int,unordered_set<int>> HideLastSeen;
-    map<int,unordered_set<int>> HidePhoto;
-    map<int,unordered_set<int>> HideAbout;
-    map<int,unordered_set<int>> HideStatus;
-
-    set<int> TmpContacts = User::getCurrentUser()->getContacts();
-    vector<User> Users = User::getUsers();
-    vector<int> TmpUsers;
-    int TmpID = User::getCurrentUser()->getId();
-
+        CurrentWidget = Main;
 
 public:
     Widget(QWidget *parent = nullptr);
@@ -120,16 +103,7 @@ private slots:
 
     void on_StatusChoiceOnlyShareWith_clicked();
 
-    void on_ExcludeContactsSelectAll_clicked();
-
 private:
     Ui::Widget *ui;
-
-    void PrepareMyContactsExcept(set<int> Contacts,
-                                 unordered_set<int> Excluded);
-
-    unordered_set<int> SetMyContactsExcept(vector<ContactWidget*> v);
-
-    void FixButtonsBorder();
 };
 #endif // PRIVACYSETTINGS_H

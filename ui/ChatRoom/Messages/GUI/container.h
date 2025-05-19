@@ -18,15 +18,10 @@ public:
     ~Container();
     void resizeEvent(QResizeEvent *event) override;
     void sendMessage(MessageModel msg);
-    void clearMessages();
-    void showNoResults();
-    void deleteSearchResults();
-    void showMessages();
-    void removeNoResultsLabel();
+    void clearChat();
     VoiceMessage* CurrentPlayed;
     QPushButton *cancelReplyButton;
     Message* CurrentReply = nullptr;
-
 private:
     void ShowReply();
     void AddLeft(Message* msg);

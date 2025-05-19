@@ -43,8 +43,6 @@ Settings::Settings(QWidget *parent) :
     QGraphicsOpacityEffect *effect = new QGraphicsOpacityEffect(ui->newPasswordInput);
     effect->setOpacity(0.5);
     ui->newPasswordInput->setGraphicsEffect(effect);
-    privacy = new Widget(ui->privacySettings);
-    privacy->show();
 }
 
 void Settings::closeSettings() {
@@ -94,6 +92,7 @@ void Settings::uploadProfileImage() {
     );
     if (filePath.isEmpty()) return;
 
+    // QString destDir = QCoreApplication::applicationDirPath() + "/data/images";
     QString dir = QString::fromStdString("../../src/data/images");
     QDir().mkpath(dir);
 
@@ -105,7 +104,7 @@ void Settings::uploadProfileImage() {
     }
 
     string path = destPath.toStdString();
-    initializeUserImage(path);
+    initializeUserImage(filePath.toStdString());
     optional<User> optUser = User::getCurrentUser();
     if (optUser.has_value()) {
         User currentUser = optUser.value();
@@ -123,12 +122,12 @@ void Settings::initializeUsername(string username) {
 }
 
 void Settings::showPrivacy() {
-    ui->profileScrollArea->setVisible(false);
+    ui->profileInfoForm->setVisible(false);
     ui->privacySettings->setVisible(true);
 }
 
 void Settings::showProfileInfoForm() {
-    ui->profileScrollArea->setVisible(true);
+    ui->profileInfoForm->setVisible(true);
     ui->privacySettings->setVisible(false);
 }
 
