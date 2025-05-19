@@ -62,3 +62,9 @@ void AboutG::on_addMember_clicked()
 {
     a->show();
 }
+
+void AboutG::on_pushButton_3_clicked()
+{
+
+}
+
