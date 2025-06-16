@@ -304,6 +304,7 @@ void User::readCurrentUser() {
         file.close();
         return;
     }
+    file.seekg(0, ios::beg);
     file >> json;
     file.close();
     if (!json.empty()) setCurrentUser(fromJson(json));

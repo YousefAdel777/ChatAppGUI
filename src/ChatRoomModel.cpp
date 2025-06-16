@@ -130,6 +130,11 @@ void ChatRoomModel::readChatRoomModels() {
     if (!file.is_open()) {
         throw runtime_error("Failed to open ChatRoomModels.json");
     }
+    if (file.peek() == std::ifstream::traits_type::eof()) {
+        file.close();
+        return;
+    }
+    file.seekg(0, ios::beg);
     file >> json;
     file.close();
     for (const auto &ChatRoomModel : json) {
