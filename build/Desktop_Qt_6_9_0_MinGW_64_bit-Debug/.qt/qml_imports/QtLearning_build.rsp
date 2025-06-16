@@ -1,9 +1,0 @@
--rootPath
-C:/Users/dell/Documents/QtLearning
--cmake-output
--output-file
-C:/Users/dell/Documents/QtLearning/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/.qt/qml_imports/QtLearning_build.cmake
--importPath
-C:/Users/dell/Documents/QtLearning/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug
--importPath
-E:/Qt/6.9.0/mingw_64/qml
