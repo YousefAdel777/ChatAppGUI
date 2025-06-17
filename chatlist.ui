@@ -50,9 +50,9 @@ border: none;</string>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>210</x>
       <y>20</y>
-      <width>151</width>
+      <width>221</width>
       <height>80</height>
      </rect>
     </property>
@@ -142,6 +142,29 @@ border: none;</string>
      <property name="icon">
       <iconset resource="assets.qrc">
        <normaloff>:/icons/more.png</normaloff>:/icons/more.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>25</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="newGroup">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>0</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="assets.qrc">
+       <normaloff>:/icons/group-users.png</normaloff>:/icons/group-users.png</iconset>
      </property>
      <property name="iconSize">
       <size>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>AddContact</class>
- <widget class="QWidget" name="AddContact">
+ <widget class="QDialog" name="AddContact">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>413</width>
-    <height>224</height>
+    <height>213</height>
    </rect>
   </property>
   <property name="windowTitle">

@@ -6,13 +6,14 @@
 #define CREATEGROUP_H
 
 #include <QWidget>
+#include <QDialog>
 
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class CreateGroup; }
 QT_END_NAMESPACE
 
-class CreateGroup : public QWidget {
+class CreateGroup : public QDialog {
 Q_OBJECT
 
 public slots:

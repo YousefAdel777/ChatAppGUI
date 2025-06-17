@@ -5,6 +5,7 @@
 
 #include "ChatWidget.h"
 #include "StatusWindow/StatusWindow.h"
+#include "Settings/settings.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,5 +25,6 @@ private:
     Ui::MainWindow *ui;
     ChatWidget *Mainwidget;
     StatusWindow *Status;
+    Settings * settings;
 };
 #endif // MAINWINDOW_H

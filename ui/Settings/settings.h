@@ -29,6 +29,9 @@ private slots:
     void openLinksDialog();
     bool checkOldPassword();
 
+signals:
+    void settingsClosed();
+
 private:
     Ui::Settings *ui;
     string profileImagePath;

@@ -17,6 +17,7 @@ public:
     ~ChatWidget();
 signals:
     void statusClicked();
+    void settingsClicked();
 private:
     Ui::ChatWidget *ui;
     ChatList * leftSide;

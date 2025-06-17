@@ -22,6 +22,8 @@ public:
     ~ChatList();
 
 private slots:
+    void on_group_clicked();
+
     void on_ActionList_clicked();
 
     void on_StatusWidget_clicked();
@@ -30,6 +32,8 @@ private slots:
 signals:
     void ChatCardClicked(int id);
     void StatusClicked();
+    void settingsClicked();
+    void groupClicked();
 private:
     Ui::ChatList *ui;
     Search* searchBar;

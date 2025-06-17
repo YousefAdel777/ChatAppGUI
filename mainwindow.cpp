@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     Mainwidget = new ChatWidget(this);
     auto user = User::getCurrentUser().value();
     Status = new StatusWindow(user);
+    settings = new Settings();
     connect(Mainwidget,&ChatWidget::statusClicked,this,[=]{
         Mainwidget->setParent(nullptr);
         Status->setParent(this);
@@ -19,6 +20,16 @@ MainWindow::MainWindow(QWidget *parent)
     connect(Status,&StatusWindow::backClicked,this,[=](){
         Mainwidget->setParent(this);
         Status->setParent(nullptr);
+        Mainwidget->show();
+    });
+    connect(Mainwidget,&ChatWidget::settingsClicked,this,[=]{
+        Mainwidget->setParent(nullptr);
+        settings->setParent(this);
+        settings->show();
+    });
+    connect(settings,&Settings::settingsClosed,this,[=](){
+        Mainwidget->setParent(this);
+        settings->setParent(nullptr);
         Mainwidget->show();
     });
 }

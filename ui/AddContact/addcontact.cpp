@@ -1,9 +1,3 @@
-//
-// Created by Dell on 5/18/2025.
-//
-
-// You may need to build the project (run Qt uic code generator) to get "ui_AddContact.h" resolved
-
 #include "addcontact.h"
 
 #include <QPushButton>
@@ -13,7 +7,7 @@
 
 
 AddContact::AddContact(QWidget *parent) :
-    QWidget(parent), ui(new Ui::AddContact) {
+    QDialog(parent), ui(new Ui::AddContact) {
     ui->setupUi(this);
     connect(ui->addBtn, &QPushButton::clicked, this, &AddContact::on_add);
 }

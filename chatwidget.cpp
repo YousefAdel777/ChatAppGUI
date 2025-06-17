@@ -10,7 +10,6 @@ ChatWidget::ChatWidget(QWidget *parent)
     ui->container->addWidget(leftSide);
     chat = nullptr;
     connect(leftSide,&ChatList::ChatCardClicked,this,[=](int id){
-        cout<<1<<endl;
         if(chat){
             ui->container->removeWidget(chat);
             chat->setParent(nullptr);
@@ -22,6 +21,9 @@ ChatWidget::ChatWidget(QWidget *parent)
     });
     connect(leftSide,&ChatList::StatusClicked,this,[=]{
         emit statusClicked();
+    });
+    connect(leftSide,&ChatList::settingsClicked,this,[=]{
+        emit settingsClicked();
     });
 }
 

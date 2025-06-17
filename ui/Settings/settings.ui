@@ -178,7 +178,7 @@ padding: 50px;</string>
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../img.qrc">:/icons/icons/user.png</pixmap>
+             <pixmap>:/icons/icons/user.png</pixmap>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -396,7 +396,7 @@ border-radius: 20px;</string>
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="../../img.qrc">:/icons/icons/padlock.png</pixmap>
+             <pixmap>:/icons/icons/padlock.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -442,7 +442,7 @@ background-color: &quot;#D3E8D2&quot;;</string>
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../../img.qrc">
+             <iconset>
               <normaloff>:/icons/icons/arrow-right.png</normaloff>:/icons/icons/arrow-right.png</iconset>
             </property>
            </widget>
@@ -590,7 +590,7 @@ font-size: 30px</string>
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap resource="../../img.qrc">:/icons/icons/user.png</pixmap>
+                    <pixmap>:/icons/icons/user.png</pixmap>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -1216,8 +1216,6 @@ border-radius: 16px;</string>
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../img.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

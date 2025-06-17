@@ -1,0 +1,23 @@
+{
+  "blocked": [],
+  "chatRooms": [],
+  "contacts": [],
+  "firstName": "Dick",
+  "id": 2,
+  "infoVisibility": [],
+  "lastName": "Grayson",
+  "lastSeenVisibility": [],
+  "mobileNumber": "+201069661535",
+  "password": "$2b$10$z.yCZJxdJDaO3D3.DL8cJebdRwVKKNhS/9oz0NfYLnBR7db4TfIIe",
+  "seenVisibility": [],
+  "stories": [],
+  "userProfileDescription": {
+    "About": "",
+    "Name": "",
+    "Phone": "",
+    "SocialMediaLinks": [],
+    "VisibilityOption": true,
+    "id": 2,
+    "imagePath": ""
+  }
+}

@@ -1,7 +1,5 @@
-//
-// Created by dell on 4/20/2025.
-//
 #include "Group.h"
+#include "User.h"
 Group::Group() :
 ImagePath("default image"),
 Description("Rghyapp Group"),
@@ -67,12 +65,27 @@ void Group::Change_Member_Role(User& member, Roles Role) {
 }
 
 void Group::Add_Member(int Member) {
-    //todo
+    User user = User::getUser(Member).value();
+    user.getChatRooms().push(id);
+    user.save();
     users.push_back(Member);
-
 }
+
 void Group::Remove_Member(int Member) {
     users.erase(find(users.begin(), users.end(), Member));
+}
+
+const Group& Group::createGroup(string name, int adminId, string imagePath, string description, bool type_perm) {
+    vector<int> userIds;
+    map<int, Roles> roles;
+    set<MessageModel> messages;
+
+    userIds.push_back(adminId);
+    roles[adminId] = Roles::ADMIN;
+
+    Group g(name, userIds, messages, roles, imagePath, description, type_perm);
+    g.save();
+    return g;
 }
 
 json Group::toJson()

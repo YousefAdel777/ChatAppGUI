@@ -16,7 +16,7 @@
 
 
 CreateGroup::CreateGroup(QWidget *parent) :
-    QWidget(parent), ui(new Ui::CreateGroup) {
+    QDialog(parent), ui(new Ui::CreateGroup) {
     ui->setupUi(this);
     ui->removeImageBtn->setVisible(false);
     connect(ui->removeImageBtn, &QPushButton::clicked, this, &CreateGroup::removeImage);
@@ -85,6 +85,7 @@ void CreateGroup::removeImage() {
 }
 
 void CreateGroup::on_create() {
+    User user = User::getCurrentUser().value();
     ui->nameErr->setText("");
     ui->descErr->setText("");
     bool error = false;
@@ -99,8 +100,12 @@ void CreateGroup::on_create() {
         error = true;
     }
     if (error) return;
-    // TODO
-    // Group g(name, {}, {}, {}, imagePath, desc, false);
+    Group::createGroup(name, user.getId(), imagePath, desc, true);
+    // vector<int> userIds;
+    // set<MessageModel> messages;
+    // userIds.push_back(user.getId());
+
+    // Group g(name, messages, userIds, {}, imagePath, desc, true);
     // g.save();
 }
 

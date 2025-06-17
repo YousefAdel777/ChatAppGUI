@@ -1,0 +1,66 @@
+[
+  {
+    "blocked": [],
+    "chatRooms": [],
+    "contacts": [],
+    "firstName": "Bruce",
+    "id": 1,
+    "infoVisibility": [],
+    "lastName": "Wayne",
+    "lastSeenVisibility": [],
+    "mobileNumber": "+21022880617",
+    "password": "$2b$10$0/XFm5W44rKcUaRgU4eFx.bFwabE9AZ7ulX6fyaAvpRv0LGUrEEsK",
+    "seenVisibility": [],
+    "stories": [
+      {
+        "excludedIds": [],
+        "publishTime": {
+          "time": {
+            "day": 16,
+            "hour": 23,
+            "minute": 37,
+            "month": 6,
+            "second": 50,
+            "year": 2025
+          }
+        },
+        "storyColor": "\ncolor: rgb(255, 255, 255);background-color: #44E2F4;",
+        "storyPhotoPath": "",
+        "storyText": "Tees tayez",
+        "userId": 1
+      }
+    ],
+    "userProfileDescription": {
+      "About": "",
+      "Name": "",
+      "Phone": "",
+      "SocialMediaLinks": [],
+      "VisibilityOption": true,
+      "id": 1,
+      "imagePath": ""
+    }
+  },
+  {
+    "blocked": [],
+    "chatRooms": [],
+    "contacts": [],
+    "firstName": "Dick",
+    "id": 2,
+    "infoVisibility": [],
+    "lastName": "Grayson",
+    "lastSeenVisibility": [],
+    "mobileNumber": "+201069661535",
+    "password": "$2b$10$z.yCZJxdJDaO3D3.DL8cJebdRwVKKNhS/9oz0NfYLnBR7db4TfIIe",
+    "seenVisibility": [],
+    "stories": [],
+    "userProfileDescription": {
+      "About": "",
+      "Name": "",
+      "Phone": "",
+      "SocialMediaLinks": [],
+      "VisibilityOption": true,
+      "id": 2,
+      "imagePath": ""
+    }
+  }
+]

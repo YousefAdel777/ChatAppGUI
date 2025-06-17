@@ -10,10 +10,12 @@ int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     ChatRoomModel::readChatRoomModels();
     User::readUsers();
-    User::setCurrentUser(User::getUsers()[0]);
-    User user = User::getCurrentUser().value();
-    StatusWindow * w = new StatusWindow(user);
-    w->show();
+    User::readCurrentUser();
+    optional<User> user = User::getCurrentUser();
+    // User::setCurrentUser(User::getUsers()[0]);
+    // User user = User::getCurrentUser().value();
+    // StatusWindow * w = new StatusWindow(user);
+    // w->show();
     // auto model = ChatRoomModel::getChatRoomModel(2);
     // if(!model.has_value()){
     //     model = ChatRoomModel();
@@ -23,23 +25,26 @@ int main(int argc, char *argv[]) {
     // }
     // MainWindow window;
     // window.show();
-    User::setCurrentUser(User::getUsers()[1]);
-    auto model = ChatRoomModel::getChatRoomModel(2);
-    if(!model.has_value()){
-        model = ChatRoomModel();
-        model->setName(User::getUser(2)->getFirstName());
-        vector<int> x = {User::getCurrentUser()->getId(),2};
-        model->setUsers(x);
+    // User::setCurrentUser(User::getUsers()[1]);
+    // auto model = ChatRoomModel::getChatRoomModel(2);
+    // if(!model.has_value()){
+    //     model = ChatRoomModel();
+    //     model->setName(User::getUser(2)->getFirstName());
+    //     vector<int> x = {User::getCurrentUser()->getId(),2};
+    //     model->setUsers(x);
+    // }
+    if (user.has_value()) {
+        MainWindow *window = new MainWindow();
+        window->show();
     }
-    MainWindow window;
-    window.show();
-    if(app.exec()==0)
-    {
-        User::writeUsers();
-        ChatRoomModel::writeChatRoomModels();
-        return 0;
-    }else{
-        return 0;
+    else {
+        Login * login = new Login();
+        login->show();
     }
+    int code = app.exec();
+    User::writeCurrentUser();
+    User::writeUsers();
+    ChatRoomModel::writeChatRoomModels();
+    return code;
 }
 

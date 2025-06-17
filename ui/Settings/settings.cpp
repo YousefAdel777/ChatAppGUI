@@ -46,7 +46,8 @@ Settings::Settings(QWidget *parent) :
 }
 
 void Settings::closeSettings() {
-    this->close();
+    // this->close();
+    emit settingsClosed();
 }
 
 void Settings::initializeUserImage(string imagePath) {

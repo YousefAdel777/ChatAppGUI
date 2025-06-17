@@ -70,8 +70,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
          ui/StatusWindow/StatusWindow.cpp ui/StatusWindow/StatusWindow.h ui/StatusWindow/StatusWindow.ui
          ui/AddStoryPage/AddStoryPage.cpp ui/AddStoryPage/AddStoryPage.h ui/AddStoryPage/addStoryPage.ui
          chatwidget.h chatwidget.cpp chatwidget.ui
-
-
+        ui/AddContact/addcontact.cpp ui/AddContact/addcontact.h ui/AddContact/addcontact.ui ui/AddStoryPage/AddStoryPage.cpp ui/AddStoryPage/AddStoryPage.h ui/AddStoryPage/addStoryPage.ui
+        ui/CreateGroup/creategroup.cpp ui/CreateGroup/creategroup.h ui/CreateGroup/creategroup.ui
 
 
     )
@@ -93,7 +93,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(QtLearning PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6::Multimedia Qt6::Qml Qt6::Quick mpg123)
+target_link_libraries(QtLearning PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6::Multimedia Qt6::Qml Qt6::Quick)
 
 # Copy DLL after build so it's available at runtime
 

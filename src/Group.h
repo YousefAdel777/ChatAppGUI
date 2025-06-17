@@ -38,7 +38,8 @@ public:
         string ImagePath,
         string Description,
         bool Type_Permission
-        );
+    );
+    static const Group& createGroup(string name, int adminId, string imagePath, string descreption, bool type_perm);
     const string& getImagePath() const;
     const string& getDescription() const;
     Roles getRoleOf(int Member) const;
