@@ -23,10 +23,12 @@ public:
     QWidget *container;
     static QVector<MemberCard*> memberCards;
     explicit AboutG(int GroupId,int OwnerId,string path,string name,string des,QWidget *parent = nullptr);
-    ~AboutG();
+    ~AboutG() override;
 
 private slots:
     void on_addMember_clicked();
+signals:
+    void groupDeleted(int id);
 private:
     Ui::AboutG *ui;
 };

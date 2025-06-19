@@ -42,9 +42,17 @@ int main(int argc, char *argv[]) {
         login->show();
     }
     int code = app.exec();
-    User::writeCurrentUser();
-    User::writeUsers();
-    ChatRoomModel::writeChatRoomModels();
+    user = User::getCurrentUser();
+    if (user.has_value()) {
+        user->setLastSeen(Date::getNow());
+        user->save();
+        User::setCurrentUser(user.value());
+    }
+    if (code == 0) {
+        User::writeCurrentUser();
+        User::writeUsers();
+        ChatRoomModel::writeChatRoomModels();
+    }
     return code;
 }
 

@@ -27,6 +27,7 @@ class User {
     inline static vector<User> users;
     static optional<User> currentUser;
     int id;
+    tm lastSeen;
     string mobileNumber;
     string password;
     string firstName;
@@ -42,6 +43,7 @@ class User {
 public:
     User(
         int id,
+        tm lastSeen,
         const string &mobileNumber,
         const string &password,
         const string &firstName,
@@ -54,7 +56,7 @@ public:
         unordered_set<int> lastSeenVisibility,
         unordered_set<int> blocked,
         unordered_set<int> seenVisibility
-        );
+    );
 
     User(
         const string &mobileNumber,
@@ -65,7 +67,7 @@ public:
         const set<Story> &stories,
         const set<int> &contacts,
         const UserProfileDescription &userProfileDescription
-        );
+    );
 
     User();
 
@@ -140,6 +142,14 @@ public:
 
     // nlohmann cannot serialize priority_queue by default must convert to vector or list
     json toJson();
+
+    tm getLastSeen();
+
+    void setLastSeen(const tm &lastSeen);
+
+    void addChatRoom(int chatId);
+
+    void removeChatRoom(int chatId);
 
     static void readUsers();
 

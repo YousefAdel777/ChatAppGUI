@@ -1,35 +1,32 @@
 [
   {
     "blocked": [],
-    "chatRooms": [],
-    "contacts": [],
+    "chatRooms": [
+      2,
+      1
+    ],
+    "contacts": [
+      2
+    ],
     "firstName": "Bruce",
     "id": 1,
     "infoVisibility": [],
     "lastName": "Wayne",
-    "lastSeenVisibility": [],
-    "mobileNumber": "+21022880617",
-    "password": "$2b$10$0/XFm5W44rKcUaRgU4eFx.bFwabE9AZ7ulX6fyaAvpRv0LGUrEEsK",
-    "seenVisibility": [],
-    "stories": [
-      {
-        "excludedIds": [],
-        "publishTime": {
-          "time": {
-            "day": 16,
-            "hour": 23,
-            "minute": 37,
-            "month": 6,
-            "second": 50,
-            "year": 2025
-          }
-        },
-        "storyColor": "\ncolor: rgb(255, 255, 255);background-color: #44E2F4;",
-        "storyPhotoPath": "",
-        "storyText": "Tees tayez",
-        "userId": 1
+    "lastSeen": {
+      "time": {
+        "day": 19,
+        "hour": 3,
+        "minute": 18,
+        "month": 6,
+        "second": 10,
+        "year": 2025
       }
-    ],
+    },
+    "lastSeenVisibility": [],
+    "mobileNumber": "+201022880617",
+    "password": "$2b$10$mYsgoxDnSvNMUVGpWS1Sg.TeVXvxOcRGnuDGGtlu4InSA21ldFTLq",
+    "seenVisibility": [],
+    "stories": [],
     "userProfileDescription": {
       "About": "",
       "Name": "",
@@ -42,15 +39,30 @@
   },
   {
     "blocked": [],
-    "chatRooms": [],
-    "contacts": [],
+    "chatRooms": [
+      2,
+      1
+    ],
+    "contacts": [
+      1
+    ],
     "firstName": "Dick",
     "id": 2,
     "infoVisibility": [],
     "lastName": "Grayson",
+    "lastSeen": {
+      "time": {
+        "day": 19,
+        "hour": 3,
+        "minute": 25,
+        "month": 6,
+        "second": 25,
+        "year": 2025
+      }
+    },
     "lastSeenVisibility": [],
     "mobileNumber": "+201069661535",
-    "password": "$2b$10$z.yCZJxdJDaO3D3.DL8cJebdRwVKKNhS/9oz0NfYLnBR7db4TfIIe",
+    "password": "$2b$10$Z3QmDChwDlHy0jaE8ay2b../5h2cwEcMPow3rY7QdO/rlXe5zcM.W",
     "seenVisibility": [],
     "stories": [],
     "userProfileDescription": {
@@ -59,7 +71,7 @@
       "Phone": "",
       "SocialMediaLinks": [],
       "VisibilityOption": true,
-      "id": 2,
+      "id": 3,
       "imagePath": ""
     }
   }

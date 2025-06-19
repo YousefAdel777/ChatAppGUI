@@ -5,6 +5,7 @@
 #include"AboutG.h"
 #include "User.h"
 #include "ChatRoom.h"
+#include "Group.h"
 using namespace std;
 AddMembers::AddMembers(int id,QWidget *parent)
     : QWidget(parent)
@@ -16,9 +17,12 @@ AddMembers::AddMembers(int id,QWidget *parent)
     contactLayout = new QVBoxLayout(container);
     contactLayout->setSpacing(3);
     contactLayout->setContentsMargins(0,0,0,0);
-    for(auto id : User::getCurrentUser()->getContacts()){
-        AddInGroup *m = new AddInGroup(id);
-        contactLayout->addWidget(m);
+    Group * g = static_cast<Group *>(ChatRoomModel::getChatRoomModel(GroupId).value());
+    for(auto userId : User::getCurrentUser()->getContacts()){
+        if (!g->isMember(userId)) {
+            AddInGroup *m = new AddInGroup(userId);
+            contactLayout->addWidget(m);
+        }
     } 
     contactLayout->addStretch();
     container->setLayout(contactLayout);
@@ -33,8 +37,6 @@ AddMembers::~AddMembers()
     delete ui;
 }
 
-
-
 void AddMembers::on_added_clicked()
 {
     QVector<MemberCard*>members;
@@ -45,7 +47,12 @@ void AddMembers::on_added_clicked()
         if (QWidget* w = item->widget()) {
             if (AddInGroup* card = qobject_cast<AddInGroup*>(w)) {
                 if (card->isChecked) {
-                    members.push_back(new MemberCard(card->photo->property("imagepath").toString(),card->name->text(),"Member"));
+                    User user =  User::getUser(card->UserId).value();
+
+                    Group * g = static_cast<Group *>(ChatRoomModel::getChatRoomModel(GroupId).value());
+                    members.push_back(new MemberCard(card->UserId, GroupId, card->photo->property("imagepath").toString(),card->name->text(),Group::roleToString(g->getRoleOf(user.getId())).c_str()));
+                    g->Add_Member(card->UserId);
+                    g->save();
                     //TODO
                     //curGroup.addMemeber(card->UserId);
                 }

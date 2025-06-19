@@ -18,7 +18,7 @@ private slots:
     void on_Name_clicked();
     void on_LastSeen_clicked();
     void on_Dots_clicked();
-
+    void on_add_contact_clicked();
 private:
     Ui::header *ui;
 };

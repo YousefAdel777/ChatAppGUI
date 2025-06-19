@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "Description": "test",
+    "Image_Path": "",
+    "Member_Roles": [
+      {
+        "Role": 1,
+        "id": 1
+      },
+      {
+        "Role": 3,
+        "id": 2
+      }
+    ],
+    "Type_Permission": true,
+    "id": 2,
+    "messages": [],
+    "name": "Test",
+    "type": true,
+    "users": [
+      2,
+      1
+    ]
+  },
+  {
+    "chatType": 0,
+    "id": 1,
+    "messages": [],
+    "name": "ChatRoomModel1",
+    "type": false,
+    "users": [
+      2,
+      1
+    ]
+  }
+]

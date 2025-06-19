@@ -21,7 +21,8 @@ public:
     int msgId = 0,user_id;
     //explicit ChatRoom(User user,QWidget *parent = nullptr);
     ~ChatRoom();
-    optional<ChatRoomModel> model;
+    ChatRoomModel * model;
+    optional<ChatRoomModel*> opt_m;
     void resizeEvent(QResizeEvent *event) override;
     Ui::ChatRoom *ui;
     void Update();

@@ -2,17 +2,18 @@
 #include "ui_About.h"
 #include "User.h"
 #include<iostream>
-Form::Form(QWidget *parent)
+Form::Form(int userId, QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Form)
 {
+    optional<User> user = User::getUser(userId);
     ui->setupUi(this);
     ui->verticalLayout_2->setAlignment(Qt::AlignTop);
     ui->About->setFixedSize(ui->About->sizeHint());
-    ui->Name->setText(User::getCurrentUser()->getFirstName().data());
-    ui->PhoneNumber->setText(User::getCurrentUser()->getMobileNumber().data());
+    ui->Name->setText(user->getFirstName().data());
+    ui->PhoneNumber->setText(user->getMobileNumber().data());
 
-    ui->About->setText(User::getCurrentUser()->getUserProfileDescription().getAbout().data());
+    ui->About->setText(user->getUserProfileDescription().getAbout().data());
 
     ui->Bio->setFixedHeight(ui->About->sizeHint().height()+60);
     ui->widget_3->setFixedHeight(ui->CummonGroups->sizeHint().height()+70);

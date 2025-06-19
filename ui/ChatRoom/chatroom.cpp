@@ -1,4 +1,6 @@
 #include "chatroom.h"
+
+#include "Group.h"
 #include "ui_chatroom.h"
 #include "Helper.h"
 ChatRoom::ChatRoom(int id,int user_id,QWidget *parent)
@@ -7,12 +9,18 @@ ChatRoom::ChatRoom(int id,int user_id,QWidget *parent)
     ,user_id(user_id)
 {
     ui->setupUi(this);
-    model = ChatRoomModel::getChatRoomModel(id);
-    if(!model.has_value()){
-        model = ChatRoomModel();
+    cout << "aaaaaaa\n";
+    opt_m = ChatRoomModel::getChatRoomModel(id);
+
+    if(!opt_m.has_value()){
+        model = new ChatRoomModel();
         model->setName(User::getUser(user_id)->getFirstName());
         vector<int> x = {User::getCurrentUser()->getId(),user_id};
         model->setUsers(x);
+    }
+    else {
+    cout <<"4444"<<endl;
+        model = opt_m.value();
     }
     chat = nullptr;
     headerBar=nullptr;
@@ -53,15 +61,22 @@ void ChatRoom::Update(){
     }
     chat = new Container(this);
     chat->show();
-    if(!model.has_value()||model->getUsers().size()>2){
+    if(!opt_m.has_value()||model->getUsers().size()>2){
         sendBar = new Sending(this);
     }else{
-        int user = model->getUsers()[model->getUsers()[0]==User::getCurrentUser()->getId()];
+        int user;
+        int currentId = User::getCurrentUser()->getId();
+        if (model->getUsers()[0] == currentId)
+            user = model->getUsers()[1];
+        else
+            user = model->getUsers()[0];
+        // int user = model->getUsers()[model->getUsers()[0]==User::getCurrentUser()->getId()];
         if(User::getCurrentUser()->getBlocked().find(user)!=User::getCurrentUser()->getBlocked().end()){
             block = new BlockerWidget(this);
             block->show();
         }
-        else if(User::getUser(model->getUsers()[1])->getBlocked().find(User::getCurrentUser()->getId())!=User::getUser(user)->getBlocked().end()){
+
+        else if(model->getUsers().size() > 1 && User::getUser(model->getUsers()[1])->getBlocked().find(User::getCurrentUser()->getId())!=User::getUser(user)->getBlocked().end()){
             blocked = new BlockedWidget(this);
             blocked->show();
         }
@@ -70,9 +85,18 @@ void ChatRoom::Update(){
             sendBar->show();
         }
     }
+
     headerBar = new Header(this);
+    cout << model->type << endl;
+    if (model->type){
+        Group* g = static_cast<Group*>(model);
+        headerBar->getName()->setText(QString::fromStdString(g->getName()));
+    }else{
+        headerBar->getName()->setText(QString::fromStdString(User::getUser(model->getUsers()[User::getCurrentUser()->getId()==model->getUsers()[0]])->getFirstName().data()));
+    }
     headerBar->show();
     headerBar->setFixedWidth(width());
+
     if(sendBar)
     {
         sendBar->setFixedWidth(width());
@@ -109,7 +133,7 @@ void ChatRoom::Update(){
 
         chat->setFixedSize(width(),height()-block->height()-headerBar->height());
         block->setGeometry(0,height()-block->height(),block->width(),block->height());
-    }else{
+    }else {
         blocked->setFixedWidth(width());
         chat->setGeometry(0,headerBar->height(),chat->width(),chat->height());
 
@@ -121,13 +145,14 @@ void ChatRoom::Update(){
         chat->sendMessage(x);
         msgId = max(msgId,x.getMessageID());
     }
-    if(model->getUsers().size()==2){
+    if(!model->type && model->getUsers().size()==2){
         if(model->getUsers()[0]!=User::getCurrentUser()->getId()){
             headerBar->getName()->setText(User::getUser(model->getUsers()[0])->getFirstName().data());
         }else{
             headerBar->getName()->setText(User::getUser(model->getUsers()[1])->getFirstName().data());
         }
     }
+
 }
 
 void ChatRoom::resizeEvent(QResizeEvent *event){

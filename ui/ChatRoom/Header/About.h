@@ -12,7 +12,7 @@ class Form : public QWidget
     Q_OBJECT
 
 public:
-    explicit Form(QWidget *parent = nullptr);
+    explicit Form(int userId, QWidget *parent = nullptr);
     ~Form();
     void resizeEvent(QResizeEvent *event) override;
 

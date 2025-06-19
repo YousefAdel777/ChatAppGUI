@@ -3,6 +3,7 @@
 #include <QPushButton>
 #include <QGraphicsDropShadowEffect>
 
+#include "mainwindow.h"
 #include "ui_login.h"
 #include "User.h"
 #include "../Settings/settings.h"
@@ -52,8 +53,8 @@ void Login::handleLogin() {
         ui->loginError->setText("Invalid Credentials");
         return;
     }
-    Settings *settings = new Settings;
-    settings->show();
+    MainWindow *main_window = new MainWindow;
+    main_window->show();
     this->close();
 }
 

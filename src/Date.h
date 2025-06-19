@@ -18,6 +18,9 @@ public:
     static tm fromJson(const json &);
 
     static json toJson(const tm &);
+
+    static string format(tm *);
+
 };
 
 #endif //DATE_H

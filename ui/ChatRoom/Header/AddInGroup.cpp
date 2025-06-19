@@ -11,7 +11,7 @@ AddInGroup::AddInGroup(int id,QWidget *parent)
     QPixmap pix(User::getUser(id)->getUserProfileDescription().getImagePath().c_str());
     ui->label->setPixmap(pix);
     ui->label->setScaledContents(true);
-    ui->label_2->setText(QString(User::getUser(id)->getFirstName().c_str())+" "+ QString(User::getUser(id)->getFirstName().c_str()));
+    ui->label_2->setText(QString(User::getUser(id)->getFirstName().c_str())+" "+ QString(User::getUser(id)->getLastName().c_str()));
     photo = ui->label;
     name = ui->label_2;
 
@@ -25,7 +25,7 @@ AddInGroup::~AddInGroup()
 void AddInGroup::on_pushButton_clicked()
 {
     if(!isChecked)
-        ui->pushButton->setIcon(QIcon("C:/Users/ELKAYAN/OneDrive/Documents/ChatAppGUI/icons/check.png"));
+        ui->pushButton->setIcon(QIcon(":/icons/check.png"));
     else
         ui->pushButton->setIcon(QIcon());
     isChecked^=1;

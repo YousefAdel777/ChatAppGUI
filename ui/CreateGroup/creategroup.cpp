@@ -100,13 +100,7 @@ void CreateGroup::on_create() {
         error = true;
     }
     if (error) return;
-    Group::createGroup(name, user.getId(), imagePath, desc, true);
-    // vector<int> userIds;
-    // set<MessageModel> messages;
-    // userIds.push_back(user.getId());
-
-    // Group g(name, messages, userIds, {}, imagePath, desc, true);
-    // g.save();
+    emit groupCreated(Group::createGroup(name, user.getId(), imagePath, desc, true));
 }
 
 CreateGroup::~CreateGroup() {

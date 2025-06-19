@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QDialog>
 
+#include "ChatRoomModel.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class AddContact; }
@@ -18,6 +20,9 @@ public:
 
 private slots:
     void on_add();
+
+signals:
+    void chatCreated(ChatRoomModel * chat);
 
 private:
     Ui::AddContact *ui;

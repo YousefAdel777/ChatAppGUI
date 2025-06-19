@@ -7,6 +7,7 @@
 
 #include <QWidget>
 #include <QDialog>
+#include "Group.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -24,6 +25,9 @@ public slots:
 public:
     explicit CreateGroup(QWidget *parent = nullptr);
     ~CreateGroup() override;
+
+signals:
+    void groupCreated(Group * g);
 
 private:
     Ui::CreateGroup *ui;

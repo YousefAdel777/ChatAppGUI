@@ -11,6 +11,7 @@ optional<User> User::currentUser;
 
 User::User(
     int id,
+    tm lastSeen,
     const string &mobileNumber,
     const string &password,
     const string &firstName,
@@ -25,6 +26,7 @@ User::User(
     unordered_set<int> seenVisibility
 ) {
     this->id = id;
+    this->lastSeen = lastSeen;
     this->mobileNumber = mobileNumber;
     this->password = password;
     this->firstName = firstName;
@@ -51,6 +53,7 @@ User::User(
 ) {
     count++;
     this->id = count;
+    this->lastSeen = Date::getNow();
     this->mobileNumber = mobileNumber;
     this->password = password;
     this->firstName = firstName;
@@ -169,6 +172,14 @@ void User::setBlocked(unordered_set<int> blocked) {
     this->blocked = blocked;
 }
 
+tm User::getLastSeen() {
+    return lastSeen;
+}
+
+void User::setLastSeen(const tm &lastSeen) {
+    this->lastSeen = lastSeen;
+}
+
 int User::getCount() {
     return count;
 }
@@ -196,8 +207,10 @@ User User::fromJson(const json &json) {
         }
         stories.insert(storedStory);
     }
+    // auto time = json["lastSeen"].get<time_t>();
     return  User(
         json["id"].get<int>(),
+        Date::fromJson(json["lastSeen"]),
         json["mobileNumber"].get<string>(),
         json["password"].get<string>(),
         json["firstName"].get<string>(),
@@ -227,6 +240,7 @@ json User::toJson() {
     json["blocked"] = blocked;
     json["contacts"] = contacts;
     json["chatRooms"] = json::array();
+    json["lastSeen"] = Date::toJson(lastSeen);
     while (!chatRooms.empty()) {
         long long chatRoom = chatRooms.top();
         json["chatRooms"].push_back(chatRoom);
@@ -238,6 +252,22 @@ json User::toJson() {
     }
     json["userProfileDescription"] = userProfileDescription.toJson();
     return json;
+}
+
+void User::addChatRoom(int chatId) {
+    chatRooms.push(chatId);
+}
+
+void User::removeChatRoom(int chatId) {
+    priority_queue<long long> newRooms;
+    while (!chatRooms.empty()) {
+        int chatRoom = chatRooms.top();
+        chatRooms.pop();
+        cout << chatRoom << chatId << endl;
+        if (chatRoom == chatId) continue;
+        newRooms.push(chatRoom);
+    }
+    chatRooms = newRooms;
 }
 
 void User::save() {

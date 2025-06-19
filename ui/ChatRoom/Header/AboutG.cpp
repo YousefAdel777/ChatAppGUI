@@ -3,6 +3,8 @@
 #include "MemberCard.h"
 #include "User.h"
 #include <iostream>
+
+#include "Group.h"
 QVector<MemberCard*> AboutG::memberCards;
 AboutG::AboutG(int GroupId,int OwnerId,string path,string name,string des,QWidget *parent)
     : QWidget(parent)
@@ -20,12 +22,20 @@ AboutG::AboutG(int GroupId,int OwnerId,string path,string name,string des,QWidge
     contactLayout = new QVBoxLayout(container);
     contactLayout->setSpacing(3);
     contactLayout->setContentsMargins(0,0,0,0);
-    for(auto card:memberCards){
-        contactLayout->addWidget(card);
-        ++members;
+
+    memberCards.clear();
+    Group * group = static_cast<Group *>(ChatRoomModel::getChatRoomModel(GroupId).value());
+    for (int userId : group->getUsers()) {
+        User user = User::getUser(userId).value();
+        auto card = new MemberCard(
+            userId,
+            group->getId(),
+            user.getUserProfileDescription().getImagePath().c_str(),
+            user.getFirstName().c_str()+QString(" ")+user.getLastName().c_str(),
+            Group::roleToString(group->getRoleOf(userId)).c_str()
+        );
+        memberCards.push_back(card);
     }
-    auto card = new MemberCard(User::getCurrentUser()->getUserProfileDescription().getImagePath().c_str(),User::getCurrentUser()->getFirstName().c_str()+QString(" ")+User::getCurrentUser()->getLastName().c_str(),"Owner");
-    memberCards.push_back(card);
     for(auto card:memberCards){
         contactLayout->addWidget(card);
         ++members;
@@ -41,7 +51,7 @@ AboutG::AboutG(int GroupId,int OwnerId,string path,string name,string des,QWidge
     container->adjustSize();
     container->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Maximum);
     ui->MembersNo->setText(QString::number(members)+" Members");
-    connect(a,&AddMembers::add,this,[=](){
+    connect(a,&AddMembers::add,this,[=]{
         for(auto card:memberCards){
             contactLayout->addWidget(card);
             ++members;
@@ -50,6 +60,21 @@ AboutG::AboutG(int GroupId,int OwnerId,string path,string name,string des,QWidge
         container->adjustSize();
         ui->MembersNo->setText(QString::number(members)+" Members");
         ui->scrollArea_2->widget()->updateGeometry();
+    });
+    User currUser = User::getCurrentUser().value();
+    if (group->getRoleOf(currUser.getId()) != Group::OWNER) {
+        ui->deleteBtn->setVisible(false);
+    }
+    else {
+        connect(ui->deleteBtn, &QPushButton::clicked, this, [=] {
+            group->deleteGroup();
+            emit groupDeleted(group->getId());
+        });
+    }
+    int currUserId = currUser.getId();
+    connect(ui->leaveBtn, &QPushButton::clicked, this, [=] {
+        group->Remove_Member(currUserId);
+        group->save();
     });
 }
 
@@ -62,9 +87,3 @@ void AboutG::on_addMember_clicked()
 {
     a->show();
 }
-
-void AboutG::on_pushButton_3_clicked()
-{
-
-}
-

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
+    <width>523</width>
     <height>720</height>
    </rect>
   </property>
@@ -32,8 +32,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>480</width>
-          <height>696</height>
+          <width>503</width>
+          <height>700</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -263,38 +263,6 @@ border-radius:45px;</string>
                </size>
               </property>
              </widget>
-             <widget class="QPushButton" name="addMember_2">
-              <property name="geometry">
-               <rect>
-                <x>220</x>
-                <y>10</y>
-                <width>30</width>
-                <height>30</height>
-               </rect>
-              </property>
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">border:0;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../../../assets.qrc">
-                <normaloff>:/icons/add.png</normaloff>:/icons/add.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
-              </property>
-             </widget>
             </widget>
            </item>
            <item alignment="Qt::AlignmentFlag::AlignHCenter">
@@ -462,7 +430,7 @@ color:gray;</string>
                <rect>
                 <x>0</x>
                 <y>50</y>
-                <width>471</width>
+                <width>481</width>
                 <height>251</height>
                </rect>
               </property>
@@ -510,7 +478,7 @@ QScrollBar::handle:vertical:hover {
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>451</width>
+                 <width>461</width>
                  <height>231</height>
                 </rect>
                </property>
@@ -537,7 +505,7 @@ QScrollBar::handle:vertical:hover {
 border-bottom-right-radius:25px;
 border-bottom-left-radius:25px;</string>
              </property>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="deleteBtn">
               <property name="geometry">
                <rect>
                 <x>230</x>
@@ -562,7 +530,7 @@ padding:4px;
                 <normaloff>:/icons/delete.png</normaloff>:/icons/delete.png</iconset>
               </property>
              </widget>
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="leaveBtn">
               <property name="geometry">
                <rect>
                 <x>70</x>

@@ -33,6 +33,9 @@ void AddContact::on_add() {
     currentUser.save();
     User::setCurrentUser(currentUser);
     ui->phoneIn->setText("");
+    vector usersIds = { currentUser.getId(), user->getId() };
+    ChatRoomModel * chat = ChatRoomModel::createChat(usersIds);
+    emit chatCreated(chat);
 }
 
 AddContact::~AddContact() {

@@ -9,6 +9,7 @@
 #include <QGraphicsDropShadowEffect>
 #include <QPushButton>
 
+#include "mainwindow.h"
 #include "ui_SignUp.h"
 #include "../Login/login.h"
 #include "User.h"
@@ -75,8 +76,8 @@ void SignUp::handleSignUp() {
         ui->loginError->setText("A user with that phone number exists");
         return;
     }
-    Settings *settings = new Settings;
-    settings->show();
+    MainWindow *main_window = new MainWindow;
+    main_window->show();
     this->close();
 };
 

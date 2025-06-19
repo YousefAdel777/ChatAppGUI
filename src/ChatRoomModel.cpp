@@ -6,7 +6,8 @@
 #include <Group.h>
 ChatRoomModel::ChatRoomModel() :
     id(++Id_Generator),
-    name("ChatRoomModel"+to_string(id))
+    name("ChatRoomModel"+to_string(id)),
+    chatType(ChatRoomModel::ChatType::INDIVIDUAL)
 {
     type = 0;
 }
@@ -15,7 +16,8 @@ ChatRoomModel::ChatRoomModel(long long id,bool type, string name, vector<int> &u
     name(name),
     users(users),
     messages(messages),
-    type(type)
+    type(type),
+    chatType(ChatRoomModel::ChatType::INDIVIDUAL)
 {
     save();
 }
@@ -24,7 +26,8 @@ ChatRoomModel::ChatRoomModel(string name,bool type, vector<int> &users, set<Mess
     name(name),
     users(users),
     messages(messages),
-    type(type)
+    type(type),
+    chatType(ChatRoomModel::ChatType::INDIVIDUAL)
 {
     save();
 }
@@ -56,6 +59,17 @@ MessageModel ChatRoomModel::getMessage(int id){
     return *messages.find(MessageModel(id));
 }
 
+ChatRoomModel * ChatRoomModel::createChat(vector<int> usersIds) {
+    ChatRoomModel * chat = new ChatRoomModel();
+    for (const int id : usersIds) {
+        chat->addMember(id);
+    }
+    int id = User::getCurrentUser()->getId();
+    User::setCurrentUser(User::getUser(id).value());
+    chat->save();
+    return chat;
+}
+
 void ChatRoomModel::setMessages(set<MessageModel> &messages) {
     this->messages = messages;
     save();
@@ -72,12 +86,12 @@ void ChatRoomModel::removeMessage(long long id) {
     messages.erase(messages.lower_bound(MessageModel(id)));
     save();
 }
-optional<ChatRoomModel> ChatRoomModel::getChatRoomModel(int id) {
+optional<ChatRoomModel*> ChatRoomModel::getChatRoomModel(int id) {
     if( ChatRoomModels.count(id)==0)
         return nullopt;
     return ChatRoomModels[id];
 }
-ChatRoomModel ChatRoomModel::fromJson(const json &json) {
+ChatRoomModel* ChatRoomModel::fromJson(const json &json) {
     vector<int> users;
     set<MessageModel> messages;
     for (const auto &user : json["users"]) {
@@ -86,17 +100,26 @@ ChatRoomModel ChatRoomModel::fromJson(const json &json) {
     for (const auto &message : json["messages"]) {
         messages.insert(MessageModel::fromJson(message));
     }
-    return ChatRoomModel(
-        json["id"].get<long long>(),
-        json["type"].get<bool>(),
-        json["name"].get<string>(),
-        users,
-        messages
-    );
+    ChatType chatType = json["chatType"].get<ChatType>();
+    if (chatType == ChatType::INDIVIDUAL) {
+        return new ChatRoomModel(
+            json["id"].get<long long>(),
+            json["type"].get<bool>(),
+            json["name"].get<string>(),
+            users,
+            messages
+        );
+    }
+    return Group::fromJson(json);
 }
 json ChatRoomModel::toJson() {
     json json;
+    if (chatType == ChatType::GROUP) {
+        Group* group = static_cast<Group*>(this);
+        json = group->toJson();
+    }
     json["type"] = type;
+    json["chatType"] = chatType;
     json["id"] = id;
     json["name"] = name;
     json["users"] = json::array();
@@ -110,7 +133,13 @@ json ChatRoomModel::toJson() {
     return json;
 }
 void ChatRoomModel::save() {
-    ChatRoomModels[id]=*this;
+    ChatRoomModels[id]= this;
+}
+void ChatRoomModel::addMember(int userId) {
+    User user = User::getUser(userId).value();
+    user.addChatRoom(id);
+    user.save();
+    users.push_back(userId);
 }
 void ChatRoomModel::writeChatRoomModels() {
     ofstream file(QCoreApplication::applicationDirPath().toStdString()+"/../../src/data/chatRooms.json");
@@ -119,7 +148,7 @@ void ChatRoomModel::writeChatRoomModels() {
         throw runtime_error("Failed to open ChatRoomModels.json");
     }
     for (auto &x: ChatRoomModels) {
-        json.push_back(x.second.toJson());
+        json.push_back(x.second->toJson());
     }
     file << json.dump(2);
     file.close();
@@ -138,6 +167,7 @@ void ChatRoomModel::readChatRoomModels() {
     file >> json;
     file.close();
     for (const auto &ChatRoomModel : json) {
+        Id_Generator++;
         if(ChatRoomModel["type"].get<bool>()==0)
             ChatRoomModels[ChatRoomModel["id"].get<long long>()]=fromJson(ChatRoomModel);
         else

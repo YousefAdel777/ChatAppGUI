@@ -3,6 +3,7 @@
 //
 
 #include "Date.h"
+#include <ctime>
 
 tm Date::getNow() {
     time_t timeStamp = time(&timeStamp); // time() makes a timestamp for current date
@@ -11,6 +12,32 @@ tm Date::getNow() {
     ++now.tm_mon; // Because month is zero-based
     return now;
 }
+
+string Date::format(tm *time) {
+    time_t now = std::time(nullptr);
+    tm* currentTm = localtime(&now);
+
+    time_t inputTime = mktime(time);
+    tm startOfToday = *currentTm;
+    startOfToday.tm_hour = 0;
+    startOfToday.tm_min = 0;
+    startOfToday.tm_sec = 0;
+    time_t todayStart = mktime(&startOfToday);
+    double diffInSeconds = difftime(now, inputTime);
+    int daysDiff = diffInSeconds / (60 * 60 * 24);
+    char buffer[100];
+
+    if (inputTime >= todayStart) {
+        strftime(buffer, sizeof(buffer), "Today, %I:%M %p", time);
+    } else if (daysDiff < 7) {
+        strftime(buffer, sizeof(buffer), "%A, %I:%M %p", time);
+    } else {
+        strftime(buffer, sizeof(buffer), "%B %d, %Y, %I:%M %p", time);
+    }
+
+    return string(buffer);
+}
+
 
 tm Date::fromJson(const json &json) {
     tm timeStruct{};

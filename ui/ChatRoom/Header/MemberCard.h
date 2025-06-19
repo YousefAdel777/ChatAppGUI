@@ -14,12 +14,14 @@ class MemberCard : public QWidget
 
 public:
     explicit MemberCard(QWidget *parent = nullptr);
-    explicit MemberCard(QString path,QString name,QString role,QWidget *parent = nullptr);
+    explicit MemberCard(int userId, int groupId, QString path,QString name,QString role,QWidget *parent = nullptr);
     ~MemberCard();
 private slots:
     void on_pushButton_clicked();
-
+    void on_remove();
 private:
+    int userId;
+    int groupId;
     Ui::MemberCard *ui;
 };
 
