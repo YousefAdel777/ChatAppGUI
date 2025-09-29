@@ -1,0 +1,10 @@
+image: gitpod/workspace-full:latest
+
+tasks:
+  - init: |
+      sudo apt-get update
+      sudo apt-get install -y qt6-base-dev qt6-tools-dev-tools \
+          xvfb x11vnc fluxbox novnc websockify
+ports:
+  - port: 6080
+    onOpen: open-preview
